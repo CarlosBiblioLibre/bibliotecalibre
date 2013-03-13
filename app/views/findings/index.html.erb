@@ -1,0 +1,23 @@
+<h1>Listing findings</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @findings.each do |finding| %>
+  <tr>
+    <td><%= finding.location %></td>
+    <td><%= link_to 'Show', finding %></td>
+    <td><%= link_to 'Edit', edit_finding_path(finding) %></td>
+    <td><%= link_to 'Destroy', finding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Finding', new_finding_path %>
