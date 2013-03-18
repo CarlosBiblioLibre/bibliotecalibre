@@ -3,7 +3,6 @@ window.position = lat: -33.440596, lng: -70.665913
 changeLocation = (position) ->
   window.marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
   window.map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
-  #window.position = lat: position.coords.latitude, lng: position.coords.longitude
 
 errorHandler = (err) ->
   if (err.code == 1)
@@ -37,3 +36,7 @@ $ ->
   google.maps.event.addListener window.map, 'click', (event) -> 
     window.marker.setPosition(event.latLng)
     #window.map.setCenter(event.latLng)
+
+  $('#new_finding').on 'submit', (e) ->
+    $('#finding_location').val("#{window.marker.position.mb},#{window.marker.position.nb}")
+
