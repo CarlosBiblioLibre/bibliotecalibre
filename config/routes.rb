@@ -2,5 +2,5 @@ BiblioLibre::Application.routes.draw do
   resources :findings
   resources :books
 
-  root to: 'findings#index'
+  root to: 'biblio_libre#index'
 end

@@ -1,10 +1,3 @@
-<div id="nada" />
-<br />
-
-<div id="map_canvas"></div>
-
-<br />
-
 <%= form_for(@finding) do |f| %>
   <% if @finding.errors.any? %>
     <div id="error_explanation">
@@ -19,12 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.hidden_field :location %>
-  </div>
-  <div class="field">
     <%= f.label :book_id %><br />
     <%= f.select :book_id, options_from_collection_for_select(Book.all, :id, :title) %>
   </div>
+
+  <div class="field">
+    <%= f.label '¿Donde lo encontraste?' %><br />
+    <div id="map_canvas"></div>
+  </div>
+
+  <div class="field">
+    <%= f.label :how, '¿Donde?' %><br />
+    <%= f.select :how, [['Por mano', 'Por mano'], ['Lo encontré', 'Lo encontré']] %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :location %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

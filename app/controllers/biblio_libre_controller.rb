@@ -1,0 +1,2 @@
+class BiblioLibreController < ApplicationController
+end
