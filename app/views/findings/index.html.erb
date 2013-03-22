@@ -2,7 +2,9 @@
 
 <table>
   <tr>
+    <th>Title</th>
     <th>Location</th>
+    <th>How</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +12,9 @@
 
 <% @findings.each do |finding| %>
   <tr>
+    <td><%= finding.book.title %></td>
     <td><%= finding.location %></td>
+    <td><%= finding.how %></td>
     <td><%= link_to 'Show', finding %></td>
     <td><%= link_to 'Edit', edit_finding_path(finding) %></td>
     <td><%= link_to 'Destroy', finding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
