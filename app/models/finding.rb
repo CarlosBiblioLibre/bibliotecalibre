@@ -11,7 +11,7 @@
 #
 
 class Finding < ActiveRecord::Base
-  attr_accessible :location, :book_id
+  attr_accessible :location, :book_id, :how
 
   belongs_to :book
 end

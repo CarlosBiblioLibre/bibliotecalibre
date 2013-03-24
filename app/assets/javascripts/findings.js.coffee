@@ -38,5 +38,6 @@ $ ->
     #window.map.setCenter(event.latLng)
 
   $('#new_finding').on 'submit', (e) ->
-    $('#finding_location').val("#{window.marker.position.mb},#{window.marker.position.nb}")
+    $('#finding_location').val("#{window.marker.getPosition().toString()}")
+    alert "#{$('#finding_location').val()}"
 

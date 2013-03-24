@@ -17,17 +17,15 @@
   </div>
 
   <div class="field">
-    <%= f.label '¿Donde lo encontraste?' %><br />
+    <%= f.label '¿Donde lo encontraste?' %>
+    <%= f.hidden_field :location %>
+    <br />
     <div id="map_canvas"></div>
   </div>
 
   <div class="field">
     <%= f.label :how, '¿Donde?' %><br />
     <%= f.select :how, [['Por mano', 'Por mano'], ['Lo encontré', 'Lo encontré']] %>
-  </div>
-
-  <div class="field">
-    <%= f.hidden_field :location %>
   </div>
   
   <div class="actions">
