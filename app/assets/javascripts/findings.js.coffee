@@ -40,3 +40,12 @@ $ ->
   $('#new_finding').on 'submit', (e) ->
     $('#finding_location').val("#{window.marker.getPosition().toString()}")
 
+  $('#book_code').on 'keyup', (e) ->
+    if $('#book_code').val().length >= 5
+      $.ajax "/books/#{$('#book_code').val()}/ajax",
+        type: 'GET'
+        dataType: 'html'
+        error: (jqXHR, textStatus, errorThrown) ->
+          $('#book_info').html "Ups... algo ha fallado, intentalo en otro momento."
+        success: (data, textStatus, jqXHR) ->
+          $('#book_info').html data

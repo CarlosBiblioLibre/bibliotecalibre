@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :book_id, 'Libro' %><br />
+    <%= f.label :book_id, 'Ingresa el código del libro' %><br />
+    <%= text_field_tag :book_code %>
+
+    <div id="book_info"></div>
+    <!--
     <%= f.select :book_id, options_from_collection_for_select(Book.all, :id, :title) %>
+    -->
   </div>
 
   <div class="field">

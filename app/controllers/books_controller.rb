@@ -8,6 +8,11 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def show_by_code
+    @book = Book.find_by_code(params[:code])
+    render partial: 'show'
+  end
+
   def new
     @book = Book.new
   end

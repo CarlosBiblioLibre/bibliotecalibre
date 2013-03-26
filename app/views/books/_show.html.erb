@@ -1,0 +1,27 @@
+<% if @book %>
+  <input type="hidden" name="finding[book_id]" value="<%= @book.id %>">
+
+  <p>
+    <b>Title:</b>
+    <%= @book.title %>
+  </p>
+
+  <p>
+    <b>Code:</b>
+    <%= @book.code %>
+  </p>
+
+  <p>
+    <b>Pages:</b>
+    <%= @book.pages %>
+  </p>
+
+  <p>
+    <b>Hallazgos:</b>
+    <% @book.findings.each do |finding| %>
+    	<li><%= finding.location %></li>
+    <% end %>
+  </p>
+<% else %>
+  <p>Código invalido</p>
+<% end %>
