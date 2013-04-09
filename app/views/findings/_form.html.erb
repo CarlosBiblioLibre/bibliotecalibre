@@ -1,8 +1,8 @@
 <%= form_for(@finding) do |f| %>
+<div class="span6">
   <% if @finding.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@finding.errors.count, "error") %> prohibited this finding from being saved:</h2>
-
+      <h2>No se pudo guardar:</h2>
       <ul>
       <% @finding.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -16,16 +16,6 @@
     <%= text_field_tag :book_code %>
 
     <div id="book_info"></div>
-    <!--
-    <%= f.select :book_id, options_from_collection_for_select(Book.all, :id, :title) %>
-    -->
-  </div>
-
-  <div class="field">
-    <%= f.label '¿Donde lo encontraste?' %>
-    <%= f.hidden_field :location %>
-    <br />
-    <div id="map_canvas"></div>
   </div>
 
   <div class="field">
@@ -34,6 +24,15 @@
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Guardar hallazgo', { id: "finding_submit" } %>
   </div>
+</div>
+<div class="span6">
+  <div class="field" style="height:100%;">
+    <%= f.label '¿Donde lo encontraste?' %>
+    <%= f.hidden_field :location %>
+    <br />
+    <div id="map_canvas"></div>
+  </div>
+</div>
 <% end %>

@@ -16,12 +16,6 @@
     <%= @book.pages %>
   </p>
 
-  <p>
-    <b>Hallazgos:</b>
-    <% @book.findings.each do |finding| %>
-    	<li><%= finding.location %></li>
-    <% end %>
-  </p>
 <% else %>
   <p>Código invalido</p>
 <% end %>

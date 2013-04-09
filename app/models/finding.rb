@@ -14,4 +14,6 @@ class Finding < ActiveRecord::Base
   attr_accessible :location, :book_id, :how
 
   belongs_to :book
+
+  validates_presence_of :book_id
 end
