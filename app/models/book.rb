@@ -19,7 +19,8 @@ class Book < ActiveRecord::Base
 
   def generate_code
   	if not self.code
-  		self.code =  SecureRandom.random_number(99999).to_s.center(5, SecureRandom.random_number(9).to_s)
+  		#SecureRandom.random_number(99999).to_s.center(5, SecureRandom.random_number(9).to_s)
+  		self.code = SecureRandom.hex(3);
   		self.save
   	end
   end
