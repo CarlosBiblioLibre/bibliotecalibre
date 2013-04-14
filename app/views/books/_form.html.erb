@@ -16,9 +16,26 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
     <%= f.label :pages %><br />
     <%= f.number_field :pages %>
   </div>
+  <div class="field">
+    <%= f.label :editorial %><br />
+    <%= f.text_field :editorial %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br />
+    <%= f.text_field :genre %>
+  </div>
+  <div class="field">
+    <%= f.label :subgenre %><br />
+    <%= f.text_field :subgenre %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -11,7 +11,7 @@
 #
 
 class Book < ActiveRecord::Base
-  attr_accessible :pages, :title, :code
+  attr_accessible :pages, :title, :code, :author, :editorial, :genre, :subgenre
 
   has_many :findings
 
