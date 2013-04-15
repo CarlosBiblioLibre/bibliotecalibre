@@ -1,4 +1,8 @@
-<h1>Listing books</h1>
+<%= link_to 'Libro Nuevo', new_book_path %>
+/
+<%= link_to 'Hallazgos', findings_path %>
+
+<h1>Los libros (<%= Book.count %>):</h1>
 
 <table class="table table-striped table-bordered table-hover">
   <tr>
@@ -23,15 +27,12 @@
     <td><%= book.genre %></td>
     <td><%= book.subgenre %></td>
     <td><%= book.code %></td>
-    <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
-    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', book %></td>
+    <td><%= link_to 'Editar', edit_book_path(book) %></td>
+    <td><%= link_to 'Eliminar', book, method: :delete, data: { confirm: '¿Estas seguro?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Book', new_book_path %>
-
-<%= link_to 'Findings', findings_path %>
