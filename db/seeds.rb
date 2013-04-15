@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
+p "Loading books..."
 
 csv_file = Rails.root.join('db', 'seed', 'BL1.csv')
 CSV.foreach(csv_file, headers: true, return_headers: false, encoding: 'UTF-8') do |row|
@@ -23,3 +24,5 @@ CSV.foreach(csv_file, headers: true, return_headers: false, encoding: 'UTF-8') d
   #	old_book.update_attributes(book)
   #else
 end
+
+p "Books loaded =)"
