@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+
+
+csv_file = Rails.root.join('db', 'seed', 'BL1.csv')
+CSV.foreach(csv_file, headers: true, return_headers: false, encoding: 'UTF-8') do |row|
+  book = row.to_hash
+  book.delete('n')
+
+  #TODO: Update attributes
+
+  new_book = Book.find_or_initialize_by_code(book)
+  new_book.save
+  
+  #old_book = Book.find_by_code(book.code)
+  #if old_book
+  #	old_book.update_attributes(book)
+  #else
+end
