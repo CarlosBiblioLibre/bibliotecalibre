@@ -14,6 +14,7 @@ class Book < ActiveRecord::Base
   attr_accessible :pages, :title, :code, :author, :editorial, :genre, :subgenre
 
   has_many :findings
+  has_many :releases
 
   after_initialize :generate_code
 

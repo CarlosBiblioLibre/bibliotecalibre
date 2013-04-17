@@ -1,4 +1,7 @@
 BiblioLibre::Application.routes.draw do
+  resources :releases
+
+
   resources :findings
   resources :books
 

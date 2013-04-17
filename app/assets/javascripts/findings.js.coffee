@@ -40,7 +40,7 @@ $ ->
   $('#new_finding').on 'submit', (e) ->
     $('#finding_location').val("#{window.marker.getPosition().toString()}")
 
-  $('#finding_submit').attr('disabled', 'disabled');
+  $('#form_submit').attr('disabled', 'disabled');
 
   $('#book_code').on 'keyup', (e) ->
     if $('#book_code').val().length >= 5
@@ -51,4 +51,4 @@ $ ->
           $('#book_info').html "Ups... algo ha fallado, intentalo en otro momento."
         success: (data, textStatus, jqXHR) ->
           $('#book_info').html data
-          $('#finding_submit').removeAttr('disabled');
+          $('#form_submit').removeAttr('disabled');
