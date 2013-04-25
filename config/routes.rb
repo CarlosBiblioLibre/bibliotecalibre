@@ -1,7 +1,8 @@
 BiblioLibre::Application.routes.draw do
+ 
+  devise_for :users
+
   resources :releases
-
-
   resources :findings
   resources :books
 

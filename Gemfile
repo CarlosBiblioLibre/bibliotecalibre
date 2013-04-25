@@ -9,6 +9,8 @@ gem 'thin'
 
 gem 'pg'
 
+gem 'devise'
+
 group :development do
   gem 'annotate', ">=2.5.0"
   gem 'quiet_assets'

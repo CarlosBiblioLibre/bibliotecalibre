@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ReleasesController < ApplicationController
   # GET /releases
   # GET /releases.json
@@ -44,7 +46,7 @@ class ReleasesController < ApplicationController
 
     respond_to do |format|
       if @release.save
-        format.html { redirect_to @release, notice: 'Release was successfully created.' }
+        format.html { redirect_to @release, notice: 'Se ha guardado la liberación del libro, gracias!' }
         format.json { render json: @release, status: :created, location: @release }
       else
         format.html { render action: "new" }
@@ -60,7 +62,7 @@ class ReleasesController < ApplicationController
 
     respond_to do |format|
       if @release.update_attributes(params[:release])
-        format.html { redirect_to @release, notice: 'Release was successfully updated.' }
+        format.html { redirect_to @release, notice: 'Se ha actualizado la liberación.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

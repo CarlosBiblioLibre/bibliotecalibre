@@ -15,7 +15,7 @@ getLocation = ->
     options = { timeout:60000 }
     navigator.geolocation.getCurrentPosition(changeLocation, errorHandler, options)
   else
-    console.log("Sorry, browser does not support geolocation!")
+    console.log("Tu navegador no soporta Geolocalización.")
 
 $ ->
   location = new google.maps.LatLng( window.position.lat, window.position.lng )
@@ -40,9 +40,13 @@ $ ->
   $('#new_finding').on 'submit', (e) ->
     $('#finding_location').val("#{window.marker.getPosition().toString()}")
 
+  $('#new_release').on 'submit', (e) ->
+      $('#release_location').val("#{window.marker.getPosition().toString()}")
+
   $('#form_submit').attr('disabled', 'disabled');
 
-  $('#book_code').on 'keyup', (e) ->
+  $('#book_code').on 'change', (e) ->
+    $('#form_submit').attr('disabled', 'disabled');
     if $('#book_code').val().length >= 5
       $.ajax "/books/#{$('#book_code').val()}/ajax",
         type: 'GET'

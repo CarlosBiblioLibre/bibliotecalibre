@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_filter :authenticate_user!, except: :show_by_code
 
   def index
     @books = Book.all.reverse

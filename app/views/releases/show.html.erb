@@ -1,15 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Location:</b>
-  <%= @release.location %>
+  <b>Haz liberado: </b>
+  <%= Book.find(@release.book_id).title %>
 </p>
-
-<p>
-  <b>Book:</b>
-  <%= @release.book_id %>
-</p>
+<p>¡Muchas gracias!</p>
 
 
-<%= link_to 'Edit', edit_release_path(@release) %> |
-<%= link_to 'Back', releases_path %>
+<%= user_signed_in? ? link_to('Editar', edit_release_path(@release) )+' |' : '' %>
+<%= link_to 'Volver', root_path %>

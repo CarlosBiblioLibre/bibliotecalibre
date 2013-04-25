@@ -1,18 +1,24 @@
 <% if @book %>
   <input type="hidden" name="finding[book_id]" value="<%= @book.id %>">
+  <input type="hidden" name="release[book_id]" value="<%= @book.id %>">
 
   <p>
-    <b>Title:</b>
+    <b>Título:</b>
     <%= @book.title %>
   </p>
 
   <p>
-    <b>Code:</b>
-    <%= @book.code %>
+    <b>Autor:</b>
+    <%= @book.author %>
   </p>
 
   <p>
-    <b>Pages:</b>
+    <b>Genero:</b>
+    <%= @book.genre %>
+  </p>
+
+  <p>
+    <b>Número de páginas:</b>
     <%= @book.pages %>
   </p>
 
