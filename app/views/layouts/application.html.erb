@@ -17,6 +17,9 @@
           <div class="nav pull-right">
             <li><a href="#">F.A.Q</a></li> 
             <li><a href="#">Contacto</a></li>
+            <% if  user_signed_in? %>
+              <li><%= link_to('Salir', destroy_user_session_path, method: :delete) %></li>
+            <% end %>
           </div>
         </div>
       </nav>

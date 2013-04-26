@@ -45,9 +45,10 @@ $ ->
 
   $('#form_submit').attr('disabled', 'disabled');
 
-  $('#book_code').on 'change', (e) ->
-    $('#form_submit').attr('disabled', 'disabled');
+  $('#book_code').on 'change click keyup focusout', (e) ->
+    $('#form_submit').attr('disabled', 'disabled');  
     if $('#book_code').val().length >= 5
+      $('#book_info').html('Cargando datos del libro...');
       $.ajax "/books/#{$('#book_code').val()}/ajax",
         type: 'GET'
         dataType: 'html'

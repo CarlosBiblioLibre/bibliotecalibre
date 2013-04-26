@@ -9,5 +9,5 @@
 	<%= link_to 'Volver', root_path %>
 </div>
 	<br />
-	<%= link_to '(Todos)', findings_path %>
+	<%= user_signed_in? ? link_to('(Todos)', findings_path) : '' %>
 </div>

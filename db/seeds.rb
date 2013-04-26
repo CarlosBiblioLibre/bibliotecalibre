@@ -9,9 +9,12 @@ require 'csv'
 
 p "Loading books..."
 
-csv_file = Rails.root.join('db', 'seed', 'BL1.csv')
+User.create({email: 'admin@labibliotecalibre.cl', password: 'biblioalgo'}) unless User.find_by_email('admin@labibliotecalibre.cl').present?
+
+csv_file = Rails.root.join('db', 'seed', 'BL2.csv')
 CSV.foreach(csv_file, headers: true, return_headers: false, encoding: 'UTF-8') do |row|
   book = row.to_hash
+  p book
   book.delete('n')
 
   #TODO: Update attributes
