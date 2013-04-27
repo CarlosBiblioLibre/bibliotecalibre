@@ -1,13 +1,15 @@
 <div class="span12">
-<div class="row">
-	<h1>¡Nuevo hallazgo!</h1>
-</div>
-<div class="row">
-	<%= render 'form' %>
-</div>
-<div class="row">
-	<%= link_to 'Volver', root_path %>
-</div>
-	<br />
-	<%= user_signed_in? ? link_to('(Todos)', findings_path) : '' %>
+	<div class="row">
+		<div class="span12">
+			<h1>¡Nuevo hallazgo!</h1>
+		</div>
+	</div>
+	<div class="row">
+		<%= render 'form' %>
+	</div>
+	<div class="row">
+		<%= link_to 'Volver', root_path %>
+		<br />
+		<%= user_signed_in? ? link_to('(Todos)', findings_path) : '' %>
+	</div>
 </div>
