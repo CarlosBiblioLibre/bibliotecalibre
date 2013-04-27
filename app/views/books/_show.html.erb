@@ -1,27 +1,30 @@
-<% if @book %>
-  <input type="hidden" name="finding[book_id]" value="<%= @book.id %>">
-  <input type="hidden" name="release[book_id]" value="<%= @book.id %>">
+<div class="alert alert-block alert-info">
+   <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <% if @book %>
+    <input type="hidden" name="finding[book_id]" value="<%= @book.id %>">
+    <input type="hidden" name="release[book_id]" value="<%= @book.id %>">
 
-  <p>
-    <b>Título:</b>
-    <%= @book.title %>
-  </p>
+    <p>
+      <b>Título:</b>
+      <%= @book.title %>
+    </p>
 
-  <p>
-    <b>Autor:</b>
-    <%= @book.author %>
-  </p>
+    <p>
+      <b>Autor:</b>
+      <%= @book.author %>
+    </p>
 
-  <p>
-    <b>Genero:</b>
-    <%= @book.genre %>
-  </p>
+    <p>
+      <b>Genero:</b>
+      <%= @book.genre %>
+    </p>
 
-  <p>
-    <b>Número de páginas:</b>
-    <%= @book.pages %>
-  </p>
+    <p>
+      <b>Número de páginas:</b>
+      <%= @book.pages %>
+    </p>
 
-<% else %>
-  <p>Código invalido</p>
-<% end %>
+  <% else %>
+    <p>Código invalido</p>
+  <% end %>
+</div>

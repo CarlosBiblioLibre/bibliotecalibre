@@ -27,6 +27,19 @@
         <%= f.select :how, [['Por mano', 'Por mano'], ['Lo encontré', 'Lo encontré']] %>
       </div>
     </div>
+    <div class="row">
+      <div class="field">
+        <%= f.label :username, '¿Cómo te llamas?' %><br />
+        <%= f.text_field :username %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <%= f.label :email, '¿Tu correo electronico?' %><br />
+        <%= f.text_field :email %>
+      </div>
+    </div>
   </div>
   <div class="span6">
     <div class="field" style="height:100%;">

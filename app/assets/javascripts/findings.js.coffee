@@ -48,12 +48,12 @@ $ ->
   $('#book_code').on 'change click keyup focusout', (e) ->
     $('#form_submit').attr('disabled', 'disabled');  
     if $('#book_code').val().length >= 5
-      $('#book_info').html('Cargando datos del libro...');
+      $('#book_info').html "<div class='alert alert-info'>Cargando datos del libro...</div>"
       $.ajax "/books/#{$('#book_code').val()}/ajax",
         type: 'GET'
         dataType: 'html'
         error: (jqXHR, textStatus, errorThrown) ->
-          $('#book_info').html "Ups... algo ha fallado, intentalo en otro momento."
+          $('#book_info').html "<div class='alert alert-error'>Ups... algo ha fallado, intentalo en otro momento.</div>"
         success: (data, textStatus, jqXHR) ->
           $('#book_info').html data
           $('#form_submit').removeAttr('disabled');

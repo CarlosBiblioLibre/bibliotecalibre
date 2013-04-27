@@ -10,7 +10,7 @@
 #
 
 class Release < ActiveRecord::Base
-  attr_accessible :book_id, :location
+  attr_accessible :book_id, :location, :username, :email
 
   belongs_to :book
 
