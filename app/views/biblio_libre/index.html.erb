@@ -1,6 +1,11 @@
 
 <div class="span12">
 	<div class="row">
+        <div class="span12 pagination-centered">
+          <img id="logo" src="/assets/logoBL.png" />
+        </div>
+    </div>
+	<div class="row">
 		<div class="row">
 			<div class="span12 pagination-centered">
 				<h2>Encuentra/Lee/Comparte</h2>
@@ -14,6 +19,27 @@
 			<div class="span6 pagination-centered">
 				<p>¿Quieres liberar un libro?</p>
 				<p><%= link_to 'LIBERALO ACÁ!', new_release_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="accordion" id="accordion2">
+			  <div class="accordion-group">
+			    <div class="accordion-heading">
+			      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+			        Preguntas frecuentes
+			      </a>
+			    </div>
+			    <div id="collapseOne" class="accordion-body collapse">
+			      <div class="accordion-inner">
+			        <dl>
+					  <dt>Pregunta 1</dt>
+					  <dd>Respuesta 1</dd>
+					  <dt>Pregunta 2</dt>
+					  <dd>Respuesta 2</dd>
+					</dl>
+			      </div>
+			    </div>
+			  </div>			 
 			</div>
 		</div>
 	</div>
