@@ -23,7 +23,7 @@
       <nav class="navbar-inner">
         <div class="container">
           <div class="nav pull-right">
-            <p> Siguienos en facebook: <img src="assets/fb_logo.gif" style="height:30px;" /></p>
+            <p style="margin-top: 5px;">Síguenos <a href="http://www.facebook.com/labibliotecalibre"><img src="/assets/fb_logo.gif" style="height:30px;" /></a></p>
             <% if  user_signed_in? %>
               <li><%= link_to('Salir', destroy_user_session_path, method: :delete) %></li>
             <% end %>
