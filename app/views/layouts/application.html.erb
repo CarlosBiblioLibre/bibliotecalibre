@@ -11,12 +11,19 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <header class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
         <div class="container">
           <div class="nav pull-right">
-            <li><a href="#">F.A.Q</a></li> 
-            <li><a href="#">Contacto</a></li>
+            <p> Siguienos en facebook: <img src="assets/fb_logo.gif" style="height:30px;" /></p>
             <% if  user_signed_in? %>
               <li><%= link_to('Salir', destroy_user_session_path, method: :delete) %></li>
             <% end %>
