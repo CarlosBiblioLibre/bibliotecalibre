@@ -13,7 +13,7 @@
 	<div class="row">
 		<div class="row">
 			<div class="span12 pagination-centered">
-				<h2>Encuentra/Lee/Comparte</h2>
+				<h2>encuentra/lee/comparte</h2>
 				<p>La BibliotecaLibre es una iniciativa que promueve el intercambio gratuito de libros: las personas dejan o toman ejemplares de su interés.
 
 				Los libros de La Biblioteca Libre no son de nadie en particular y son de todos en general.
@@ -24,13 +24,15 @@
 		</div>
 		<div>
 			<div class="span6 pagination-centered">
-				<p>¿Encontraste un libro?</p>
+				<h3>¿Tienes un libro?</h3>
 				<p><%= link_to '¡REGISTRALO ACÁ!', new_finding_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
 			</div>
+		
 			<div class="span6 pagination-centered">
 				<p>¿Quieres liberar un libro?</p>
-				<p><%= link_to 'LIBERALO ACÁ!', new_release_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
+				<p><%= link_to '¡LIBERALO ACÁ!', new_release_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
 			</div>
+		
 		</div>
 		<div class="row">
 			<div class="accordion" id="accordion2">
@@ -42,7 +44,7 @@
 			    </div>
 			    <div id="collapseOne" class="accordion-body collapse in">
 			      <div class="accordion-inner">
-			      	<p> Vísitanos: <a href="http://www.facebook.com/events/518225834907858/">Evento facebook</a></p>
+			      	<p> Vísitanos: <a href="http://www.facebook.com/events/518225834907858/">1º Liberación de Libro</a></p>
 			      </div>
 			    </div>
 			  </div>
@@ -55,27 +57,66 @@
 			    <div id="collapseTwo" class="accordion-body collapse">
 			      <div class="accordion-inner">
 					<dl>
+
+						<dt>¿De qué se trata La Biblioteca Libre?</dt>
+
+						<dd>En pocas palabras: encuentra, lee y comparte!</dd>
+
 						<dt>¿Pueden resumir cómo funciona La Biblioteca Libre en unos pocos pasos?</dt>
-						<dd>Simple: Encuentra, Lee y comparte!</dd>
-						<dt>¿A qué se refieren con liberar un libro?</dt>
-						<dd>Cada vez que un libro recibe un nuevo código y es entregado a una persona para que lo lea, registre y comparta una vez leído</dd>
-						<dt>¿Cómo registro un libro?</dt>
-						<dd>Por el momento lo debes hacer directamente en las liberaciones masivas que organizamos. Pronto habilitaremos este sitio web para que puedas hacerlo =)</dd>
+
+						<dd>Cada libro que encuentres y que tenga un código y adhesivo de La Biblioteca Libre tienes que registrarlo en esta página. Así sabremos que está en buenas manos y está siendo usado. En este proceso es muy importante compartirlo cuando lo hayas terminado, para que nadie se quede sin la oportunidad de leerlo.
+
+						Los libros de La Biblioteca Libre no son de nadie en particular y son de todos en general.</dd>
+
+						<dt>¿Cómo registro un libro de La Biblioteca Libre que encontré o me pasaron?</dt>
+
+						<dd>En esta página haz clic en el botón ¡REGÍSTRALO ACÁ! y completa los datos.</dd>
+
+
 						<dt>Encontré un libro de La Biblioteca Libre. ¿Qué tengo que hacer?</dt>
-						<dd>¡Reporta el hallazgo! Es muy importante para nosotros saber que libros están siendo leídos.</dd>
+
+						<dd>Léelo! Luego, compártelo!</dd>
+
 						<dt>¿Dónde encuentro más libros?</dt>
-						<dd>Atento a nuestro facebook para que sepas de las actividades que organizamos.</dd>
+
+						<dd>También puedes encontrarlos en las Liberaciones de Libros que organizamos, las que tienen un funcionamiento itinerante en la comuna de Santiago.</dd>
+
+						<dt>¿A qué se refieren con liberar un libro?</dt>
+
+						<dd>En La Biblioteca Libre creemos que cada libro tiene su magia, pero que se pierde si nadie lo lee. Por eso los liberamos, para que quien quiera pueda leerlos y disfrutarlos. La verdadera magia está en compartir.</dd>
+
 						<dt>¿La Biblioteca Libre tiene algún espacio físico propio?</dt>
-						<dd>Aún no :P</dd>
+
+						<dd>No. En las Liberaciones de Libros hacemos uso de espacios públicos como parques y plazas, para que nadie quede fuera. Tienes que revisar periódicamente este sitio para enterarte de la próxima Liberación.</dd>
+
 						<dt>¿Qué hago si se me pierde un libro?</dt>
-						<dd>Libera uno o más libros en compensación</dd>
+
+						<dd>Mala noticia… Bueno, una lástima. No te preocupes, no quedarás en la lista negra. Más cuidado para la próxima.</dd>
+
+						<dt>¿Qué hago si el código no venía en el libro?</dt>
+
+						<dd>Ingrésalo como una liberación tuya. Para eso tienes que hacer clic en el botón ¡LIBÉRALO ACÁ! y llenar los campos necesarios. Recuerda compartirlo cuando lo hayas terminado.</dd>
+
+
 						<dt>¿Puedo poner en circulación mis libros?</dt>
-						<dd>¡Si! Pronto más información</dd>
+
+						<dd>Por supuesto! Para eso tienes que hacer clic en el botón ¡LIBÉRALO ACÁ! y llenar los campos necesarios. Luego, compártelos con una persona a la que le puedan interesar los libros. También puedes llevarlos a nuestras Liberaciones de Libros.</dd>
+
 						<dt>¿Tengo que leer un libro antes de liberarlo?</dt>
+
+						<dd>Sólo si tú quieres.</dd>
+
+						<dt>¿Cómo lo hago para encontrar un libro que hace tiempo estoy buscando?</dt>
+
+						<dd>Cuando hacemos las Liberaciones de Libros publicamos el catálogo de los libros que tiene en su momento La Biblioteca Libre. Ahí puedes buscar un libro en particular. Para llevártelo, invoca a tus dioses y llega temprano a la actividad.</dd>
+
 						<dt>¿Qué pasa si me quedo con el libro y no lo comparto?</dt>
-						<dd>El libro poco a poco morirá, debes compartirlo para que alguien más lo lea y el libro siga con vida.</dd>
+
+						<dd>Mala idea. Nos gusta confiar en la gente, por lo que esperamos que eso no pase. No nos decepciones.</dd>
+
 						<dt>¿Cómo le paso el libro a otra persona? ¿Dónde? ¿A quién? ¿Qué le digo?</dt>
-						<dd>Pásale el libro y dile que ingrese a este sitio web para que registre que lo tiene en su poder</dd>
+
+						<dd>Revisa que tenga el código. Después, busca a una persona especial para ti a la cual le pueda interesar el libro. Posteriormente, cuéntale sobre esta genial iniciativa y recuérdale que tiene que registrar el libro para que nosotros nos enteremos de que está en buenas manos. Por último, dile que haga lo mismo que hiciste tú: compartirlo.</dd>
 					</dl>
 			      </div>
 			    </div>
