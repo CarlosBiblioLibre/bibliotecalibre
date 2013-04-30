@@ -14,11 +14,34 @@
       </div>
     <% end %>
     <div class="row">
-      <div class="field">
-        <%= f.label :book_id, 'Ingresa el código del libro' %><br />
-        <%= text_field_tag :book_code %>
-        <div id="book_info"></div>
-      </div>
+      <% if not params[:code].present? %>
+        <div class="field">
+          <%= f.label :book_id, 'Ingresa el código del libro' %><br />
+          <%= text_field_tag :book_code %>
+          <div id="book_info"></div>
+        </div>
+      <% else %>
+        <% book = Book.find_by_code(params[:code]) %>
+        <input type="hidden" name="finding[book_id]" value="<%= book.id %>">
+        <div class="alert alert-block alert-info">
+          <p>
+            <b>Título:</b>
+            <%= book.title %>
+          </p>
+          <p>
+            <b>Autor:</b>
+            <%= book.author %>
+          </p>
+          <p>
+            <b>Genero:</b>
+            <%= book.genre %>
+          </p>
+          <p>
+            <b>Número de páginas:</b>
+            <%= book.pages %>
+          </p>
+        </div>
+      <% end %>
     </div>
 
     <div class="row">
@@ -54,7 +77,7 @@
   <div class="span6">
 
     <div class="actions">
-      <%= f.submit 'Guardar hallazgo', { id: "form_submit" } %>
+      <%= f.submit 'Guardar hallazgo', { id: "form_submit_new" } %>
     </div>
 
   </div>

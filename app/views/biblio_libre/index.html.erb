@@ -25,11 +25,38 @@
 		<div>
 			<div class="span6 pagination-centered">
 				<h3>¿Tienes un libro?</h3>
-				<p><%= link_to '¡REGISTRALO ACÁ!', new_finding_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
+				<p><%= link_to '¡REGISTRALO ACÁ!', new_finding_path, { class: "btn btn-primary btn-large", style: "color: white;" } %>
+				<a href="#modal_code" role="button" class="btn btn-primary btn-large" data-toggle="modal">¡REGISTRALO ACÁ!</a>
+			</p>
+			</div>
+			<div id="modal_code" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			    <h3 id="myModalLabel">Ingresa el código del libro:</h3>
+			  </div>
+			  <form class="form form-horizontal"  action="/check_code" method="get">
+				  <div class="modal-body">
+				  		<div class="row">
+				  			<div class="span8 pagination-centered">
+				  				<div class=".control-group">
+						        	<%= label_tag :code, 'Código:', class: "control-label" %>
+						        	<div class="controls">
+						        		<%= text_field_tag :code %>
+						        	</div>
+						        	<!-- <div id="book_info"></div> -->
+				      			</div>
+				  			</div>
+				  		</div>
+				  </div>
+				  <div class="modal-footer">
+				    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+				    <input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
+				  </div>
+			  </form>
 			</div>
 		
 			<div class="span6 pagination-centered">
-				<p>¿Quieres liberar un libro?</p>
+				<h2>¿Quieres liberar un libro?</h2>
 				<p><%= link_to '¡LIBERALO ACÁ!', new_release_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
 			</div>
 		

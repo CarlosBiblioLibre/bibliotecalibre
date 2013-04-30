@@ -15,5 +15,5 @@ class Finding < ActiveRecord::Base
 
   belongs_to :book
 
-  validates_presence_of :book_id
+  #validates_presence_of :book_id
 end

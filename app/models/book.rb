@@ -15,12 +15,14 @@
 #
 
 class Book < ActiveRecord::Base
-  attr_accessible :pages, :title, :code, :author, :editorial, :genre, :subgenre
+  attr_accessible :pages, :title, :code, :author, :editorial, :genre, :subgenre, :findings_attributes
 
-  has_many :findings
+  has_many :findings, dependent: :destroy
   has_many :releases
 
-  after_initialize :generate_code
+  accepts_nested_attributes_for :findings
+
+  #after_initialize :generate_code
 
   def generate_code
     #TODO: un while o algo asi por aca

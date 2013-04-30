@@ -18,6 +18,24 @@ getLocation = ->
     console.log("Tu navegador no soporta Geolocalización.")
 
 $ ->
+  $('#book_code').on 'change click keyup focusout', (e) ->
+    $('#form_submit').attr('disabled', 'disabled');  
+    if $('#book_code').val().length >= 5
+      $('#book_info').html "<div class='alert alert-info'>Cargando datos del libro...</div>"
+      $.ajax "/books/#{$('#book_code').val()}/ajax",
+        type: 'GET'
+        dataType: 'html'
+        error: (jqXHR, textStatus, errorThrown) ->
+          $('#book_info').html "<div class='alert alert-error'>Ups... algo ha fallado, intentalo en otro momento.</div>"
+        success: (data, textStatus, jqXHR) ->
+          $('#book_info').html data
+          $('#form_submit').removeAttr('disabled');
+
+  $('#code').on 'change click keyup focusout', (e) ->
+    $('#form_submit').attr('disabled', 'disabled');  
+    if $('#code').val().length >= 5
+      $('#form_submit').removeAttr('disabled');
+
   location = new google.maps.LatLng( window.position.lat, window.position.lng )
 
   mapOptions = 
@@ -43,17 +61,9 @@ $ ->
   $('#new_release').on 'submit', (e) ->
       $('#release_location').val("#{window.marker.getPosition().toString()}")
 
+  $('#new_book').on 'submit', (e) ->
+      $('#book_findings_attributes_0_location').val("#{window.marker.getPosition().toString()}")
+
+ 
   $('#form_submit').attr('disabled', 'disabled');
 
-  $('#book_code').on 'change click keyup focusout', (e) ->
-    $('#form_submit').attr('disabled', 'disabled');  
-    if $('#book_code').val().length >= 5
-      $('#book_info').html "<div class='alert alert-info'>Cargando datos del libro...</div>"
-      $.ajax "/books/#{$('#book_code').val()}/ajax",
-        type: 'GET'
-        dataType: 'html'
-        error: (jqXHR, textStatus, errorThrown) ->
-          $('#book_info').html "<div class='alert alert-error'>Ups... algo ha fallado, intentalo en otro momento.</div>"
-        success: (data, textStatus, jqXHR) ->
-          $('#book_info').html data
-          $('#form_submit').removeAttr('disabled');

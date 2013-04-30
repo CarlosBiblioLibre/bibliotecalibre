@@ -32,10 +32,21 @@ class FindingsController < ApplicationController
     end
   end
 
+  def new_with_code
+    @finding = Finding.new
+    @finding.book = Book.find_by_code(params[:code]) if params[:code].present?
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @finding }
+    end
+  end
+
   # GET /findings/1/edit
   def edit
     @finding = Finding.find(params[:id])
   end
+
 
   # POST /findings
   # POST /findings.json

@@ -1,5 +1,18 @@
 class BooksController < ApplicationController
-  before_filter :authenticate_user!, except: :show_by_code
+  before_filter :authenticate_user!, except: [:show_by_code, :check_code, :new_book_and_finding, :show, :create]
+
+  def check_code
+    if Book.find_by_code(params[:code])
+      redirect_to "/new_finding_with_code/#{params[:code]}", code: params[:code]
+    else
+      redirect_to "/new_book_and_finding/#{params[:code]}", code: params[:code]
+    end
+  end
+
+  def new_book_and_finding
+    @book = Book.new
+    @book.findings.build
+  end
 
   def index
     @books = Book.all.reverse

@@ -9,7 +9,7 @@
   <%= @finding.how %>
 </p>
 
-<p>¡Muchas gracias!</p>
+<p>¡<%= @finding.username %>, muchas gracias!</p>
 
 
 <%= user_signed_in? ? link_to('Editar', edit_finding_path(@finding) )+' |' : '' %>
