@@ -1,10 +1,12 @@
 
 <div class="span12">
+	<!--
 	<div class="alert alert-info">
   		<button type="button" class="close" data-dismiss="alert">&times;</button>
   		<p>¡Muchas gracias a todos los que asistieron el domingo al parque forestal!</p>
   		<p>Cerca de 1700 libros fueron liberados.</p>
 	</div>
+	-->
 	<div class="row">
         <div class="span12 pagination-centered">
           <img id="logo" src="/assets/logo.png" />
@@ -23,11 +25,6 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="span12 pagination-centered">	
-				<iframe width="420" height="315" src="http://www.youtube.com/embed/UWNlLrFS1Fw?rel=0" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-		<div class="row">
 			<div class="span6 pagination-centered">
 				<h2>¿Tienes un libro?</h2>
 				<a href="#modal_code" role="button" class="btn btn-primary btn-large" data-toggle="modal">¡REGISTRALO ACÁ!</a>
@@ -41,7 +38,7 @@
 			  <form class="form form-horizontal"  action="/check_code" method="get">
 				  <div class="modal-body">
 				  		<div class="row">
-				  			<div class="span8 pagination-centered">
+				  			<div class="span6 pagination-centered">
 				  				<div class=".control-group">
 						        	<%= label_tag :code, 'Código:', class: "control-label" %>
 						        	<div class="controls">
@@ -63,7 +60,11 @@
 				<h2>¿Quieres liberar un libro?</h2>
 				<p><%= link_to '¡LIBERALO ACÁ!', new_release_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
 			</div>
-		
+		</div>
+		<div class="row">
+			<div class="span12 pagination-centered">	
+				<iframe width="420" height="315" src="http://www.youtube.com/embed/UWNlLrFS1Fw?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
 		</div>
 		<div class="row">
 			<div class="accordion" id="accordion2">
