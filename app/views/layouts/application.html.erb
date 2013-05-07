@@ -23,7 +23,8 @@
       <nav class="navbar-inner">
         <div class="container">
           <div class="nav pull-right">
-            <p style="margin-top: 5px;">Síguenos <a href="http://www.facebook.com/labibliotecalibre"><img src="/assets/fb_logo.gif" style="height:30px;" /></a></p>
+              <li><%= link_to('Contacto', contact_path) %></li>
+              <li><p style="margin-top: 5px;">Síguenos <a href="http://www.facebook.com/labibliotecalibre"><img src="/assets/fb_logo.gif" style="height:30px;" /></a></p></li>
             <% if  user_signed_in? %>
               <li><%= link_to('Salir', destroy_user_session_path, method: :delete) %></li>
             <% end %>
@@ -34,6 +35,15 @@
     <div id="main" role="main">
       <div class="container">
         <div> <!-- class="content"> -->
+
+          <% [:notice, :error, :alert].each do |level| %>
+            <% unless flash[level].blank? %>
+              <div class="alert alert-message alert-<%= flash_class(level) %>">
+                <a class="close" href="#">×</a>
+                <%= content_tag :p, flash[level] %>
+              </div>
+            <% end %>
+          <% end %>
            <div class="row">
             <div class="span12">              
               <%= yield %>
