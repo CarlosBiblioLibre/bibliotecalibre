@@ -1,7 +1,7 @@
 class NotificationsMailer < ActionMailer::Base
 
   default :from => "noreply@bibliotecalibre.cl"
-  default :to => "biblioteca@catedraslibres.com"
+  default :to => "hola@catedraslibres.com"
 
   def new_message(message)
     @message = message
