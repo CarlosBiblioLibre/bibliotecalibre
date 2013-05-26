@@ -11,6 +11,8 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'rails-i18n'
+
 group :development do
   gem 'annotate', ">=2.5.0"
   gem 'quiet_assets'

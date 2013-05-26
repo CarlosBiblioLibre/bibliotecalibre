@@ -25,17 +25,28 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="span6 pagination-centered">
-				<h2>¿Tienes un libro?</h2>
-				<a href="#modal_code" role="button" class="btn btn-primary btn-large" data-toggle="modal">¡REGISTRALO ACÁ!</a>
-			</p>
+			<div class="span6">
+				<div class="row  pagination-centered">
+					<h2>¿Tienes un libro?</h2>
+					<a href="#modal_code" role="button" class="btn btn-primary btn-large" data-toggle="modal">¡REGISTRALO ACÁ!</a>
+				</div>
+				<div class="row">
+					<div class="well negro clearfix" style="margin-top: 30px">
+						<p>Lo últimos libros encontrados son:</p>
+						<ol>
+							<% for finding in @findings %>
+								<li><%= finding.book.title %>, hace <%= time_ago_in_words(finding.created_at.to_time) %></li>
+							<% end %>
+						</ol>
+					</div>
+				</div>
 			</div>
 			<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			    <h3 id="myModalLabel">Ingresa el código del libro:</h3>
 			  </div>
-			  <form class="form form-horizontal"  action="/check_code" method="get">
+			  <form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
 				  <div class="modal-body">
 				  		
 				  				<div class=".control-group">
@@ -53,17 +64,23 @@
 			  </form>
 			</div>
 
+			<div class="span6 pagination-centered">	
+				<iframe width="420" height="315" src="http://www.youtube.com/embed/UWNlLrFS1Fw?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+<!--
 			<div class="span6 pagination-centered">
 				<h2>¿Quieres liberar un libro?</h2>
 				<p><%= link_to '¡LIBERALO ACÁ!', new_release_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
 			</div>
-
+-->
 		</div>
+<!--
 		<div class="row">
 			<div class="span12 pagination-centered">	
 				<iframe width="420" height="315" src="http://www.youtube.com/embed/UWNlLrFS1Fw?rel=0" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
+-->
 		<div class="row">
 			<div class="accordion" id="accordion2">
 			  <div class="accordion-group">

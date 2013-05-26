@@ -84,6 +84,8 @@ GEM
       activesupport (= 3.2.11)
       bundler (~> 1.0)
       railties (= 3.2.11)
+    rails-i18n (0.7.3)
+      i18n (~> 0.5)
     railties (3.2.11)
       actionpack (= 3.2.11)
       activesupport (= 3.2.11)
@@ -132,6 +134,7 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 3.2.11)
+  rails-i18n
   sass-rails (~> 3.2.3)
   thin
   uglifier (>= 1.0.3)

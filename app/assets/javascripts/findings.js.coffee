@@ -36,6 +36,12 @@ $ ->
     if $('#code').val().length >= 5
       $('#form_submit').removeAttr('disabled');
 
+  $('#code').on 'keypress', (e) -> 
+    if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13))
+      if $('#code').val().length >= 5
+        e.preventDefault()
+        $('#new_finding_form').submit()
+
   location = new google.maps.LatLng( window.position.lat, window.position.lng )
 
   mapOptions = 
