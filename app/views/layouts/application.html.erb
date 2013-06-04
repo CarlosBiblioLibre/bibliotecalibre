@@ -24,7 +24,7 @@
         <div class="container">
           <div class="nav pull-right">
               <li><%= link_to('Contacto', contact_path) %></li>
-              <li><p style="margin-top: 5px;">Síguenos <a href="http://www.facebook.com/labibliotecalibre"><img src="/assets/fb_logo.gif" style="height:30px;" /></a></p></li>
+              <li><p style="margin-top: 8px;">Síguenos <a href="http://www.facebook.com/labibliotecalibre"><img src="/assets/fb_logo.gif" style="height:25px;" /></a></p></li>
             <% if  user_signed_in? %>
               <li><%= link_to('Salir', destroy_user_session_path, method: :delete) %></li>
             <% end %>

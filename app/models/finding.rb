@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # == Schema Information
 #
 # Table name: findings
@@ -16,4 +18,9 @@ class Finding < ActiveRecord::Base
   belongs_to :book
 
   #validates_presence_of :book_id
+
+  def self.how_options
+  	return [['Me lo pasaron', 'Me lo pasaron'], ['Lo encontré', 'Lo encontré']]
+  end
+
 end
