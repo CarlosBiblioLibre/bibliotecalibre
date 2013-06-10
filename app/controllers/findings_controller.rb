@@ -10,6 +10,10 @@ class FindingsController < ApplicationController
     end
   end
 
+  def map
+    @findings = Finding.all
+  end
+
   # GET /findings/1
   # GET /findings/1.json
   def show

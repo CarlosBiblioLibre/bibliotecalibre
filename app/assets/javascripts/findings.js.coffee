@@ -49,17 +49,26 @@ $ ->
     mapTypeId: google.maps.MapTypeId.ROADMAP
     zoom: 15
 
-  window.map = new google.maps.Map($('#map_canvas')[0], mapOptions)
+  if $('#map_canvas').size() > 0
+    window.map = new google.maps.Map($('#map_canvas')[0], mapOptions)
 
-  window.marker = new google.maps.Marker
-    position: location
-    map: window.map
+    window.marker = new google.maps.Marker
+      position: location
+      map: window.map
 
-  getLocation()
+    google.maps.event.addListener window.map, 'click', (event) -> 
+      window.marker.setPosition(event.latLng)
+      # window.map.setCenter(event.latLng)
+    getLocation()
 
-  google.maps.event.addListener window.map, 'click', (event) -> 
-    window.marker.setPosition(event.latLng)
-    #window.map.setCenter(event.latLng)
+  if $('#findings_map_canvas').size() > 0
+    window.findings_map = new google.maps.Map($('#findings_map_canvas')[0], mapOptions)
+
+    for finding in $('#findings_map_canvas').data('findings')
+      do (finding) ->
+        new google.maps.Marker
+          position: new google.maps.LatLng(finding.split(',')[0].substring(1), finding.split(',')[1].substring(1, finding.split(',')[1].length - 1) )
+          map: window.findings_map
 
   $('#new_finding').on 'submit', (e) ->
     $('#finding_location').val("#{window.marker.getPosition().toString()}")

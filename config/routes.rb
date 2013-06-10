@@ -14,6 +14,8 @@ BiblioLibre::Application.routes.draw do
 
   get '/new_finding_with_code/:code' => 'findings#new_with_code', as: 'new_finding_with_code'
 
+  get '/map' => 'findings#map', as: 'findings_map'
+
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
 	match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
