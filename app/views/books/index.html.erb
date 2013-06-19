@@ -13,6 +13,7 @@
     <th>Género</th>
     <th>Sub Género</th>
     <th>Code</th>
+    <th>Hallazgos<th>
     <th></th>
     <th></th>
     <th></th>
@@ -27,6 +28,7 @@
     <td><%= book.genre %></td>
     <td><%= book.subgenre %></td>
     <td><%= book.code %></td>
+    <td><%= book.findings.count %></td>
     <td><%= link_to 'Mostrar', book %></td>
     <td><%= link_to 'Editar', edit_book_path(book) %></td>
     <td><%= link_to 'Eliminar', book, method: :delete, data: { confirm: '¿Estas seguro?' } %></td>

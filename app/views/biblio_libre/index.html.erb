@@ -1,10 +1,10 @@
 
 <div class="span12">
 	<!--
-	<div class="alert alert-info">
+	<div class="alert alert-success">
   		<button type="button" class="close" data-dismiss="alert">&times;</button>
-  		<p>¡Muchas gracias a todos los que asistieron el domingo al parque forestal!</p>
-  		<p>Cerca de 1700 libros fueron liberados.</p>
+  		<p> <strong>Próxima liberación:</strong> Por quinta vez La Biblioteca Libre abre sus puertas y este sábado 22 de junio liberaremos más de 800 libros, desde clásicos como "Don Quijote" hasta best-sellers como el "El Código Da Vinci", ;) En esta ocasión estaremos en la terraza Neptuno del Cerro Santa Lucía. El lugar está a pasos de la estación de metro Santa Lucía.</p>
+			  <p> Más información en facebook: <a href="https://www.facebook.com/events/321310498000361/">5º Liberación de Libros</a></p>
 	</div>
 	-->
 	<div class="row">
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="span12">
+					<div class="span12 negro">
 						<p>La Biblioteca Libre es una iniciativa que promueve el intercambio gratuito de libros: las personas dejan o toman ejemplares de su interés.
 
 						Los libros de La Biblioteca Libre no son de nadie en particular y son de todos en general.
@@ -50,41 +50,57 @@
 					<a href="#modal_code" role="button" class="btn btn-primary btn-large" data-toggle="modal">¡REGISTRALO ACÁ!</a>
 				</div>
 				<div class="row">
-					<div class="well negro clearfix" style="margin-top: 30px">
-						<p>Lo últimos libros encontrados son:</p>
-						<ol>
-							<% for finding in @findings %>
-								<li><%= finding.book.title %>, hace <%= time_ago_in_words(finding.created_at.to_time) %></li>
-							<% end %>
-						</ol>
+					<div class="span5 center">
+						<div class="negro well" style="margin-top: 30px">
+							<p>Lo últimos libros encontrados son:</p>
+							<ol>
+								<% for finding in @findings %>
+									<li><%= finding.book.title %>, hace <%= time_ago_in_words(finding.created_at.to_time) %></li>
+								<% end %>
+							</ol>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-header">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			    <h3 id="myModalLabel">Ingresa el código del libro:</h3>
-			  </div>
-			  <form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
-				  <div class="modal-body">
-				  		
-				  				<div class=".control-group">
-						        	<%= label_tag :code, 'Código:', class: "control-label" %>
-						        	<div class="controls">
-						        		<%= text_field_tag :code %>
-						        	</div>
-						        	<!-- <div id="book_info"></div> -->
-				      			</div>
+				<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				    <h3 id="myModalLabel">Ingresa el código del libro:</h3>
 				  </div>
-				  <div class="modal-footer">
-				    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-				    <input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
-				  </div>
-			  </form>
-			</div>
+				  <form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
+					  <div class="modal-body">
+					  		
+					  				<div class=".control-group">
+							        	<%= label_tag :code, 'Código:', class: "control-label" %>
+							        	<div class="controls">
+							        		<%= text_field_tag :code %>
+							        	</div>
+							        	<!-- <div id="book_info"></div> -->
+					      			</div>
+					  </div>
+					  <div class="modal-footer">
+					    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+					    <input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
+					  </div>
+				  </form>
+				</div>
 
-			<div class="span6 pagination-centered">	
-				<iframe width="420" height="315" src="http://www.youtube.com/embed/UWNlLrFS1Fw?rel=0" frameborder="0" allowfullscreen></iframe>
+			<div class="span6">
+				<div class="well negro">
+					<p> <strong>Próxima liberación:</strong> Por quinta vez La Biblioteca Libre abre sus puertas y este sábado 22 de junio liberaremos más de 800 libros, desde clásicos como "Don Quijote" hasta best-sellers como el "El Código Da Vinci", ;)<P>
+			  	<p>En esta ocasión estaremos en la terraza Neptuno del Cerro Santa Lucía. El lugar está a pasos de la estación de metro Santa Lucía.</p>
+			  	<p> Más información en facebook: <a href="https://www.facebook.com/events/321310498000361/">5º Liberación de Libros</a></p>
+				<!--
+					<ul>
+					  <li>Vísitanos en facebook</li>
+					  <li>Revisa el video realizado por CNN de la primera liberación</li>
+					  <li>Bibliotecas</li>
+					</ul>
+					
+					<iframe width="420" height="315" src="http://www.youtube.com/embed/UWNlLrFS1Fw?rel=0" frameborder="0" allowfullscreen></iframe>
+					<p style="margin-top: 8px;">Síguenos <a href="http://www.facebook.com/labibliotecalibre"><img src="/assets/fb_logo.gif" style="height:25px;" /></a></p>
+					-->
+				</div>
 			</div>
 <!--
 			<div class="span6 pagination-centered">
@@ -101,6 +117,7 @@
 		</div>
 -->
 		<div class="row">
+		<!--
 			<div class="accordion" id="accordion2">
 			  <div class="accordion-group">
 			    <div class="accordion-heading">
@@ -113,88 +130,16 @@
 			      	<p> Por quinta vez La Biblioteca Libre abre sus puertas y este sábado 22 de junio liberaremos más de 800 libros, desde clásicos como "Don Quijote" hasta best-sellers como el "El Código Da Vinci", ;)<P>
 			      	<p>En esta ocasión estaremos en la terraza Neptuno del Cerro Santa Lucía. El lugar está a pasos de la estación de metro Santa Lucía.</p>
 			      	<p> Más información en facebook: <a href="https://www.facebook.com/events/321310498000361/">5º Liberación de Libros</a></p>
-			      	<!--
+			      	
 			      	<p> ¡Tenemos nueva estación para la biblioteca itinerante! Por cuarta vez La Biblioteca Libre abre sus puertas y este domingo 9 de junio liberaremos más de 700 libros, desde clásicos como "Hijo de Ladrón" hasta la última moda: "50 sombras de Grey", ;) </p>
 			      	<p>En esta ocasión estaremos en el Espacio Urbano Las Rejas, cumpliendo con nuestra visita a la comuna de Estación Central. El lugar está a pasos de la estación de metro Las Rejas.</p>
 			      	<p> Más información en facebook: <a href="https://www.facebook.com/events/355598767896715/">4º Liberación de Libros</a></p>
-			        -->
+			        
 			      </div>
 			    </div>
 			  </div>
-			  <div class="accordion-group">
-			    <div class="accordion-heading">
-			      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-			        Preguntas frecuentes &#9660;
-			      </a>
-			    </div>
-			    <div id="collapseTwo" class="accordion-body collapse">
-			      <div class="accordion-inner">
-					<dl>
-
-						<dt>¿De qué se trata La Biblioteca Libre?</dt>
-
-						<dd>En pocas palabras: encuentra, lee y comparte!</dd>
-
-						<dt>¿Pueden resumir cómo funciona La Biblioteca Libre en unos pocos pasos?</dt>
-
-						<dd>Cada libro que encuentres y que tenga un código y adhesivo de La Biblioteca Libre tienes que registrarlo en esta página. Así sabremos que está en buenas manos y está siendo usado. En este proceso es muy importante compartirlo cuando lo hayas terminado, para que nadie se quede sin la oportunidad de leerlo.
-
-						Los libros de La Biblioteca Libre no son de nadie en particular y son de todos en general.</dd>
-
-						<dt>¿Cómo registro un libro de La Biblioteca Libre que encontré o me pasaron?</dt>
-
-						<dd>En esta página haz clic en el botón ¡REGÍSTRALO ACÁ! y completa los datos.</dd>
-
-
-						<dt>Encontré un libro de La Biblioteca Libre. ¿Qué tengo que hacer?</dt>
-
-						<dd>Léelo! Luego, compártelo!</dd>
-
-						<dt>¿Dónde encuentro más libros?</dt>
-
-						<dd>También puedes encontrarlos en las Liberaciones de Libros que organizamos, las que tienen un funcionamiento itinerante en la comuna de Santiago.</dd>
-
-						<dt>¿A qué se refieren con liberar un libro?</dt>
-
-						<dd>En La Biblioteca Libre creemos que cada libro tiene su magia, pero que se pierde si nadie lo lee. Por eso los liberamos, para que quien quiera pueda leerlos y disfrutarlos. La verdadera magia está en compartir.</dd>
-
-						<dt>¿La Biblioteca Libre tiene algún espacio físico propio?</dt>
-
-						<dd>No. En las Liberaciones de Libros hacemos uso de espacios públicos como parques y plazas, para que nadie quede fuera. Tienes que revisar periódicamente este sitio para enterarte de la próxima Liberación.</dd>
-
-						<dt>¿Qué hago si se me pierde un libro?</dt>
-
-						<dd>Mala noticia… Bueno, una lástima. No te preocupes, no quedarás en la lista negra. Más cuidado para la próxima.</dd>
-
-						<dt>¿Qué hago si el código no venía en el libro?</dt>
-
-						<dd>Ingrésalo como una liberación tuya. Para eso tienes que hacer clic en el botón ¡LIBÉRALO ACÁ! y llenar los campos necesarios. Recuerda compartirlo cuando lo hayas terminado.</dd>
-
-
-						<dt>¿Puedo poner en circulación mis libros?</dt>
-
-						<dd>Por supuesto! Para eso tienes que hacer clic en el botón ¡LIBÉRALO ACÁ! y llenar los campos necesarios. Luego, compártelos con una persona a la que le puedan interesar los libros. También puedes llevarlos a nuestras Liberaciones de Libros.</dd>
-
-						<dt>¿Tengo que leer un libro antes de liberarlo?</dt>
-
-						<dd>Sólo si tú quieres.</dd>
-
-						<dt>¿Cómo lo hago para encontrar un libro que hace tiempo estoy buscando?</dt>
-
-						<dd>Cuando hacemos las Liberaciones de Libros publicamos el catálogo de los libros que tiene en su momento La Biblioteca Libre. Ahí puedes buscar un libro en particular. Para llevártelo, invoca a tus dioses y llega temprano a la actividad.</dd>
-
-						<dt>¿Qué pasa si me quedo con el libro y no lo comparto?</dt>
-
-						<dd>Mala idea. Nos gusta confiar en la gente, por lo que esperamos que eso no pase. No nos decepciones.</dd>
-
-						<dt>¿Cómo le paso el libro a otra persona? ¿Dónde? ¿A quién? ¿Qué le digo?</dt>
-
-						<dd>Revisa que tenga el código. Después, busca a una persona especial para ti a la cual le pueda interesar el libro. Posteriormente, cuéntale sobre esta genial iniciativa y recuérdale que tiene que registrar el libro para que nosotros nos enteremos de que está en buenas manos. Por último, dile que haga lo mismo que hiciste tú: compartirlo.</dd>
-					</dl>
-			      </div>
-			    </div>
-			  </div>			 
 			</div>
+		-->
 		</div>
 	</div>
 	<div class="row">

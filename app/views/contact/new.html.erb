@@ -1,19 +1,24 @@
 
-<%= form_for @message, url: contact_path, html: {class: "well span8 negro"} do |form| %>
+<div class="row">
+  <div class="span8 center">
+    <h3>¿Alguna duda o sugerencia? ¿Tienes libros en tu casa que quieras donar a nustra biblioteca? Mándanos un mensaje y te responderemos a la brevedad.</h3>
+  </div>
+</div>
+
+<%= form_for @message, url: contact_path, html: {class: "well span8 negro center"} do |form| %>
   <div class="row">
     <div class="span3">
       <%= form.label :name %>
       <%= form.text_field :name, class: "span3", placeholder: "Nombre" %>
       <%= form.label :email %>
       <%= form.text_field :email, class: "span3", placeholder: "Correo" %>
-    <label>Asunto</label>
-       <%= form.text_field :subject %>
+      <label>Asunto</label>
+      <%= form.text_field :subject, class: "span3" %>
     </div>
     <div class="span5">
       <label>Mensaje</label>
       <%= form.text_area :body, class: "input-xlarge span5", rows: 10 %>
     </div>
-  
     <%= form.submit "Enviar", class: "btn btn-primary pull-right" %>
   </div>
 <% end %>

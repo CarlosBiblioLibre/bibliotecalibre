@@ -16,6 +16,9 @@ BiblioLibre::Application.routes.draw do
 
   get '/map' => 'findings#map', as: 'findings_map'
 
+  get '/bibliotecas' => 'biblio_libre#bibliotecas', as: 'bibliotecas'
+  get '/faq' => 'biblio_libre#faq', as: 'faq'
+
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
 	match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
