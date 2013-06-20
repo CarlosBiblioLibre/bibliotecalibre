@@ -1,16 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Libro encontrado: </b>
-  <%= Book.find(@finding.book_id).title %>
-</p>
-<p>
-  <b>¿Cómo llegó a ti?:</b>
-  <%= @finding.how %>
-</p>
-
-<p>¡<%= @finding.username %>, muchas gracias!</p>
-
-
-<%= user_signed_in? ? link_to('Editar', edit_finding_path(@finding) )+' |' : '' %>
-<%= link_to 'Volver', root_path %>
+<div class="row">
+	<div class="span8 center well negro">
+		<p>
+		  <b>Libro encontrado: </b>
+		  <%= Book.find(@finding.book_id).title %>
+		</p>
+		<p>
+		  <b>¿Cómo llegó a ti?:</b>
+		  <%= @finding.how %>
+		</p>
+		
+		<p>¡<%= @finding.username %>, muchas gracias!</p>
+	</div>
+</div>
+<div class="row">
+			<%= user_signed_in? ? link_to('Editar', edit_finding_path(@finding) )+' |' : '' %>
+      <%= link_to 'Volver', root_path %>
+</div>

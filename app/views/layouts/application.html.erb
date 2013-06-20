@@ -25,18 +25,23 @@
           <div class="pull-left">
             <a href='<%= root_path %>'><img id="logo" src="/assets/logo_30px.png" style="height: 25px; margin-top: 5px;" /></a>
           </div>
-          <div class="nav pull-right">
-              <li class="divider-vertical"></li>
-              <li><%= link_to('Preguntas frecuentes', faq_path) %></li>
-              <li class="divider-vertical"></li>
-              <li><%= link_to('Bibliotecas amigas', bibliotecas_path) %></li>
-              <li class="divider-vertical"></li>
-              <li><%= link_to('Contacto', contact_path) %></li>
-              <li class="divider-vertical"></li>
-              <li><div class="fb-like pull-right" data-href="http://www.facebook.com/labibliotecalibre" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" style="margin-top: 8px;"></div></li>
-              <% if  user_signed_in? %>
-                <li><%= link_to('Salir', destroy_user_session_path, method: :delete) %></li>
-              <% end %>
+          <a href="#" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span clas="icon-th-list"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <div class="nav pull-right">
+                <li class="divider-vertical"></li>
+                <li><%= link_to('Preguntas frecuentes', faq_path) %></li>
+                <li class="divider-vertical"></li>
+                <li><%= link_to('Bibliotecas amigas', bibliotecas_path) %></li>
+                <li class="divider-vertical"></li>
+                <li><%= link_to('Contacto', contact_path) %></li>
+                <li class="divider-vertical"></li>
+                <li><div class="fb-like pull-right" data-href="http://www.facebook.com/labibliotecalibre" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" style="margin-top: 8px;"></div></li>
+                <% if  user_signed_in? %>
+                  <li><%= link_to('Salir', destroy_user_session_path, method: :delete) %></li>
+                <% end %>
+            </div>
           </div>
         </div>
       </nav>
@@ -53,11 +58,7 @@
               </div>
             <% end %>
           <% end %>
-           <div class="row">
-            <div class="span12">              
               <%= yield %>
-            </div>
-          </div>
           <footer>
           </footer>
         </div>

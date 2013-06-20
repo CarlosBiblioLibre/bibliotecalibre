@@ -1,27 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Título:</b>
-  <%= @book.title %>
-</p>
-
-<p>
-  <b>Código:</b>
-  <%= @book.code %>
-</p>
-
-<% if user_signed_in? %>
-  <p>
-    <b>Hallazgos:</b>
-    <% @book.findings.each do |finding| %>
-    	<li><%= finding.location %></li>
-    <% end %>
-  </p>
-<% end %>
-
 <div class="row">
-  <%= link_to 'Volver', root_path %>
-  <br />
-  <%= user_signed_in? ? link_to('(Todos)', books_path) : '' %>
-  <%= user_signed_in? ? link_to('| (Edit)', edit_book_path(@book)) : '' %>
+  <div class="span8 center well negro">
+    <p>
+      <b>Título:</b>
+      <%= @book.title %>
+    </p>
+    
+    <p>
+      <b>Código:</b>
+      <%= @book.code %>
+    </p>
+    
+    <% if user_signed_in? %>
+      <p>
+        <b>Hallazgos:</b>
+        <% @book.findings.each do |finding| %>
+        	<li><%= finding.location %></li>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+      <%= link_to 'Volver', root_path %>
+      <br />
+      <%= user_signed_in? ? link_to('(Todos)', books_path) : '' %>
+      <%= user_signed_in? ? link_to('| (Edit)', edit_book_path(@book)) : '' %>
 </div>
