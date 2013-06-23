@@ -1,4 +1,5 @@
-window.position = lat: -33.440596, lng: -70.665913
+window.position = lat: -33.441751, lng: -70.644163
+# window.position = lat: -33.440596, lng: -70.665913
 
 changeLocation = (position) ->
   window.marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
@@ -58,6 +59,7 @@ $ ->
 
     google.maps.event.addListener window.map, 'click', (event) -> 
       window.marker.setPosition(event.latLng)
+      console.log window.marker.getPosition().toString()
       # window.map.setCenter(event.latLng)
     getLocation()
 
