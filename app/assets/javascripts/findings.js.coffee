@@ -71,6 +71,7 @@ $ ->
 
     for finding in $('#findings_map_canvas').data('findings')
       do (finding) ->
+        console.log finding
         new google.maps.Marker
           position: new google.maps.LatLng(finding.split(',')[0].substring(1), finding.split(',')[1].substring(1, finding.split(',')[1].length - 1) )
           map: window.findings_map
