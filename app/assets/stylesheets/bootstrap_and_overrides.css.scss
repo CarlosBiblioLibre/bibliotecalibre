@@ -10,6 +10,10 @@ body { padding-top: 60px; }
 	color: black;
 }
 
+.negro a {
+	color: #666;
+}
+
 .table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th {
   background-color: #4DA6AD;
 }
