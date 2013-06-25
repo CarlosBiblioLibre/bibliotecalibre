@@ -28,7 +28,7 @@ class Book < ActiveRecord::Base
     #TODO: un while o algo asi por aca
   	if not self.code
   		#SecureRandom.random_number(99999).to_s.center(5, SecureRandom.random_number(9).to_s)
-  		self.code = 'bb'+SecureRandom.hex(2);
+  		self.code = 'BB'+SecureRandom.hex(2);
   		self.save
   	end
   end

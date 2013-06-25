@@ -33,7 +33,7 @@ $ ->
           $('#form_submit').removeAttr('disabled');
 
   $('#code').on 'change click keyup focusout', (e) ->
-    $('#form_submit').attr('disabled', 'disabled');  
+    $('#form_submit').attr('disabled', 'disabled'); 
     if $('#code').val().length >= 5
       $('#form_submit').removeAttr('disabled');
 
@@ -42,6 +42,9 @@ $ ->
       if $('#code').val().length >= 5
         e.preventDefault()
         $('#new_finding_form').submit()
+
+  $('#new_finding_form').on 'submit', (e) ->
+    $('#code').val( $('#code').val().toUpperCase() )
 
   location = new google.maps.LatLng( window.position.lat, window.position.lng )
 
