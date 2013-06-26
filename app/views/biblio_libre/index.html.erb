@@ -51,6 +51,7 @@
 									<li><%= finding.book.title %>, hace <%= time_ago_in_words(finding.created_at.to_time) %></li>
 								<% end %>
 							</ol>
+							<p>Revisa como los libros son encontrados en distintas partes de la ciudad en el <%= link_to('mapa de hallazgos', findings_map_path) %>.</p>
 						</div>
 					</div>
 				</div>
