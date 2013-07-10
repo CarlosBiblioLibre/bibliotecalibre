@@ -45,7 +45,7 @@
 				<div class="row">
 					<div class="span5 center">
 						<div class="negro well" style="margin-top: 30px">
-							<p>Lo últimos libros encontrados son:</p>
+							<p>Los últimos libros encontrados son:</p>
 							<ol>
 								<% for finding in @findings %>
 									<li><%= finding.book.title %>, hace <%= time_ago_in_words(finding.created_at.to_time) %></li>
