@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # == Schema Information
 #
 # Table name: books
@@ -31,5 +33,24 @@ class Book < ActiveRecord::Base
   		self.code = 'BB'+SecureRandom.hex(2);
   		self.save
   	end
+  end
+
+  def self.genre
+    return [['Autoayuda', 'Autoayuda'],
+     ['Biografía', 'Biografía'],
+     ['Crónica & Periodismo', 'Crónica & Periodismo'],
+     ['Cuento', 'Cuento'],
+     ['Ensayo', 'Ensayo'],
+     ['Esotérico', 'Esotérico'],
+     ['Filosofía & Psicología', 'Filosofía & Psicología'],
+     ['Gastronomía', 'Gastronomía'],
+     ['Historia', 'Historia'],
+     ['Infantil & Juvenil', 'Infantil & Juvenil'],
+     ['Novela', 'Novela'],
+     ['Poesía', 'Poesía'],
+     ['Política', 'Política'],
+     ['Religión', 'Religión'],
+     ['Teatro', 'Teatro'],
+     ['Otro', 'Otro']]
   end
 end

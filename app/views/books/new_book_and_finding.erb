@@ -27,25 +27,29 @@
         <%= f.text_field :author %>
       </div>
     </div>
-     <%= f.fields_for :findings do |u| %>
+    <%= f.fields_for :findings do |u| %>
+    <div class="row">
+      <div class="field span6">
+        <%= f.label :genre, 'Género' %><br />
+        <%= f.select :genre, Book.genre %>
+      </div>
+      <div class="field span6">
+        <%= u.label :how, '¿Cómo te llego el libro?' %><br />
+        <%= u.select :how, Finding.how_options %>
+      </div>
+    </div>
        <div class="row">
-          <div class="field span6">
-            <%= u.label :how, '¿Como te llego el libro?' %><br />
-            <%= u.select :how, Finding.how_options %>
-          </div>
           <div class="field span6">
             <%= u.label :username, '¿Cómo te llamas?' %><br />
             <%= u.text_field :username %>
           </div>
-        </div>
-
-        <div class="row">
           <div class="field span6">
             <%= u.label :email, '¿Tu correo electrónico?' %><br />
             <%= u.text_field :email %>
           </div>
-        
-    
+        </div>
+
+        <div class="row">
           <div class="span6">
             <div class="field" style="height:100%;">
               <%= u.label :location, '¿Dónde lo encontraste? (Haz click en el mapa)' %>
