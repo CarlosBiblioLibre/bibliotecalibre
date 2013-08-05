@@ -1,4 +1,5 @@
-window.position = lat: -33.425334, lng: -70.612376
+window.position = lat: -33.443411, lng: -70.647870
+# window.position = lat: -33.425334, lng: -70.612376
 # window.position = lat: -33.440108, lng: -70.683346
 # window.position = lat: -33.441751, lng: -70.644163
 # window.position = lat: -33.440596, lng: -70.665913
