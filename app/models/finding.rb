@@ -20,7 +20,8 @@ class Finding < ActiveRecord::Base
   #validates_presence_of :book_id
 
   def self.how_options
-  	return [['Me lo pasaron', 'Me lo pasaron'], ['Lo encontré', 'Lo encontré']]
+  	# [['Me lo pasaron', 'Me lo pasaron'], ['Lo encontré', 'Lo encontré']]
+  	return [['En una liberación', 'En una liberación'], ['Me lo pasó un amigo', 'Me lo pasó un amigo']]
   end
 
 end
