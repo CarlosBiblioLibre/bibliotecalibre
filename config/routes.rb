@@ -22,5 +22,8 @@ BiblioLibre::Application.routes.draw do
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
 	match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
+  get '/QR' => 'biblio_libre#index'
+  get '/qr' => 'biblio_libre#index'
+
   root to: 'biblio_libre#index'
 end
