@@ -1,4 +1,6 @@
 class FindingsController < ApplicationController
+  before_filter :authenticate_user!, except: [:map, :show, :new, :new_with_code, :create]
+  # index  edit  update destroy map show new new_with_code create
   # GET /findings
   # GET /findings.json
   def index

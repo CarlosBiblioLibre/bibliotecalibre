@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_filter :authenticate_user!, except: [:show_by_code, :check_code, :new_book_and_finding, :show, :create]
+  before_filter :authenticate_user!, except: [:show_by_code, :check_code, :new_book_and_finding, :new_book_and_release, :show, :create]
 
   def check_code
     if Book.find_by_code(params[:code])
@@ -12,6 +12,12 @@ class BooksController < ApplicationController
   def new_book_and_finding
     @book = Book.new
     @book.findings.build
+  end
+
+  def new_book_and_release
+    @book = Book.new
+    @book.code = Book.generate_code
+    @book.releases.build
   end
 
   def index

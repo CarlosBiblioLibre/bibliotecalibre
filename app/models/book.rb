@@ -35,6 +35,14 @@ class Book < ActiveRecord::Base
   	end
   end
 
+  def self.generate_code
+    code = 'BB' + SecureRandom.hex(2)
+    while Book.find_by_code code
+      code = 'BB' + SecureRandom.hex(2)
+    end
+    return code.upcase
+  end
+
   def self.genre
     return [['Autoayuda', 'Autoayuda'],
      ['Biografía', 'Biografía'],

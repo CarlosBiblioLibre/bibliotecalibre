@@ -1,6 +1,10 @@
 <div class="row">
-  <h2>¡Tienes un libro nuevo!</h2>
-  <p>El libro que tienes aún no ha sido ingresado a nuestro sistema, debe ser su primera liberación, ayúdanos completando el siguiente formulario. ¡Muchas gracias!</p>
+  <h2>¡Gracias por liberar un libro nuevo!</h2>
+  <p>Para liberar un nuevo libro debes: </p>
+  <ul>
+  	<li>Ingresar el libro en el siguiente formulario</li>
+		<li>Escribir -imprimir- pegar las leyendas y el codigo: <%= @book.code %></li>
+  <ul>
 </div>
 
 <div class="row">
@@ -8,7 +12,6 @@
     <% if @book.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
         <ul>
         <% @book.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -27,7 +30,7 @@
         <%= f.text_field :author %>
       </div>
     </div>
-    <%= f.fields_for :findings do |u| %>
+    <%= f.fields_for :release do |u| %>
     <div class="row">
       <div class="field span6">
         <%= f.label :genre, 'Género' %><br />
@@ -52,7 +55,7 @@
         <div class="row">
           <div class="span6">
             <div class="field" style="height:100%;">
-              <%= u.label :location, '¿Dónde lo encontraste? (Haz click en el mapa)' %>
+              <%= u.label :location, '¿Dónde lo liberarás? (Haz click en el mapa)' %>
               <%= u.hidden_field :location %>
               <br />
               <div id="map_canvas"></div>
