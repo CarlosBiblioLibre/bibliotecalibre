@@ -23,7 +23,7 @@ getLocation = ->
 
 $ ->
   $('#book_code').on 'change click keyup focusout', (e) ->
-    $('#form_submit').attr('disabled', 'disabled');  
+    $('#form_submit').attr('disabled', 'disabled');
     if $('#book_code').val().length >= 5
       $('#book_info').html "<div class='alert alert-info'>Cargando datos del libro...</div>"
       $.ajax "/books/#{$('#book_code').val()}/ajax",
@@ -36,11 +36,11 @@ $ ->
           $('#form_submit').removeAttr('disabled');
 
   $('#code').on 'change click keyup focusout', (e) ->
-    $('#form_submit').attr('disabled', 'disabled'); 
+    $('#form_submit').attr('disabled', 'disabled');
     if $('#code').val().length >= 5
       $('#form_submit').removeAttr('disabled');
 
-  $('#code').on 'keypress', (e) -> 
+  $('#code').on 'keypress', (e) ->
     if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13))
       if $('#code').val().length >= 5
         e.preventDefault()
@@ -51,7 +51,7 @@ $ ->
 
   location = new google.maps.LatLng( window.position.lat, window.position.lng )
 
-  mapOptions = 
+  mapOptions =
     center: location
     mapTypeId: google.maps.MapTypeId.ROADMAP
     zoom: 15
@@ -63,7 +63,7 @@ $ ->
       position: location
       map: window.map
 
-    google.maps.event.addListener window.map, 'click', (event) -> 
+    google.maps.event.addListener window.map, 'click', (event) ->
       window.marker.setPosition(event.latLng)
       console.log window.marker.getPosition().toString()
       # window.map.setCenter(event.latLng)
@@ -88,6 +88,7 @@ $ ->
   $('#new_book').on 'submit', (e) ->
       $('#book_findings_attributes_0_location').val("#{window.marker.getPosition().toString()}")
 
- 
+
   $('#form_submit').attr('disabled', 'disabled');
+
 

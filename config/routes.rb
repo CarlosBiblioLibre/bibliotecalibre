@@ -22,10 +22,13 @@ BiblioLibre::Application.routes.draw do
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
 	match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
+  match 'invitanos' => 'contact#invitanos', :as => 'invitanos', :via => :get
+  match 'invitanos' => 'contact#invitanos_create', :as => 'invitanos', :via => :post
+
   get '/QR' => 'biblio_libre#index'
   get '/qr' => 'biblio_libre#index'
 
   get '/nuevo_home' => 'biblio_libre#index_nuevo'
 
-  root to: 'biblio_libre#index'
+  root to: 'biblio_libre#index_nuevo'
 end

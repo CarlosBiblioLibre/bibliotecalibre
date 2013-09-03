@@ -1,0 +1,116 @@
+2<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "La Biblioteca Libre" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41898970-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  </script>
+  </head>
+  <body>
+  <div id="wrap">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <div class="pull-left">
+            <a href='<%= root_path %>'><img id="logo" src="/assets/logo_30px.png" style="height: 25px; margin-top: 5px;" alt="La Biblioteca Libre"/></a>
+          </div>
+          <a href="#" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <div class="nav pull-right">
+                <li class="divider-vertical"></li>
+                <li><%= link_to('Preguntas frecuentes', faq_path) %></li>
+                <li class="divider-vertical"></li>
+                <li><%= link_to('Bibliotecas amigas', bibliotecas_path) %></li>
+                <li class="divider-vertical"></li>
+                <li><%= link_to('Contacto', contact_path) %></li>
+                <li class="divider-vertical"></li>
+                <li><div class="fb-like pull-right" data-href="http://www.facebook.com/labibliotecalibre" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" style="margin-top: 8px;"></div></li>
+                <% if  user_signed_in? %>
+                  <li><%= link_to('Salir', destroy_user_session_path, method: :delete) %></li>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div id="main" role="main">
+      <div class="container">
+        <div> <!-- class="content"> -->
+
+          <% [:notice, :error, :alert].each do |level| %>
+            <% unless flash[level].blank? %>
+              <div class="alert alert-message alert-<%= flash_class(level) %>">
+                <a class="close" href="#">×</a>
+                <%= content_tag :p, flash[level] %>
+              </div>
+            <% end %>
+          <% end %>
+              <%= yield %>
+          <footer>
+          </footer>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+
+     <div id="push"></div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <div class="row negro pull-right">
+          <div class="span4">
+            <div class="row">
+              <p class="muted credit pull-left" style="margin-top: 30px; vertical-align: middle;">Nuestros patrocinadores:</p>
+            </div>
+            <div class="row">
+              <div class="span2 offset1">
+                <img class="center" src="/assets/muni_stgo.png" style="height:60px; margin-right: 30px;" />
+              </div>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="row">
+              <p class="muted credit pull-left" style="margin-top: 30px; vertical-align: middle;">Nuestros colaboradores:</p>
+            </div>
+            <div class="row">
+              <img class="pull-right" src="/assets/startup.png" style="width: 140px; margin-top: 25px; margin-right: 30px;" />
+              <img class="pull-right" src="/assets/fau.png" style="height:60px; margin-right: 30px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyCjFGRwHIUl0nLB59JL-4bWR-w2qc1auqo&sensor=true" %>
+  </body>
+</html>

@@ -66,7 +66,7 @@ module BiblioLibre
       :port                 => 587,
       :domain               => "catedraslibres.com",
       :user_name            => "hola@catedraslibres.com",
-      :password             => "catedraslibres",
+      :password             => "1catedras9",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }

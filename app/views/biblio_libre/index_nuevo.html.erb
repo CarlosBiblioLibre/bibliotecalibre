@@ -1,3 +1,151 @@
+	<div class="row">
+		<div class="span12 text-center">
+				<div id="myCarousel" class="carousel slide">
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="/assets/1.png"  width="1170px" height="300px" alt="">
+							<!-- <div class="carousel-caption">
+								<h4>First Thumbnail label</h4>
+								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+							</div> -->
+						</div>
+						<div class="item">
+							<img src="/assets/2.png" width="1170px" height="300px" alt="">
+						</div>
+						<div class="item">
+							<img src="/assets/3.png" width="1170px" height="300px" alt="">
+						</div>
+					</div>
+					<a class="left carousel-control" style="top: 50%;" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+					<a class="right carousel-control" style="top: 50%;" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span6"> <!-- columna 1 -->
+				<div class="row">
+					<div class="span6">
+						<p><strong>Los últimos libros encontrados son:</strong></p>
+					</div>
+				</div>
+				<div class="row" style="font-size: 10px;">
+					<div class="span3">
+						<img class="pull-left genero" src=<%= genre_to_img(@findings[0].book.genre) %> />
+						<p>Autor: <%= @findings[0].book.author %></p>
+						<p>Título: <%= @findings[0].book.title %></p>
+						<p>Hace <%= time_ago_in_words(@findings[0].created_at.to_time) %></p>
+					</div>
+					<div class="span3">
+						<img class="pull-left genero" src=<%= genre_to_img(@findings[1].book.genre) %> />
+						<p>Autor: <%= @findings[1].book.author %></p>
+						<p>Título: <%= @findings[1].book.title %></p>
+						<p>Hace <%= time_ago_in_words(@findings[1].created_at.to_time) %></p>
+					</div>
+				</div>
+				<div class="row" style="font-size: 10px;">
+					<div class="span3">
+						<img class="pull-left genero" src=<%= genre_to_img(@findings[2].book.genre) %> />
+						<p>Autor: <%= @findings[2].book.author %></p>
+						<p>Título: <%= @findings[2].book.title %></p>
+						<p>Hace <%= time_ago_in_words(@findings[2].created_at.to_time) %></p>
+					</div>
+					<div class="span3">
+						<img class="pull-left genero" src=<%= genre_to_img(@findings[3].book.genre) %> />
+						<p>Autor: <%= @findings[3].book.author %></p>
+						<p>Título: <%= @findings[3].book.title %></p>
+						<p>Hace <%= time_ago_in_words(@findings[3].created_at.to_time) %></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span6">
+						<p>Revisa como los libros son encontrados en distintas partes de la ciudad en el <%= link_to('mapa de hallazgos', findings_map_path) %>.</p>
+					</div>
+				</div>
+				<div class="span6">
+					<p>Noticas acá!</p>
+				</div>
+		</div>
+
+		<div class="span6"> <!-- columna 2 -->
+			<div class="row">
+				<div class="span6">
+					<a href="#modal_code" role="button" class="btn btn-large btn-block btn-primary" style="display: block; width: 95%;" data-toggle="modal">Registra libros</a>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 10px;">
+				<div class="span3">
+					<%= link_to 'Libera tus libros', new_book_and_release_path, { class: "btn btn-large btn-block btn-primary", style: "color: white; width: 90%;" } %>
+				</div>
+				<div class="span3 pull-right">
+						<a href="#modal_code" role="button" class="btn btn-large btn-block btn-primary" style="width: 90%;" data-toggle="modal">Dona tus libros</a>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 20px;">
+					<div id="flickr_badge_wrapper" class="span6 center">
+						<script type="text/javascript" src="http://www.flickr.com/badge_code.gne?count=18&display=latest&size=square&nsid=101197672@N02&raw=1"></script>
+					</div>
+			</div>
+			<div class="row" style="margin-top: 20px;">
+				<div class="span6">
+					<div class="fb-like-box" data-href="https://www.facebook.com/labibliotecalibre" data-width="100%" data-show-faces="false" data-header="false" data-stream="false" data-show-border="true"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+				<!-- Modal -->
+				<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				    <h3 id="myModalLabel">Ingresa el código del libro:</h3>
+				  </div>
+				  <form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
+					  <div class="modal-body">
+					  	<div class=".control-group">
+							  <%= label_tag :code, 'Código:', class: "control-label" %>
+							  <div class="controls">
+							  	<%= text_field_tag :code, "" ,style: "text-transform:uppercase;" %>
+							  </div>
+					    </div>
+					  </div>
+					  <div class="modal-footer">
+					    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+					    <input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
+					  </div>
+				  </form>
+				</div>
+
+	<div class="row">
+		<div class="span12">
+			<hr />
+			<p><strong>Videos: </strong></p>
+			<div class="row">
+				<div class="span4">
+					<iframe width="80%" height="200px" src="//www.youtube.com/embed/hnu9XNwQ4Co" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="span4">
+					<iframe width="80%" height="200px" src="//www.youtube.com/embed/PrREMzGfT3g" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="span4">
+					<iframe width="80%" height="200px" src="//www.youtube.com/embed/_SWGaAREyeM" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--
+							<ol>
+								<% for finding in @findings %>
+									<li><%= finding.book.title %>, hace <%= time_ago_in_words(finding.created_at.to_time) %></li>
+								<% end %>
+							</ol>
+							<p>Revisa como los libros son encontrados en distintas partes de la ciudad en el <%= link_to('mapa de hallazgos', findings_map_path) %>.</p>
+-->
+
+
+
+<!--
+
 
 <div class="span12">
 	<div class="row">
@@ -12,10 +160,6 @@
 					<div class="span4">
 						&nbsp;
 					</div>
-					<!--
-				</div>
-				<div class="row">
-				-->
 					<div class="span4">
 						<h2>encuentra/lee/comparte</h2>
 					</div>
@@ -69,7 +213,6 @@
 							        	<div class="controls">
 							        		<%= text_field_tag :code, "" ,style: "text-transform:uppercase;" %>
 							        	</div>
-							        	<!-- <div id="book_info"></div> -->
 					      			</div>
 					  </div>
 					  <div class="modal-footer">
@@ -83,11 +226,6 @@
 				<p><%= link_to '¡LIBERALO ACÁ!', new_book_and_release_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
 			</div>
 
-<!--
-			<div class="span6">
-				<iframe width="420" height="315" src="http://www.youtube.com/embed/UWNlLrFS1Fw?rel=0" frameborder="0" allowfullscreen></iframe>
-			</div>
--->
 		</div>
 
 		<div class="row">
@@ -105,22 +243,7 @@
 					<p>Visítanos en <a href="https://www.facebook.com/labibliotecalibre">Facebook</a></p>
 					<p>¿Tienes libros y quieres donarlos a nuestra biblioteca? Mándanos <%= link_to('un mensaje', contact_path) %> y te contactaremos.</p>
 			</div>
-		<!--
-			<div class="accordion" id="accordion2">
-			  <div class="accordion-group">
-			    <div class="accordion-heading">
-			      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-			        Noticias &#9660;
-			      </a>
-			    </div>
-			    <div id="collapseOne" class="accordion-body collapse in">
 
-
-			      </div>
-			    </div>
-			  </div>
-			</div>
-		-->
 		</div>
 	</div>
 	<div class="row">
@@ -129,3 +252,5 @@
 		</div>
 	</div>
 </div>
+
+-->
