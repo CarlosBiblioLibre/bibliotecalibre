@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "La Biblioteca Libre" %></title>
+  <meta name="description" content="La Biblioteca Libre">
+  <meta name="author" content="La Biblioteca Libre">
+
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <%= stylesheet_link_tag "nuevo", :media => "all" %>
+  <script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+
+  <script type="text/javascript">
+    tinymce.init({
+      selector: ".post_content"
+    });
+  </script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41898970-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+<div class="container">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div id="wrapper" class="span12">
+    <div class="masthead">
+      <ul class="nav nav-pills pull-right botones">
+        <!-- <li class="active"><a href="#">Home</a></li> -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Proyecto<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Manifiesto</a></li>
+            <li><%= link_to('Preguntas frecuentes', faq_path) %></li>
+            <li><a href="#">Equipo</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Liberaciones<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">¿Qué es?</a></li>
+            <li><a href="#">Calendario</a></li>
+            <li><%= link_to('Invítanos', invitanos_path) %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#">+ Libros<b class="caret"></b></a>
+         <ul class="dropdown-menu">
+           <li><a href="#">Puntos de lectura</a></li>
+           <li><%= link_to('Bibliotecas amigas', bibliotecas_path) %></li>
+         </ul>
+       </li>
+       <li><%= link_to('Contacto', contact_path) %></li>
+     </ul>
+     <a href='<%= root_path %>'><img id="logo" src='/assets/lbl.jpg' height='70px' /></a>
+   </div>
+   <hr />
+ </div>
+
+  <div class="span12">
+    <% [:notice, :error, :alert].each do |level| %>
+      <% unless flash[level].blank? %>
+        <div class="alert alert-message alert-<%= flash_class(level) %>">
+          <a class="close" href="#">×</a>
+          <%= content_tag :p, flash[level] %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="span12">
+  <%= yield %>
+ </div>
+
+  <div class="span12">
+    <div class="row">
+      <div class="span12">
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <div class="well">
+          <div class="row">
+            <div class="span4">
+              <a href="http://catedraslibres.org/"><img src="/assets/catedras.png" /></a>
+            </div>
+            <div class="span3">
+              <p>La Biblioteca Libre</p>
+              <p>Email: biblioteca@catedraslibres.cl</p>
+              <br />
+            </div>
+            <div class="span4">
+              <div class="row">
+                <div class="span4">
+                  <p class="credit" style="">Nuestros colaboradores:</p>
+                </div>
+              </div>
+              <div class="row">
+              <div class="span4">
+                  <img src="/assets/muni_stgo_bk.png" style="height:60px" />
+                  <img src="/assets/startup_bk.png" style="width: 140px" />
+                  <img src="/assets/fau_bk.png" style="height:60px" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%= javascript_include_tag "application" %>
+<%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyCjFGRwHIUl0nLB59JL-4bWR-w2qc1auqo&sensor=true" %>
+</div>
+</body>
+</head>

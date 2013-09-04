@@ -64,4 +64,13 @@ BiblioLibre::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'biblio-libre',
+      :access_key_id => 'AKIAJUQBEUNVIBZ6KSLQ',
+      :secret_access_key => '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'
+    }
+  }
 end

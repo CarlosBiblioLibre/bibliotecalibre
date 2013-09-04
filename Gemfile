@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+
+gem 'paperclip'
+
+gem 'aws-sdk'
+
 gem 'rails', '3.2.11'
 
 gem 'thin'
@@ -21,7 +26,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 #group :assets do
-#  #gem 'sass-rails'	
+#  #gem 'sass-rails'
 #  gem 'bootstrap-sass'
 #  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 #  # gem 'therubyracer', :platforms => :ruby
