@@ -38,34 +38,33 @@
   <div id="wrapper" class="span12">
     <div class="masthead">
       <ul class="nav nav-pills pull-right botones">
-        <!-- <li class="active"><a href="#">Home</a></li> -->
         <li><%= link_to('Inicio', root_path) %></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Proyecto<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Manifiesto</a></li>
+            <!-- <li><a href="#">Manifiesto</a></li> -->
             <li><%= link_to('Preguntas frecuentes', faq_path) %></li>
-            <li><a href="#">Equipo</a></li>
+            <!-- <li><a href="#">Equipo</a></li> -->
           </ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Liberaciones<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">¿Qué es?</a></li>
-            <li><a href="#">Calendario</a></li>
+            <li><%= link_to('¿Qué es?', que_es_path) %></li>
+            <!-- <li><a href="#">Calendario</a></li> -->
             <li><%= link_to('Invítanos', invitanos_path) %></li>
           </ul>
         </li>
         <li class="dropdown">
          <a class="dropdown-toggle" data-toggle="dropdown" href="#">+ Libros<b class="caret"></b></a>
          <ul class="dropdown-menu">
-           <li><a href="#">Puntos de lectura</a></li>
+           <!-- <li><a href="#">Puntos de lectura</a></li> -->
            <li><%= link_to('Bibliotecas amigas', bibliotecas_path) %></li>
          </ul>
        </li>
        <li><%= link_to('Contacto', contact_path) %></li>
      </ul>
-     <a href='<%= root_path %>'><img id="logo" src='/assets/lbl.jpg' height='70px' /></a>
+     <a href='<%= root_path %>'><img id="logo" src='/assets/BL_apaisado-03.png' height='70px' /></a>
    </div>
    <hr />
  </div>
@@ -74,7 +73,6 @@
     <% [:notice, :error, :alert].each do |level| %>
       <% unless flash[level].blank? %>
         <div class="alert alert-message alert-<%= flash_class(level) %>">
-          <a class="close" href="#">×</a>
           <%= content_tag :p, flash[level] %>
         </div>
       <% end %>

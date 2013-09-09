@@ -25,14 +25,18 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #636363;
   &:visited {
-    color: #666;
+    /* color: #666; */
   }
   &:hover {
     color: #fff;
     background-color: #000;
   }
+}
+
+a img:hover {
+  background-color: transparent !important;
 }
 
 div {

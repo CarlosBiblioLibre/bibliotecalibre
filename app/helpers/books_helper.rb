@@ -1,7 +1,7 @@
 module BooksHelper
 	def genre_to_img(genre)
 		# return "/assets/#{genre}.png"
-		return "/assets/libro3.png"
+		return "/assets/libros.jpg"
 	end
 end
 			# return case genre

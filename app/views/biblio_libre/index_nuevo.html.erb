@@ -1,29 +1,29 @@
 	<div class="row">
 		<div class="span12 text-center">
-				<div id="myCarousel" class="carousel slide">
-					<div class="carousel-inner">
-						<div class="item active">
-							<img src="/assets/1.png"  width="1170px" height="300px" alt="">
+			<div id="myCarousel" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="/assets/Concurso Literario_Web-01.png" alt="">
+					</div>
+					<div class="item">
+						<img src="/assets/1a.jpg" alt="">
 							<!-- <div class="carousel-caption">
 								<h4>First Thumbnail label</h4>
 								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 							</div> -->
 						</div>
 						<div class="item">
-							<img src="/assets/2.png" width="1170px" height="300px" alt="">
-						</div>
-						<div class="item">
-							<img src="/assets/3.png" width="1170px" height="300px" alt="">
+							<img src="/assets/2.jpg" alt="">
 						</div>
 					</div>
 					<a class="left carousel-control" style="top: 50%;" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 					<a class="right carousel-control" style="top: 50%;" href="#myCarousel" data-slide="next">&rsaquo;</a>
 				</div>
+			</div>
 		</div>
-	</div>
 
-	<div class="row">
-		<div class="span6"> <!-- columna 1 -->
+		<div class="row">
+			<div class="span6"> <!-- columna 1 -->
 				<div class="row">
 					<div class="span6">
 						<p><strong>Los últimos libros encontrados son:</strong></p>
@@ -63,194 +63,105 @@
 					</div>
 				</div>
 				<div class="span6">
-					<p>Noticas acá!</p>
-				</div>
-		</div>
+					<!-- <div class="well"> -->
+						<div class="row">
+							<div class="span5" style="margin-right: 20px;">
+							<div class="well"
+								<p><strong>Noticias	</strong></p>
+								<ul>
+									<li>Próxima liberación: <%= link_to 'GAM (sábado 7 de septiembre)', noticia1_path %></li>
+								</ul>
+								<br />
+								</div>
+							</div>
+						<!-- </div> -->
 
-		<div class="span6"> <!-- columna 2 -->
-			<div class="row">
-				<div class="span6">
-					<a href="#modal_code" role="button" class="btn btn-large btn-block btn-primary" style="display: block; width: 95%;" data-toggle="modal">Registra libros</a>
+					</div>
 				</div>
 			</div>
-			<div class="row" style="margin-top: 10px;">
-				<div class="span3">
-					<%= link_to 'Libera tus libros', new_book_and_release_path, { class: "btn btn-large btn-block btn-primary", style: "color: white; width: 90%;" } %>
+
+			<div class="span6"> <!-- columna 2 -->
+				<div class="row">
+					<div class="span6">
+						<a href="#modal_code" role="button" class="btn btn-large btn-block btn-primary" style="display: block; width: 95%;" data-toggle="modal">Registra libros</a>
+					</div>
 				</div>
-				<div class="span3 pull-right">
-						<a href="#modal_code" role="button" class="btn btn-large btn-block btn-primary" style="width: 90%;" data-toggle="modal">Dona tus libros</a>
+				<div class="row" style="margin-top: 10px;">
+					<div class="span3">
+					<a href="#modal_prox" role="button" class="btn btn-large btn-block btn-primary" style="color: white; width: 90%;" data-toggle="modal">Libera tus libros</a>
+						<!-- <%= link_to 'Libera tus libros', new_book_and_release_path, { class: "btn btn-large btn-block btn-primary", style: "color: white; width: 90%;" } %> -->
+					</div>
+					<div class="span3 pull-right">
+						<%= link_to 'Dona tus libros', dona_path, { class: "btn btn-large btn-block btn-primary", style: "width: 90%;" } %>
+					</div>
 				</div>
-			</div>
-			<div class="row" style="margin-top: 20px;">
+				<div class="row">
+					<div class="span6">
+						<%= link_to 'Envía tu cuento', concurso_path, { class: "btn btn-large btn-block btn-success", style: "width: 95%; margin-top: 10px;" } %>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 20px;">
 					<div id="flickr_badge_wrapper" class="span6 center">
 						<script type="text/javascript" src="http://www.flickr.com/badge_code.gne?count=18&display=latest&size=square&nsid=101197672@N02&raw=1"></script>
 					</div>
-			</div>
-			<div class="row" style="margin-top: 20px;">
-				<div class="span6">
-					<div class="fb-like-box" data-href="https://www.facebook.com/labibliotecalibre" data-width="100%" data-show-faces="false" data-header="false" data-stream="false" data-show-border="true"></div>
 				</div>
-			</div>
-		</div>
-	</div>
-				<!-- Modal -->
-				<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				  <div class="modal-header">
-				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				    <h3 id="myModalLabel">Ingresa el código del libro:</h3>
-				  </div>
-				  <form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
-					  <div class="modal-body">
-					  	<div class=".control-group">
-							  <%= label_tag :code, 'Código:', class: "control-label" %>
-							  <div class="controls">
-							  	<%= text_field_tag :code, "" ,style: "text-transform:uppercase;" %>
-							  </div>
-					    </div>
-					  </div>
-					  <div class="modal-footer">
-					    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-					    <input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
-					  </div>
-				  </form>
-				</div>
-
-	<div class="row">
-		<div class="span12">
-			<hr />
-			<p><strong>Videos: </strong></p>
-			<div class="row">
-				<div class="span4">
-					<iframe width="80%" height="200px" src="//www.youtube.com/embed/hnu9XNwQ4Co" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div class="span4">
-					<iframe width="80%" height="200px" src="//www.youtube.com/embed/PrREMzGfT3g" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div class="span4">
-					<iframe width="80%" height="200px" src="//www.youtube.com/embed/_SWGaAREyeM" frameborder="0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
-
-<!--
-							<ol>
-								<% for finding in @findings %>
-									<li><%= finding.book.title %>, hace <%= time_ago_in_words(finding.created_at.to_time) %></li>
-								<% end %>
-							</ol>
-							<p>Revisa como los libros son encontrados en distintas partes de la ciudad en el <%= link_to('mapa de hallazgos', findings_map_path) %>.</p>
--->
-
-
-
-<!--
-
-
-<div class="span12">
-	<div class="row">
-        <div class="span3 pagination-centered">
-          <img id="logo_grande" src="/assets/logo.png" alt="La Biblioteca Libre" />
-        </div>
-    </div>
-	<div class="row">
-		<div class="row">
-			<div class="span12 pagination-centered">
-				<div class="row">
-					<div class="span4">
-						&nbsp;
-					</div>
-					<div class="span4">
-						<h2>encuentra/lee/comparte</h2>
-					</div>
-					<div class="span4">
-						<p class="pull-right">
-							Esta es una iniciativa de <a href='http://www.catedraslibres.com/'>Cátedras Libres</a>
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span12 negro">
-						<p>La Biblioteca Libre es una iniciativa que promueve el intercambio gratuito de libros: las personas dejan o toman ejemplares de su interés.
-
-						Los libros de La Biblioteca Libre no son de nadie en particular y son de todos en general.
-
-						Una vez que leas los libros no los dejes en tu casa juntando polvo, pásalos a alguien más, que sigan su rumbo por el mundo.</p>
+				<div class="row" style="margin-top: 20px;">
+					<div class="span6">
+						<div class="fb-like-box" data-href="https://www.facebook.com/labibliotecalibre" data-width="100%" data-show-faces="false" data-header="false" data-stream="false" data-show-border="true"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="span6">
-				<div class="row  pagination-centered">
-					<h2>¿Tienes un libro?</h2>
-					<a href="#modal_code" role="button" class="btn btn-primary btn-large" data-toggle="modal">¡REGISTRALO ACÁ!</a>
-				</div>
-				<div class="row">
-					<div class="span5 center">
-						<div class="negro well" style="margin-top: 30px">
-							<p>Los últimos libros encontrados son:</p>
-							<ol>
-								<% for finding in @findings %>
-									<li><%= finding.book.title %>, hace <%= time_ago_in_words(finding.created_at.to_time) %></li>
-								<% end %>
-							</ol>
-							<p>Revisa como los libros son encontrados en distintas partes de la ciudad en el <%= link_to('mapa de hallazgos', findings_map_path) %>.</p>
+		<!-- Modal -->
+		<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Ingresa el código del libro:</h3>
+			</div>
+			<form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
+				<div class="modal-body">
+					<div class=".control-group">
+						<%= label_tag :code, 'Código:', class: "control-label" %>
+						<div class="controls">
+							<%= text_field_tag :code, "" ,style: "text-transform:uppercase;" %>
 						</div>
 					</div>
 				</div>
-			</div>
-				<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				  <div class="modal-header">
-				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				    <h3 id="myModalLabel">Ingresa el código del libro:</h3>
-				  </div>
-				  <form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
-					  <div class="modal-body">
-
-					  				<div class=".control-group">
-							        	<%= label_tag :code, 'Código:', class: "control-label" %>
-							        	<div class="controls">
-							        		<%= text_field_tag :code, "" ,style: "text-transform:uppercase;" %>
-							        	</div>
-					      			</div>
-					  </div>
-					  <div class="modal-footer">
-					    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-					    <input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
-					  </div>
-				  </form>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+					<input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
 				</div>
-			<div class="span6 pagination-centered">
-				<h2>¿Quieres liberar un libro?</h2>
-				<p><%= link_to '¡LIBERALO ACÁ!', new_book_and_release_path, { class: "btn btn-primary btn-large", style: "color: white;" } %></p>
-			</div>
+			</form>
+		</div>
 
+		<!-- Modal -->
+		<div id="modal_prox" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Próximamente</h3>
+			</div>
+				<div class="modal-body">
+					¡Próximamente podrás liberar tus propios libros! Prontamente te diremos como hacerlo :)
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+				</div>
 		</div>
 
 		<div class="row">
-			<div class="alert alert-info negro">
-
-				<p><strong>Próxima liberación:</strong> Con orgullo y alegría les comunicamos que ¡por novena vez! :D La Biblioteca Libre abre sus puertas y el sábado 17 de agosto más de 1.200 libros serán liberados, con libros de autores tan destacados como Nicanor Parra y nuestros premios Nobel.</p>
-
-				<p>Por cada libro que liberes, te podrás llevar 2 libros (con un tope de 5 libros). No es un trueque, porque los libros que liberes serán tomados por otras personas.</p>
-
-				<p>En esta ocasión estaremos en el Palacio Cousiño (calle Dieciocho N° 438), de 11:00 a 16:00 horas. Tendremos música, cuentacuentos y una pintatón!</p>
-
-				<p>Más información en Facebook: <a href="https://www.facebook.com/events/494694010616833/">9ª Liberación de Libros</a></p>
+			<div class="span12">
+				<hr />
+				<p><strong>Videos: </strong></p>
+				<div class="row">
+					<div class="span4">
+						<iframe width="80%" height="200px" src="//www.youtube.com/embed/hnu9XNwQ4Co" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="span4">
+						<iframe width="80%" height="200px" src="//www.youtube.com/embed/PrREMzGfT3g" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="span4">
+						<iframe width="80%" height="200px" src="//www.youtube.com/embed/_SWGaAREyeM" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
 			</div>
-			<div class="well well-small center negro">
-					<p>Visítanos en <a href="https://www.facebook.com/labibliotecalibre">Facebook</a></p>
-					<p>¿Tienes libros y quieres donarlos a nuestra biblioteca? Mándanos <%= link_to('un mensaje', contact_path) %> y te contactaremos.</p>
-			</div>
-
 		</div>
-	</div>
-	<div class="row">
-		<div class="span12">
-			<div class="fb-like pull-right" data-href="http://www.facebook.com/labibliotecalibre" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-		</div>
-	</div>
-</div>
-
--->

@@ -6,13 +6,16 @@ class Message
 
   attr_accessor :name, :email, :subject, :body
 
-  validates :name, :email, :subject, :body, :presence => true
+  validates :name, :email, :presence => true
   validates :email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
-  
+
   def initialize(attributes = {})
-    attributes.each do |name, value|
-      send("#{name}=", value)
-    end
+    @name    = attributes['name']
+    @email   = attributes['email']
+    @body    = attributes['body']
+    @subject = attributes['subject']
+    #attributes.each do |name, value|
+    # send("#{name}=", value)
   end
 
   def persisted?

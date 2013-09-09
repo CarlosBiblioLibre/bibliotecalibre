@@ -4,4 +4,4 @@
 
 $ ->
   if $('.carousel').size() > 0
-    $('.carousel').carousel({ interval: 2000 })
+    $('.carousel').carousel({ interval: 4000 })

@@ -1,0 +1,35 @@
+<%= form_for @message, url: concurso_path, html: {class: ""} do |form| %>
+  <div class="row">
+    <div class="span12 well">
+      <div class="row">
+        <div class="span12">
+          <h4>¡Envía tu cuento!</h4>
+          <br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="span5">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: "span4", placeholder: "Nombre" %>
+          <%= form.label :email %>
+          <%= form.text_field :email, class: "span4", placeholder: "Correo" %>
+          <label>Archivo</label>
+          <%= form.file_field :document, class: "span4" %>
+        </div>
+        <div class="span7">
+          <div class="row">
+            <div class="span7">
+              <label>Mensaje</label>
+              <%= form.text_area :body, class: "input-xlarge span7", rows: 10 %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span7">
+              <%= form.submit "Enviar", class: "btn btn-primary pull-right" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
