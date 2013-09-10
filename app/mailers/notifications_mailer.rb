@@ -11,10 +11,7 @@ class NotificationsMailer < ActionMailer::Base
   def new_message_concurso(message, document)
     @message = message
 
-    p document
-    # p document.original_filename
-
-    attachments['document.original_filename'] = document.tempfile
+    attachments[document.original_filename] = File.read(document.path)
 
     mail(:subject => "[LaBibliotecaLibre.cl] #{message.subject}")
   end
