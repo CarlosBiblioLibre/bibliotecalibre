@@ -1,3 +1,5 @@
+require "base64"
+
 class NotificationsMailer < ActionMailer::Base
 
   default :from => "noreply@bibliotecalibre.cl"
@@ -18,6 +20,11 @@ class NotificationsMailer < ActionMailer::Base
     p "#"*20
 
     attachments[document.original_filename] = document.read # File.read(document.path)
+
+    #attachments["#{document.original_filename}"] = {
+    #  :encoding => 'base64',
+    #  :content  => Base64.b64encode(document.read)
+    #}
 
     mail(:subject => "[LaBibliotecaLibre.cl] #{message.subject}")
   end
