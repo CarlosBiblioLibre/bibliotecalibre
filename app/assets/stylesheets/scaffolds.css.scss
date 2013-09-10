@@ -30,14 +30,10 @@ a {
     /* color: #666; */
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #0055cc;
   }
 }
 
-a img:hover {
-  background-color: transparent !important;
-}
 
 div {
   &.field, &.actions {
