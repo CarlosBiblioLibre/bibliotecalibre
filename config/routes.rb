@@ -45,8 +45,7 @@ BiblioLibre::Application.routes.draw do
   get '/noticias/3' => 'biblio_libre#noticia3', :as => 'noticia3'
   get '/noticias/4' => 'biblio_libre#noticia4', :as => 'noticia4'
 
-  get '/instrucciones' => 'biblio_libre#instrucciones'
-  get '/que_es' => 'biblio_libre#instrucciones', :as => 'instrucciones'
+  get '/instrucciones' => 'biblio_libre#instrucciones', :as => 'instrucciones'
 
   root to: 'biblio_libre#index_nuevo'
 end
