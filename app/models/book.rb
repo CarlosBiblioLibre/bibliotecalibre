@@ -17,12 +17,12 @@
 #
 
 class Book < ActiveRecord::Base
-  attr_accessible :pages, :title, :code, :author, :editorial, :genre, :subgenre, :findings_attributes
+  attr_accessible :pages, :title, :code, :author, :editorial, :genre, :subgenre, :findings_attributes, :releases_attributes
 
   has_many :findings, dependent: :destroy
-  has_many :releases
+  has_many :releases, dependent: :destroy
 
-  accepts_nested_attributes_for :findings
+  accepts_nested_attributes_for :findings, :releases
 
   #after_initialize :generate_code
 

@@ -13,9 +13,11 @@ BiblioLibre::Application.routes.draw do
 
   get '/check_code' => 'books#check_code'
   get '/new_book_and_finding/:code'  => 'books#new_book_and_finding', as: 'new_book_and_finding'
-  get '/new_book_and_release' => 'books#new_book_and_release', as: 'new_book_and_release'
-
   get '/new_finding_with_code/:code' => 'findings#new_with_code', as: 'new_finding_with_code'
+
+  get '/new_book_and_release' => 'books#new_book_and_release', as: 'new_book_and_release'
+  post '/printables' => 'books#printables', as: 'printables'
+  get '/generate_pdf/:code' => 'books#generate_pdf', as: 'generate_pdf'
 
   get '/map' => 'findings#map', as: 'findings_map'
 

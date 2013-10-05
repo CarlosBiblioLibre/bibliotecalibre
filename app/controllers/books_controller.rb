@@ -1,5 +1,11 @@
+# encoding: utf-8
+
+require "prawn"
+
 class BooksController < ApplicationController
-  before_filter :authenticate_user!, except: [:show_by_code, :check_code, :new_book_and_finding, :new_book_and_release, :show, :create]
+  before_filter :authenticate_user!, except: [:show_by_code, :check_code, :new_book_and_finding,
+                                              :new_book_and_release, :show, :create, :printables,
+                                              :generate_pdf]
 
   def check_code
     if Book.find_by_code(params[:code])
@@ -18,6 +24,21 @@ class BooksController < ApplicationController
     @book = Book.new
     @book.code = Book.generate_code
     @book.releases.build
+  end
+
+  def printables
+    @book = Book.new(params[:book])
+
+    if @book.save
+      # format.html { redirect_to @book, notice: 'Los datos han sido ingresados, muchas gracias!' }
+
+    else
+      render action: "new_book_and_release"
+    end
+  end
+
+  def generate_pdf
+    send_data(do_pdf(params[:code]), :filename => "instrucciones.pdf", :type => "application/pdf")
   end
 
   def index
@@ -77,5 +98,51 @@ class BooksController < ApplicationController
       format.html { redirect_to books_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def do_pdf(code)
+    Prawn::Document.new do
+
+      bounding_box([100, 750], :width => 250, :height => 260) do
+        # stroke_color 'FFFF00'
+        stroke_bounds
+
+        move_down 20
+        text "En La Biblioteca Libre", align: :center
+        text "creemos que cada libro tiene", align: :center
+        text "su magia, pero que se pierde", align: :center
+        text "si nadie lo lee.", align: :center
+        text "¡Por eso este libro te ha", align: :center
+        text "buscado! Dale vida leyéndolo", align: :center
+        text "y compartiéndolo.", align: :center
+        text "Ingresa el siguiente código", align: :center
+
+        text code, align: :center
+
+        text "en", align: :center
+        text "www.labibliotecalibre.cl", align: :center
+        text "y así sabremos que está", align: :center
+        text "en buenas manos.", align: :center
+        text "Recuerda compartirlo", align: :center
+        text "cuando lo hayas", align: :center
+        text "terminado, :)", align: :center
+
+      end
+
+      bounding_box([100, 450], :width => 250, :height => 120) do
+        # stroke_color 'FFFF00'
+        stroke_bounds
+
+        move_down 20
+        text '¿Qué te pareció el libro?', align: :center
+        text 'Cuéntanos más ', align: :center
+        text 'ingresando nuevamente ', align: :center
+        text 'el código en ', align: :center
+        text 'www.labibliotecalibre.cl', align: :center
+        text '¡Y comparte el libro!', align: :center
+      end
+
+    end.render
   end
 end

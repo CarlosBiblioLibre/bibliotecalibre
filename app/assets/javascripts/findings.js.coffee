@@ -86,7 +86,11 @@ $ ->
       $('#release_location').val("#{window.marker.getPosition().toString()}")
 
   $('#new_book').on 'submit', (e) ->
+    if $('#book_findings_attributes_0_location').size() > 0
       $('#book_findings_attributes_0_location').val("#{window.marker.getPosition().toString()}")
+    if $('#book_releases_attributes_0_location').size() > 0
+      $('#book_releases_attributes_0_location').val("#{window.marker.getPosition().toString()}")
+
 
 
   $('#form_submit').attr('disabled', 'disabled');

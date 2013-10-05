@@ -1,0 +1,15 @@
+
+
+<div class="row">
+	<div class="span12">
+		<div class="well">
+
+		<p>Tu libro ha sido ingresado y se le ha generado el siguente código: <%= @book.code %></p>
+
+		<p>Bajá  las instrucciones y pegalas en el libro.</p>
+
+		<a href="/generate_pdf/<%= @book.code %>" class="btn btn-large btn-primary">Bajar instrucciones</a>
+
+		</div>
+	</div>
+</div>

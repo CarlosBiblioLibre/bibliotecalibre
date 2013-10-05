@@ -1,73 +1,65 @@
 <div class="row">
   <h2>¡Gracias por liberar un libro nuevo!</h2>
-  <p>Para liberar un nuevo libro debes: </p>
-  <ul>
-  	<li>Ingresar el libro en el siguiente formulario</li>
-		<li>Escribir -imprimir- pegar las leyendas y el codigo: <strong><%= @book.code %></strong></li>
-  <ul>
+  <br />
+  <p>Liberar un nuevo libro es fácil, solo debes registrarlo acá y luego imprimir y pegar las instrucciones con el código que se generará en las primeras páginas del libro. Una vez hecho esto esta listo para ser liberado, compartelo con algún amigo, dejalo en algún lugar público o llevalo a la próxima liberación de libros.</p>
 </div>
 
 <div class="row">
-  <%= form_for(@book) do |f| %>
-    <% if @book.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
-        <ul>
-        <% @book.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <%= f.hidden_field(:code, value: params[:code]) %>
-    <div class="row">
-      <div class="field span6">
-        <%= f.label :title, 'Título' %><br />
-        <%= f.text_field :title %>
-      </div>
-      <div class="field span6">
-        <%= f.label :author, 'Autor' %><br />
-        <%= f.text_field :author %>
-      </div>
-    </div>
-    <%= f.fields_for :release do |u| %>
-    <div class="row">
-      <div class="field span6">
-        <%= f.label :genre, 'Género' %><br />
-        <%= f.select :genre, Book.genre %>
-      </div>
-      <div class="field span6">
-        <%= u.label :how, '¿Cómo te llego el libro?' %><br />
-        <%= u.select :how, Finding.how_options %>
-      </div>
-    </div>
-       <div class="row">
-          <div class="field span6">
-            <%= u.label :username, '¿Cómo te llamas?' %><br />
-            <%= u.text_field :username %>
-          </div>
-          <div class="field span6">
-            <%= u.label :email, '¿Tu correo electrónico?' %><br />
-            <%= u.text_field :email %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="span6">
-            <div class="field" style="height:100%;">
-              <%= u.label :location, '¿Dónde lo liberarás? (Haz clic en el mapa)' %>
-              <%= u.hidden_field :location %>
-              <br />
-              <div id="map_canvas"></div>
-            </div>
-          </div>
-      </div>
-    <% end %>
-
-    <div class="actions row">
-      <div class="span6">
-        <input name="commit" type="submit" value="Ingresar datos">
-      </div>
-    </div>
+  <%= form_for(@book, url: {action: "printables"}) do |f| %>
+  <% if @book.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
+  <%= f.hidden_field(:code, value: @book.code)%>
+  <div class="row">
+    <div class="field span6">
+      <%= f.label :title, 'Título' %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field span6">
+      <%= f.label :author, 'Autor' %><br />
+      <%= f.text_field :author %>
+    </div>
+  </div>
+<%= f.fields_for :releases do |u| %>
+  <div class="row">
+    <div class="field span6">
+      <%= f.label :genre, 'Género' %><br />
+      <%= f.select :genre, Book.genre %>
+    </div>
+    <div class="field span6">
+     <%= u.label :username, '¿Cómo te llamas?' %><br />
+     <%= u.text_field :username %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field span6">
+     <%= u.label :email, '¿Tu correo electrónico?' %><br />
+     <%= u.text_field :email %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <div class="field" style="height:100%;">
+        <%= u.label :location, '¿Dónde lo liberarás? (Haz clic en el mapa)' %>
+        <%= u.hidden_field :location %>
+        <br />
+        <div id="map_canvas"></div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="actions row">
+  <div class="span6">
+    <input name="commit" type="submit" value="Ingresar datos">
+  </div>
+</div>
+<% end %>
 </div>
