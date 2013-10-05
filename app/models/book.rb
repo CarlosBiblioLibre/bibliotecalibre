@@ -44,24 +44,28 @@ class Book < ActiveRecord::Base
   end
 
   def self.genre
-    return [['Autoayuda', 'Autoayuda'],
+    return [['Arte', 'Arte'],
+            ['Autoayuda', 'Autoayuda'],
             ['Biografía', 'Biografía'],
             ['Crónica & Periodismo', 'Crónica & Periodismo'],
             ['Economía & Empresa', 'Economía & Empresa'],
+            ['Cuento', 'Cuento'],
             ['Ensayo', 'Ensayo'],
             ['Esotérico', 'Esotérico'],
             ['Filosofía & Psicología', 'Filosofía & Psicología'],
             ['Gastronomía', 'Gastronomía'],
             ['Historia', 'Historia'],
-            ['Humor & Comics', 'Humor & Comics'],
-            ['Infantil & Juvenil', 'Infantil & Juvenil'],
-            ['Narrativa', 'Narrativa'],
+            ['Infantil & Juvenil' , 'Infantil & Juvenil' ],
+            ['Novela', 'Novela'],
             ['Poesía', 'Poesía'],
             ['Política', 'Política'],
             ['Religión', 'Religión'],
+            ['Salud', 'Salud'],
             ['Teatro', 'Teatro'],
+            ['Viajes', 'Viajes'],
             ['Otro', 'Otro']]
   end
+
 end
 
 #    [['Autoayuda', 'Autoayuda'],
@@ -80,3 +84,22 @@ end
 #     ['Religión', 'Religión'],
 #     ['Teatro', 'Teatro'],
 #     ['Otro', 'Otro']]
+
+
+# [['Autoayuda', 'Autoayuda'],
+# ['Biografía', 'Biografía'],
+# ['Crónica & Periodismo', 'Crónica & Periodismo'],
+# ['Economía & Empresa', 'Economía & Empresa'],
+# ['Ensayo', 'Ensayo'],
+# ['Esotérico', 'Esotérico'],
+# ['Filosofía & Psicología', 'Filosofía & Psicología'],
+# ['Gastronomía', 'Gastronomía'],
+# ['Historia', 'Historia'],
+# ['Humor & Comics', 'Humor & Comics'],
+# ['Infantil & Juvenil', 'Infantil & Juvenil'],
+# ['Narrativa', 'Narrativa'],
+# ['Poesía', 'Poesía'],
+# ['Política', 'Política'],
+# ['Religión', 'Religión'],
+# ['Teatro', 'Teatro'],
+# ['Otro', 'Otro']]

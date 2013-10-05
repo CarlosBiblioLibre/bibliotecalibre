@@ -43,13 +43,13 @@
 				</div>
 				<div class="row" style="font-size: 10px;">
 					<div class="span3">
-						<img class="pull-left genero" src=<%= genre_to_img(@findings[0].book.genre) %> />
+						<img class="pull-left genero" src=<%= genre_to_img(@findings[0].book.genre) %> alt="<%= @findings[0].book.genre%>" />
 						<p>Autor: <%= @findings[0].book.author %></p>
 						<p>Título: <%= @findings[0].book.title %></p>
 						<p>Hace <%= time_ago_in_words(@findings[0].created_at.to_time) %></p>
 					</div>
 					<div class="span3">
-						<img class="pull-left genero" src=<%= genre_to_img(@findings[1].book.genre) %> />
+						<img class="pull-left genero" src=<%= genre_to_img(@findings[1].book.genre) %> alt="<%= @findings[1].book.genre%>"/>
 						<p>Autor: <%= @findings[1].book.author %></p>
 						<p>Título: <%= @findings[1].book.title %></p>
 						<p>Hace <%= time_ago_in_words(@findings[1].created_at.to_time) %></p>
@@ -57,13 +57,13 @@
 				</div>
 				<div class="row" style="font-size: 10px;">
 					<div class="span3">
-						<img class="pull-left genero" src=<%= genre_to_img(@findings[2].book.genre) %> />
+						<img class="pull-left genero" src=<%= genre_to_img(@findings[2].book.genre) %> alt="<%= @findings[2].book.genre%>"/>
 						<p>Autor: <%= @findings[2].book.author %></p>
 						<p>Título: <%= @findings[2].book.title %></p>
 						<p>Hace <%= time_ago_in_words(@findings[2].created_at.to_time) %></p>
 					</div>
 					<div class="span3">
-						<img class="pull-left genero" src=<%= genre_to_img(@findings[3].book.genre) %> />
+						<img class="pull-left genero" src=<%= genre_to_img(@findings[3].book.genre) %> alt="<%= @findings[3].book.genre%>"/>
 						<p>Autor: <%= @findings[3].book.author %></p>
 						<p>Título: <%= @findings[3].book.title %></p>
 						<p>Hace <%= time_ago_in_words(@findings[3].created_at.to_time) %></p>
