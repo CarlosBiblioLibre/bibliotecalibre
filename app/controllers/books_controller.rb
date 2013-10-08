@@ -38,7 +38,12 @@ class BooksController < ApplicationController
   end
 
   def generate_pdf
-    send_data(do_pdf(params[:code]), :filename => "instrucciones.pdf", :type => "application/pdf")
+    book = Book.find_by_code(params[:code])
+    filename = "#{book.title} #{book.code}"
+    filename = sanitize_filename(filename)
+    filename = filename[0..30]
+
+    send_data(do_pdf(params[:code]), :filename => filename, :type => "application/pdf")
   end
 
   def index
@@ -104,33 +109,28 @@ class BooksController < ApplicationController
   def do_pdf(code)
     Prawn::Document.new do
 
-      bounding_box([100, 750], :width => 250, :height => 260) do
+      bounding_box([100, 750], :width => 250, :height => 210) do
         # stroke_color 'FFFF00'
         stroke_bounds
 
         move_down 20
-        text "En La Biblioteca Libre", align: :center
-        text "creemos que cada libro tiene", align: :center
-        text "su magia, pero que se pierde", align: :center
-        text "si nadie lo lee.", align: :center
+        text "En la Biblioteca Libre creemos", align: :center
+        text "que cada libro tiene su magia,", align: :center
+        text "pero que se pierde si nadie lo lee.", align: :center
         text "¡Por eso este libro te ha", align: :center
-        text "buscado! Dale vida leyéndolo", align: :center
-        text "y compartiéndolo.", align: :center
+        text "encontrado! Dale vida leyéndolo y", align: :center
+        text "compartiéndolo.", align: :center
         text "Ingresa el siguiente código", align: :center
 
-        text code, align: :center
+        text code, align: :center, size: 18
 
-        text "en", align: :center
-        text "www.labibliotecalibre.cl", align: :center
-        text "y así sabremos que está", align: :center
-        text "en buenas manos.", align: :center
-        text "Recuerda compartirlo", align: :center
-        text "cuando lo hayas", align: :center
-        text "terminado, :)", align: :center
-
+        text "en www.labibliotecalibre.cl y así", align: :center
+        text "sabremos que está en buenas", align: :center
+        text "manos. Recuerda compartirlo", align: :center
+        text "cuando lo hayas terminado :)", align: :center
       end
 
-      bounding_box([100, 450], :width => 250, :height => 120) do
+      bounding_box([100, 500], :width => 250, :height => 120) do
         # stroke_color 'FFFF00'
         stroke_bounds
 
@@ -144,5 +144,16 @@ class BooksController < ApplicationController
       end
 
     end.render
+  end
+
+  def sanitize_filename(filename)
+    filename.strip.tap do |name|
+      # NOTE: File.basename doesn't work right with Windows paths on Unix
+      # get only the filename, not the whole path
+      name.sub! /\A.*(\\|\/)/, ''
+      # Finally, replace all non alphanumeric, underscore
+      # or periods with underscore
+      name.gsub! /[^\w\.\-]/, '_'
+    end
   end
 end
