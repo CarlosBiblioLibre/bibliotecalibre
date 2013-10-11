@@ -11,7 +11,7 @@ module BooksHelper
       when 'Cuento' then 'novelas_y_cuentos.png'
       when 'Ensayo' then 'ensayo.png'
       when 'Esotérico' then 'esotérico2.png'
-      when 'Filosofía & Psicología' then 'filosofía2.png'
+      when 'Filosofía & Psicología' then 'filosofia_1.png'
       when 'Gastronomía' then 'gastronomía.png'
       when 'Historia' then 'historia2.png'
       when 'Infantil & Juvenil' then 'infantil_y_juvenil.png'
