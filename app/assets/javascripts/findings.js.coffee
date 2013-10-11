@@ -95,4 +95,6 @@ $ ->
 
   $('#form_submit').attr('disabled', 'disabled');
 
-
+  $("input,select,textarea").not("[type=submit]").jqBootstrapValidation
+    filter: () ->
+      $(this).is(":visible");
