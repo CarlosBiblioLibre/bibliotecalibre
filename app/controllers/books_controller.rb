@@ -109,38 +109,12 @@ class BooksController < ApplicationController
   def do_pdf(code)
     Prawn::Document.new do
 
-      bounding_box([100, 750], :width => 250, :height => 210) do
-        # stroke_color 'FFFF00'
-        stroke_bounds
+      image "#{Rails.root}/app/assets/images/CuponesMuestra4.jpg", position: :center,
+                                                                   vposition: :center,
+                                                                   height: 700
 
-        move_down 20
-        text "En la Biblioteca Libre creemos", align: :center
-        text "que cada libro tiene su magia,", align: :center
-        text "pero que se pierde si nadie lo lee.", align: :center
-        text "¡Por eso este libro te ha", align: :center
-        text "encontrado! Dale vida leyéndolo y", align: :center
-        text "compartiéndolo.", align: :center
-        text "Ingresa el siguiente código", align: :center
-
-        text code, align: :center, size: 18
-
-        text "en www.labibliotecalibre.cl y así", align: :center
-        text "sabremos que está en buenas", align: :center
-        text "manos. Recuerda compartirlo", align: :center
-        text "cuando lo hayas terminado :)", align: :center
-      end
-
-      bounding_box([100, 500], :width => 250, :height => 120) do
-        # stroke_color 'FFFF00'
-        stroke_bounds
-
-        move_down 20
-        text '¿Qué te pareció el libro?', align: :center
-        text 'Cuéntanos más ', align: :center
-        text 'ingresando nuevamente ', align: :center
-        text 'el código en ', align: :center
-        text 'www.labibliotecalibre.cl', align: :center
-        text '¡Y comparte el libro!', align: :center
+      bounding_box([90, 595], :width => 250, :height => 210) do
+        text code, align: :center, size: 22
       end
 
     end.render
