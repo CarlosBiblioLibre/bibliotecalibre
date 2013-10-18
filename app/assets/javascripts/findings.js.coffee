@@ -63,6 +63,12 @@ $ ->
       position: location
       map: window.map
 
+    new google.maps.Marker
+      position: new google.maps.LatLng("-33.435461455359345", "-70.64586102962494")
+      map: window.map
+      icon: "/assets/leerte.jpg"
+      clickable: false
+
     google.maps.event.addListener window.map, 'click', (event) ->
       window.marker.setPosition(event.latLng)
       console.log window.marker.getPosition().toString()
