@@ -63,11 +63,23 @@ $ ->
       position: location
       map: window.map
 
-    new google.maps.Marker
+
+    infowindow = new google.maps.InfoWindow
+      content: "Leerte"
+
+    leerte = new google.maps.Marker
       position: new google.maps.LatLng("-33.435461455359345", "-70.64586102962494")
       map: window.map
-      icon: "/assets/leerte.jpg"
-      clickable: false
+      icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+
+    google.maps.event.addListener leerte, 'click', () ->
+      window.marker.setPosition(new google.maps.LatLng("-33.435461455359345", "-70.64586102962494"))
+
+    google.maps.event.addListener leerte, 'mouseover', () ->
+      infowindow.open(window.map, leerte)
+
+    google.maps.event.addListener leerte, 'mouseout', () ->
+      infowindow.close(window.map, leerte)
 
     google.maps.event.addListener window.map, 'click', (event) ->
       window.marker.setPosition(event.latLng)
