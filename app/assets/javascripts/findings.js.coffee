@@ -65,7 +65,7 @@ $ ->
 
 
     infowindow = new google.maps.InfoWindow
-      content: "Leerte"
+      content: "Leerte: El rincón de los tés y los libros.<br /> Miraflores 610 <br /> Teléfono: 2664 8942 <br />  <img src='/assets/leerte.jpg' alt=''>"
 
     leerte = new google.maps.Marker
       position: new google.maps.LatLng("-33.435461455359345", "-70.64586102962494")
