@@ -5,7 +5,7 @@ module BooksHelper
     return '/assets/genres/' + case genre
       when 'Arte' then 'arte.png'
       when 'Autoayuda' then 'autoayuda.png'
-      when 'Biografía' then 'Biografía.png'
+      when 'Biografía' then 'biografía.png'
       when 'Crónica & Periodismo' then 'crónica_y_periodismo.png'
       when 'Economía & Empresa' then 'economía_y_empresa.png'
       when 'Cuento' then 'novelas_y_cuentos.png'
