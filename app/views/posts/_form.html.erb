@@ -16,13 +16,21 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :description, 'Descripción corta' %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
     <%= f.label :content %><br />
     <%= f.text_area :content, class: 'post_content' %>
   </div>
   <div class="field">
-    <%= f.label :picture, 'Foto' %><br />
-    <%= f.file_field :picture %>
+    <%= f.label :picture, 'Foto: ' %> <%= f.file_field :picture %>
   </div>
+
+  <div class="field">
+    <%= f.label :small_picture, 'Foto chica: ' %> <%= f.file_field :small_picture %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

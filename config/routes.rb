@@ -2,6 +2,13 @@ BiblioLibre::Application.routes.draw do
 
   resources :posts
 
+  get '/noticias/1' => 'biblio_libre#noticia1', :as => 'noticia1'
+  get '/noticias/2' => 'biblio_libre#noticia2', :as => 'noticia2'
+  get '/noticias/3' => 'biblio_libre#noticia3', :as => 'noticia3'
+  get '/noticias/4' => 'biblio_libre#noticia4', :as => 'noticia4'
+  get '/noticias/5' => 'biblio_libre#noticia5', :as => 'noticia5'
+  get '/noticias/:id' => 'posts#noticia'
+
 
   devise_for :users
 
@@ -43,12 +50,6 @@ BiblioLibre::Application.routes.draw do
   get '/qr' => 'biblio_libre#index'
 
   get '/nuevo_home' => 'biblio_libre#index_nuevo'
-
-  get '/noticias/1' => 'biblio_libre#noticia1', :as => 'noticia1'
-  get '/noticias/2' => 'biblio_libre#noticia2', :as => 'noticia2'
-  get '/noticias/3' => 'biblio_libre#noticia3', :as => 'noticia3'
-  get '/noticias/4' => 'biblio_libre#noticia4', :as => 'noticia4'
-  get '/noticias/5' => 'biblio_libre#noticia5', :as => 'noticia5'
 
   get '/instrucciones' => 'biblio_libre#instrucciones', :as => 'instrucciones'
 

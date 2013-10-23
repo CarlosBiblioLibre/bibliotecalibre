@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'paperclip'
-
 gem 'aws-sdk'
 
 gem 'rails', '3.2.11'

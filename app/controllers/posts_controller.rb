@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!, except: [:noticia]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -19,6 +21,10 @@ class PostsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @post }
     end
+  end
+
+  def noticia
+    @post = Post.find(params[:id])
   end
 
   # GET /posts/new

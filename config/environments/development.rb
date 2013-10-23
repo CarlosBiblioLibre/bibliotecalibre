@@ -34,4 +34,13 @@ BiblioLibre::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'biblio-libre',
+      :access_key_id => 'AKIAJUQBEUNVIBZ6KSLQ',
+      :secret_access_key => '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'
+    }
+  }
 end

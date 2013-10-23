@@ -83,11 +83,19 @@
 							<div class="well">
 								<p><strong>Noticias	</strong></p>
 								<ul>
+
+								<% @posts.each do |post| %>
+									<li><%= link_to post.title, post %></li>
+								<% end %>
+
+								<!--
 									<li><%= link_to 'Museo de la Educación Gabriela Mistral (sábado 12 de octubre)', noticia5_path %></li>
 									<li><%= link_to 'Centro Cultural La Moneda (domingo 29 de septiembre)', noticia4_path %></li>
 									<li><%= link_to 'Participa en El día B este 21 de septiembre.', noticia3_path %></li>
 									<li>Revisa nuestro <%= link_to 'Concurso literario', concurso_path %></li>
 									<li>Liberación: <%= link_to 'GAM (sábado 7 de septiembre)', noticia1_path %></li>
+
+									-->
 								</ul>
 								<br />
 								</div>
