@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, except: [:noticia]
+  before_filter :authenticate_user!, except: [:noticia, :show]
 
   # GET /posts
   # GET /posts.json
