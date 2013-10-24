@@ -19,6 +19,8 @@ gem 'devise'
 
 gem 'rails-i18n'
 
+gem 'tinymce-rails'
+
 group :development do
   gem 'annotate', ">=2.5.0"
   gem 'quiet_assets'

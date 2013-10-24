@@ -22,14 +22,6 @@
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 
-  <script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
-  <script type="text/javascript">
-    tinymce.init({
-      plugins: "link",
-      selector: ".post_content"
-    });
-  </script>
-
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-41898970-1']);
