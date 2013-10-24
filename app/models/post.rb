@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :title, :picture, :small_picture
+  attr_accessible :content, :description, :title, :picture, :small_picture
 
   has_attached_file :picture, styles: {
     thumb: '100x100>',

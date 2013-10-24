@@ -1,7 +1,9 @@
 
 <div class="row">
 	<div class="span12" style="text-align: center;">
-		<%= image_tag @post.picture.url(:large) %>
+		<% if @post.picture.url(:large) != "/pictures/large/missing.png" %>
+		 	<%= image_tag @post.picture.url(:large) %>
+		<% end %>
 	</div>
 </div>
 <br />
