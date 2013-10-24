@@ -7,18 +7,27 @@
   <meta name="description" content="La Biblioteca Libre">
   <meta name="author" content="La Biblioteca Libre">
 
+  <meta property="og:title" content="La Biblioteca Libre"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://www.labibliotecalibre.cl/"/>
+  <meta property="og:description" content="La Biblioteca Libre es una iniciativa que promueve el intercambio gratuito de libros: las personas dejan o toman ejemplares de su interés. Los libros de La Biblioteca Libre no son de nadie en particular y son de todos en general. Una vez que leas los libros no los dejes en tu casa juntando polvo, pásalos a alguien más, que sigan su rumbo por el mundo." />
+  <meta property="og:image" content="http://www.labibliotecalibre.cl/assets/lbl.jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="600" />
+
+
   <link rel="shortcut icon" href="/assets/favicon.ico" />
   <%= stylesheet_link_tag "nuevo", :media => "all" %>
-  <script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 
+  <script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
   <script type="text/javascript">
     tinymce.init({
       plugins: "link",
       selector: ".post_content"
     });
-
   </script>
 
   <script type="text/javascript">
@@ -44,45 +53,45 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
+<div class="row">
   <div id="wrapper" class="span12">
     <div class="masthead">
       <ul class="nav nav-pills pull-right botones">
-        <!-- <li class="active"><a href="#">Home</a></li> -->
+        <li><%= link_to('Inicio', root_path) %></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Proyecto<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Manifiesto</a></li>
+            <!-- <li><a href="#">Manifiesto</a></li> -->
             <li><%= link_to('Preguntas frecuentes', faq_path) %></li>
-            <li><a href="#">Equipo</a></li>
+            <!-- <li><a href="#">Equipo</a></li> -->
           </ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Liberaciones<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">¿Qué es?</a></li>
-            <li><a href="#">Calendario</a></li>
+            <li><%= link_to('¿Qué es?', que_es_path) %></li>
+            <!-- <li><a href="#">Calendario</a></li> -->
             <li><%= link_to('Invítanos', invitanos_path) %></li>
           </ul>
         </li>
         <li class="dropdown">
          <a class="dropdown-toggle" data-toggle="dropdown" href="#">+ Libros<b class="caret"></b></a>
          <ul class="dropdown-menu">
-           <li><a href="#">Puntos de lectura</a></li>
+           <!-- <li><a href="#">Puntos de lectura</a></li> -->
            <li><%= link_to('Bibliotecas amigas', bibliotecas_path) %></li>
          </ul>
        </li>
        <li><%= link_to('Contacto', contact_path) %></li>
      </ul>
-     <a href='<%= root_path %>'><img id="logo" src='/assets/lbl.jpg' height='70px' /></a>
+     <a href='<%= root_path %>'><img id="logo" src='/assets/BL_apaisado-03.png' height='70px' /></a>
    </div>
-   <hr />
+   <!-- <hr /> -->
  </div>
 
   <div class="span12">
     <% [:notice, :error, :alert].each do |level| %>
       <% unless flash[level].blank? %>
         <div class="alert alert-message alert-<%= flash_class(level) %>">
-          <a class="close" href="#">×</a>
           <%= content_tag :p, flash[level] %>
         </div>
       <% end %>
@@ -96,7 +105,8 @@
   <div class="span12">
     <div class="row">
       <div class="span12">
-        <hr />
+        <!-- <hr /> -->
+        <br />
       </div>
     </div>
     <div class="row">
@@ -119,6 +129,7 @@
               </div>
               <div class="row">
               <div class="span4">
+                  <img src="/assets/gam.png" style="height:60px; margin-right: 3px;" />
                   <img src="/assets/muni_stgo_bk.png" style="height:60px" />
                   <img src="/assets/startup_bk.png" style="width: 140px" />
                   <img src="/assets/fau_bk.png" style="height:60px" />
@@ -129,6 +140,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 <%= javascript_include_tag "application" %>
 <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyCjFGRwHIUl0nLB59JL-4bWR-w2qc1auqo&sensor=true" %>

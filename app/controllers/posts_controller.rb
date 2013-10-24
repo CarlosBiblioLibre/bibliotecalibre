@@ -32,13 +32,14 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
 
-    # render layout: 'admin'
+    render layout: 'admin'
   end
 
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
-    # render layout: 'admin'
+
+    render layout: 'admin'
   end
 
   # POST /posts
