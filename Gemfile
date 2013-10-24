@@ -10,6 +10,8 @@ gem 'thin'
 
 gem 'prawn'
 
+gem 'tinymce-rails'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -19,7 +21,7 @@ gem 'devise'
 
 gem 'rails-i18n'
 
-gem 'tinymce-rails'
+
 
 group :development do
   gem 'annotate', ">=2.5.0"
