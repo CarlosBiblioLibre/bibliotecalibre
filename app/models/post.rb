@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   }
 
   has_attached_file :small_picture, styles: {
-    thumb: '100x100>',
+    thumb: '260x180>',
     square: '200x200>',
     medium: '300x300>'
   }

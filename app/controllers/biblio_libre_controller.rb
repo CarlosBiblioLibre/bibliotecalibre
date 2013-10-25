@@ -6,6 +6,6 @@ class BiblioLibreController < ApplicationController
 
 	def index_nuevo
 		@findings = Finding.last(4).reverse
-		@posts = Post.last(4).reverse
+		@posts = Post.last(3).reverse
 	end
 end
