@@ -43,12 +43,6 @@
 				<div class="span8">
 
 
-
-
-
-
-
-
 					<% @posts.each do |post| %>
 					<div class="row">
 						<div class="span8">
@@ -63,7 +57,7 @@
 										<% if post.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 										<%= image_tag post.small_picture.url(:thumb) %>
 										<% else %>
-										<img src="http://placehold.it/260x180" alt="">
+										<img src="/assets/160x111.png" alt="">
 										<% end %>
 									</a>
 								</div>
@@ -78,8 +72,6 @@
 					</div>
 					<hr>
 					<% end %>
-
-
 
 				</div>
 			</div>
