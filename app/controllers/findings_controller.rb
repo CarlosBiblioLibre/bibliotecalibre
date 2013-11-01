@@ -16,6 +16,15 @@ class FindingsController < ApplicationController
     @findings = Finding.all
   end
 
+  def emails
+    @emails = {}
+    Finding.all.map do |f|
+      if f.username
+        @emails[f.username] = f.email
+      end
+    end
+  end
+
   # GET /findings/1
   # GET /findings/1.json
   def show

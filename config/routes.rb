@@ -49,6 +49,8 @@ BiblioLibre::Application.routes.draw do
   get '/QR' => 'biblio_libre#index'
   get '/qr' => 'biblio_libre#index'
 
+  get '/emails' => 'findings#emails'
+
   get '/nuevo_home' => 'biblio_libre#index_nuevo'
 
   get '/instrucciones' => 'biblio_libre#instrucciones', :as => 'instrucciones'
