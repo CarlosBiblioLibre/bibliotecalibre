@@ -5,12 +5,6 @@
 </div>
 <br />
 
-<div class="row">
-  <div class="span5 offset7">
-      <div class="fb-like pull-right" data-href="<%= request.original_url %>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
-  </div>
-</div>
-
 <%= form_for @message, url: concurso_path, html: {class: ""} do |form| %>
 
   <div class="row">
@@ -18,22 +12,33 @@
 
       <div class="row">
         <div class="span12">
-          <br />
-          <strong>Concurso Literario: Se Busca al Nuevo Superhéroe del Mundo</strong>
-          <br /><br />
 
-          <p>¿Has soñado con tener súper poderes y salvar el mundo? ¿O hacerlo un poquito mejor de lo que es? En la Biblioteca Libre te invitamos a que revivas ese personaje que alguna vez imaginaste, aquel capaz de resolver los problemas de este planeta y combatir a los malvados. Gordos, flacos, chicos, gigantes, musculosos, enmascarados, encapuchados, humanos, alienígenas o mutantes. Todos son parte de este concurso.</p>
+          <div class="row">
+            <div class="span7">
+              <br />
+              <strong>Concurso Literario: Se Busca al Nuevo Superhéroe del Mundo</strong>
+              <br /><br />
+            </div>
+            <div class="span5 offset7">
+              <div class="fb-like pull-right" data-href="<%= request.original_url %>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <p>¿Has soñado con tener súper poderes y salvar el mundo? ¿O hacerlo un poquito mejor de lo que es? En la Biblioteca Libre te invitamos a que revivas ese personaje que alguna vez imaginaste, aquel capaz de resolver los problemas de este planeta y combatir a los malvados. Gordos, flacos, chicos, gigantes, musculosos, enmascarados, encapuchados, humanos, alienígenas o mutantes. Todos son parte de este concurso.</p>
 
-          <p>Son 5 páginas tamaño carta, como máximo de extensión, que puedes usar para contar la historia de tu superhéroe. Puedes hacerlo utilizando el género literario que más te guste.</p>
+              <p>Son 5 páginas tamaño carta, como máximo de extensión, que puedes usar para contar la historia de tu superhéroe. Puedes hacerlo utilizando el género literario que más te guste.</p>
 
-          <p>En todo caso, no te tomes mucho tiempo pues la fecha límite para recibir tu escrito vence, irrevocablemente, el viernes 31 de enero de 2014 a las 23:59 hrs.</p>
+              <p>En todo caso, no te tomes mucho tiempo pues la fecha límite para recibir tu escrito vence, irrevocablemente, el viernes 31 de enero de 2014 a las 23:59 hrs.</p>
 
-          <p>¿El premio? Los 10 textos más destacados serán ilustrados y publicados en un libro edición especial de la Biblioteca Libre.</p>
+              <p>¿El premio? Los 10 textos más destacados serán ilustrados y publicados en un libro edición especial de la Biblioteca Libre.</p>
 
-          <p>Llena el siguiente formulario con tus datos para poder concursar. No olvides adjuntar el archivo con tu texto. Además, aprovecha de revisar las <strong><a href="/assets/Bases Concurso Literario BL 2.pdf" target="_blank" style="color: #0055cc">bases</a></strong>  del concurso por si te queda alguna duda.</p>
+              <p>Llena el siguiente formulario con tus datos para poder concursar. No olvides adjuntar el archivo con tu texto. Además, aprovecha de revisar las <strong><a href="/assets/Bases Concurso Literario BL 2.pdf" target="_blank" style="color: #0055cc">bases</a></strong>  del concurso por si te queda alguna duda.</p>
 
-          <p>Recuerda que siempre puedes contactar al equipo de la Biblioteca Libre por medio de biblioteca@catedraslibres.com en caso de consultas.</p>
-          <br />
+              <p>Recuerda que siempre puedes contactar al equipo de la Biblioteca Libre por medio de biblioteca@catedraslibres.com en caso de consultas.</p>
+              <br />
+            </div>
+          </div>
         </div>
 
       </div>
