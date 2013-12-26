@@ -21,7 +21,9 @@ class NotificationsMailer < ActionMailer::Base
     # p "message #{message}"
     # p "#"*20
 
-    attachments[document.original_filename] = document.read # File.read(document.path)
+    if document
+      attachments[document.original_filename] = document.read # File.read(document.path)
+    end
 
     #attachments["#{document.original_filename}"] = {
     #  :encoding => 'base64',
