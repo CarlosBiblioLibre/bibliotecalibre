@@ -54,6 +54,9 @@ class ContactController < ApplicationController
   end
 
   def concurso
+    @og_description = "¿Has soñado con tener súper poderes y salvar el mundo? ¿O hacerlo un poquito mejor de lo que es? En la Biblioteca Libre te invitamos a que revivas ese personaje que alguna vez imaginaste, aquel capaz de resolver los problemas de este planeta y combatir a los malvados. Gordos, flacos, chicos, gigantes, musculosos, enmascarados, encapuchados, humanos, alienígenas o mutantes. Todos son parte de este concurso."
+    @og_title = "Concurso Literario: Se Busca al Nuevo Superhéroe del Mundo"
+
     @message = Message.new
   end
 
@@ -68,6 +71,9 @@ class ContactController < ApplicationController
       redirect_to(root_path, :notice => "Hemos recibido tu obra, muchas gracias por participar.")
     else
       flash.now.alert = "Todos los campos son necesarios."
+
+      @og_description = "¿Has soñado con tener súper poderes y salvar el mundo? ¿O hacerlo un poquito mejor de lo que es? En la Biblioteca Libre te invitamos a que revivas ese personaje que alguna vez imaginaste, aquel capaz de resolver los problemas de este planeta y combatir a los malvados. Gordos, flacos, chicos, gigantes, musculosos, enmascarados, encapuchados, humanos, alienígenas o mutantes. Todos son parte de este concurso."
+      @og_title = "Concurso Literario: Se Busca al Nuevo Superhéroe del Mundo"
       render :concurso
     end
   end
