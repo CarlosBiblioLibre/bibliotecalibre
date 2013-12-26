@@ -4,6 +4,12 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="span12">
+      <div class="fb-like pull-right" data-href="<%= request.original_url %>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+  </div>
+</div>
+
 <%= form_for @message, url: concurso_path, html: {class: ""} do |form| %>
 
   <div class="row">
