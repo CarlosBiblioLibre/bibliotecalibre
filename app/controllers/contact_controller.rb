@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ContactController < ApplicationController
 
   def new
@@ -59,9 +61,11 @@ class ContactController < ApplicationController
     params[:message][:subject] = "[Concurso]"
     @message = Message.new(params[:message])
 
+
     if @message.valid?
       NotificationsMailer.new_message_concurso(@message, params[:message][:document]).deliver
-      redirect_to(root_path, :notice => "Mensaje enviado correctamente.")
+      NotificationsMailer.new_message_confirmacion(params[:message][:email], params[:message][:name]).deliver
+      redirect_to(root_path, :notice => "Hemos recibido tu obra, muchas gracias por participar.")
     else
       flash.now.alert = "Todos los campos son necesarios."
       render :concurso

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require "base64"
 
 class NotificationsMailer < ActionMailer::Base
@@ -13,11 +15,11 @@ class NotificationsMailer < ActionMailer::Base
   def new_message_concurso(message, document)
     @message = message
 
-    p "#"*20
-    p "original_filename: " + document.original_filename
-    p "#"*20
-    p "message #{message}"
-    p "#"*20
+    # p "#"*20
+    # p "original_filename: " + document.original_filename
+    # p "#"*20
+    # p "message #{message}"
+    # p "#"*20
 
     attachments[document.original_filename] = document.read # File.read(document.path)
 
@@ -26,7 +28,16 @@ class NotificationsMailer < ActionMailer::Base
     #  :content  => Base64.b64encode(document.read)
     #}
 
-    mail(:subject => "[LaBibliotecaLibre.cl] #{message.subject}")
+    mail(subject: "[LaBibliotecaLibre.cl] #{message.subject}")
+  end
+
+  def new_message_confirmacion(email, nombre)
+    @message = Message.new
+
+    @message.email = email
+    @message.name = nombre
+
+    mail(to: email, subject: "¡Gracias por participar! ")
   end
 
 end
