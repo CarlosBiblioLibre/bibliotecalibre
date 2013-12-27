@@ -20,8 +20,8 @@ class PostsController < ApplicationController
     @og_description = @post.description
     @og_title = @post.title
 
-    if @post.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png"
-      @og_image = @post.small_picture.url(:thumb)
+    if @post.small_picture.url(:face) != "/small_pictures/face/missing.png"
+      @og_image = @post.small_picture.url(:face)
     end
 
     respond_to do |format|
