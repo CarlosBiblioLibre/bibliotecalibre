@@ -8,9 +8,11 @@ class Post < ActiveRecord::Base
     large: '1170x390'
   }
 
+
+  # thumb: '260x180>',
   has_attached_file :small_picture, styles: {
-    thumb: '260x180>',
-    face: '320x222>',
+    thumb: '160x111>',
+    face: '320x222',
     square: '200x200>',
     medium: '300x300>'
   }
