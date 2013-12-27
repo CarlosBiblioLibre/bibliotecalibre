@@ -20,6 +20,10 @@ class PostsController < ApplicationController
     @og_description = @post.description
     @og_title = @post.title
 
+    if @post.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png"
+      @og_image = @post.small_picture.url(:thumb)
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
