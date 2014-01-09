@@ -109,9 +109,17 @@ class BooksController < ApplicationController
   def do_pdf(code)
     Prawn::Document.new do
 
-      image "#{Rails.root}/app/assets/images/CuponesMuestra4.jpg", position: :center,
-                                                                   vposition: :center,
-                                                                   height: 700
+
+      cupon_foto = "#{Rails.root}/app/assets/images/cupon1.jpg"
+
+      r = Random.rand(2)
+      if r < 1
+        cupon_foto = "#{Rails.root}/app/assets/images/cupon2.jpg"
+      end
+
+      image cupon_foto, position: :center,
+                        vposition: :center,
+                        height: 700
 
       bounding_box([90, 595], :width => 250, :height => 210) do
         text code, align: :center, size: 22
