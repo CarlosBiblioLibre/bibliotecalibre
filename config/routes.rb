@@ -55,5 +55,7 @@ BiblioLibre::Application.routes.draw do
 
   get '/instrucciones' => 'biblio_libre#instrucciones', :as => 'instrucciones'
 
+  get '/colaboradores' => 'biblio_libre#colaboradores', :as => 'colaboradores'
+
   root to: 'biblio_libre#index_nuevo'
 end
