@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131022043512) do
+ActiveRecord::Schema.define(:version => 20140214025250) do
+
+  create_table "battles", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "book1"
+    t.string   "book2"
+    t.integer  "book1_count"
+    t.integer  "book2_count"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "book1_picture_file_name"
+    t.string   "book1_picture_content_type"
+    t.integer  "book1_picture_file_size"
+    t.datetime "book1_picture_updated_at"
+    t.string   "book2_picture_file_name"
+    t.string   "book2_picture_content_type"
+    t.integer  "book2_picture_file_size"
+    t.datetime "book2_picture_updated_at"
+  end
 
   create_table "books", :force => true do |t|
     t.string   "title"

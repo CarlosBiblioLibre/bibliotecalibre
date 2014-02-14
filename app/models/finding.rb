@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 # == Schema Information
 #
 # Table name: findings
@@ -10,6 +9,8 @@
 #  updated_at :datetime         not null
 #  book_id    :integer
 #  how        :string(255)
+#  username   :string(255)
+#  email      :string(255)
 #
 
 class Finding < ActiveRecord::Base

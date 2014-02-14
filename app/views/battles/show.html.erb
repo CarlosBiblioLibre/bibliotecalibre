@@ -1,0 +1,41 @@
+
+<div class="row">
+	<div class="span12" style="text-align: center;">
+		<% if @battle.picture.url(:large) != "/pictures/large/missing.png" %>
+		 	<%= image_tag @battle.picture.url(:large) %>
+		<% end %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12 negro">
+	<p id="notice"><%= notice %></p>
+	<h3><%= @battle.title %></h3>
+		<p>
+		  <%= @battle.content %>
+		</p>
+
+	</div>
+</div>
+
+<div class="row">
+<div class="span6">
+			<% if @battle.book1_picture.url(:medium) != "/pictures/medium/missing.png" %>
+			 	<%= image_tag @battle.book1_picture.url(:medium), style: "margin: auto;" %>
+			<% end %>
+		  <h4 style="text-align: center;"><%= @battle.book1 %></h4>
+		  <h4 style="text-align: center;"><%= @battle.book1_count %></h4>
+</div>
+<div class="span6">
+			<% if @battle.book2_picture.url(:medium) != "/pictures/medium/missing.png" %>
+			 	<%= image_tag @battle.book2_picture.url(:medium), style: "float: center;" %>
+			<% end %>
+		  <h4 style="text-align: center;"><%= @battle.book2 %></h4>
+		  <h4 style="text-align: center;"><%= @battle.book2_count %></h4>
+</div>
+</div>
+
+<div class="row">
+	<%= user_signed_in? ? link_to('Edit', edit_battle_path(@battle)) + '  |' : '' %>
+	<%= user_signed_in? ? link_to('Back', battles_path) + ' ' : '' %>
+</div>

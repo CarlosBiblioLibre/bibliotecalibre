@@ -8,6 +8,8 @@
 #  updated_at :datetime         not null
 #  book_id    :integer
 #  how        :string(255)
+#  username   :string(255)
+#  email      :string(255)
 #
 
 require 'test_helper'

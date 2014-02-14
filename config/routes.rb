@@ -16,6 +16,8 @@ BiblioLibre::Application.routes.draw do
   resources :findings
   resources :books
 
+  resources :battles
+
   get '/books/:code/ajax' => 'books#show_by_code', as: 'books_ajax'
 
   get '/check_code' => 'books#check_code'
