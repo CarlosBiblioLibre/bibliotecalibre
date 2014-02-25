@@ -9,6 +9,9 @@ BiblioLibre::Application.routes.draw do
   get '/noticias/5' => 'biblio_libre#noticia5', :as => 'noticia5'
   get '/noticias/:id' => 'posts#noticia'
 
+  get '/vota/:battle_id/:book' => 'battles#vote'
+
+  get '/zohoverify/verifyforzoho.html', to: redirect('/assets/verifyforzoho.html')
 
   devise_for :users
 

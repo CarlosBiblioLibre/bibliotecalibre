@@ -12,6 +12,30 @@ class BattlesController < ApplicationController
     end
   end
 
+  def vote
+    battle_id = params[:battle_id]
+    book = params[:book]
+
+    begin
+      @battle = Battle.find(battle_id)
+
+      if book == "1"
+        @battle.book1_count += 1
+      end
+
+      if book == "2"
+        @battle.book2_count += 1
+      end
+
+      @battle.save
+
+      render :nothing => true, :status => 200, :content_type => 'text/html'
+    rescue => ex
+      render :nothing => true, :status => 500, :content_type => 'text/html'
+    end
+
+  end
+
   # GET /battles/1
   # GET /battles/1.json
   def show
