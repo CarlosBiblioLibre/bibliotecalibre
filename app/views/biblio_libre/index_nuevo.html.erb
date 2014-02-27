@@ -3,17 +3,18 @@
 			<div id="myCarousel" class="carousel slide">
 				<div class="carousel-inner">
 
+
+					<!--
 					<div class="item active">
 						<a href="http://www.labibliotecalibre.cl/posts/9"><img src="http://biblio-libre.s3.amazonaws.com/posts/pictures/000/000/009/large/Liberaci%C3%B3n_Balmaceda_Web.png?1391017655" alt="" /></a>
 					</div>
 
-					<!--
 					<div class="item active">
 						<img src="/assets/aire libre web-02.jpg" alt="" />
 					</div>
 					-->
 
-					<div class="item">
+					<div class="item active">
 						<a href="<%= que_es_path %>"><img src="/assets/Fotos Portada-01.jpg" alt="" /></a>
 					</div>
 
@@ -88,17 +89,17 @@
 
 		<div class="span4"> <!-- columna 2 -->
 			<div class="row">
-				<div class="span4">
-					<a href="#modal_code" role="button" class="btn btn-large btn-block btn-primary" style="display: block; width: 95%;" data-toggle="modal">Registra libros</a>
+				<div class="span4" style="padding: 0;">
+					<a href="#modal_code" role="button" class="btn btn-large btn-block btn-primary" style="width: 343px;" data-toggle="modal">Registra libros</a>
 				</div>
 			</div>
 			<div class="row" style="margin-top: 10px;">
 				<div class="span2">
 					<!-- <a href="#modal_prox" role="button" class="btn btn-large btn-block btn-primary" style="color: white; width: 90%;" data-toggle="modal">Libera tus libros</a> -->
-					<%= link_to 'Libera tus libros', new_book_and_release_path, { class: "btn btn-large btn-block btn-primary", style: "color: white; width: 90%;" } %>
+					<%= link_to 'Libera tus libros', new_book_and_release_path, { class: "btn btn-large btn-block btn-primary", style: "color: white; width: 143px" } %>
 				</div>
 				<div class="span2 pull-right">
-					<%= link_to 'Dona tus libros', dona_path, { class: "btn btn-large btn-block btn-primary", style: "width: 90%;" } %>
+					<%= link_to 'Dona tus libros', dona_path, { class: "btn btn-large btn-block btn-primary", style: "width: 143px;" } %>
 				</div>
 			</div>
 			<!--
@@ -115,13 +116,20 @@
 				</div>
 				-->
 			</div>
-			<!--
+
 			<div class="row" >
 				<div class="span6">
-					<a href="/assets/libro.pdf"><img src="/assets/banner libro.png" alt="" /></a>
+					<a href="/assets/libro.pdf"><img src="/assets/banner libro.png" width="370px" alt="" /></a>
 				</div>
 			</div>
-			-->
+
+			<div class="row" >
+				<div class="span6">
+				<br />
+					<a href="http://www.bibliorock.cl/"><img src="/assets/banner bibliorock.jpg" width="370px" alt="" /></a>
+				</div>
+			</div>
+
 			<div class="row" style="margin-top: 20px;">
 				<div class="span6">
 					<div class="fb-like-box" data-href="https://www.facebook.com/labibliotecalibre" data-width="100%" data-show-faces="false" data-header="false" data-stream="false" data-show-border="true"></div>
