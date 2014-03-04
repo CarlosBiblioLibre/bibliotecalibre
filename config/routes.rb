@@ -62,5 +62,7 @@ BiblioLibre::Application.routes.draw do
 
   get '/colaboradores' => 'biblio_libre#colaboradores', :as => 'colaboradores'
 
+  get '/donativos' => 'biblio_libre#donativos', :as => 'donativos'
+
   root to: 'biblio_libre#index_nuevo'
 end
