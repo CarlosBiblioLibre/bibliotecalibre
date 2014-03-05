@@ -42,6 +42,7 @@
   <link rel="shortcut icon" href="/assets/favicon.ico" />
   <%= stylesheet_link_tag "nuevo", :media => "all" %>
   <%= csrf_meta_tags %>
+  <br>
   <%= yield(:head) %>
 
   <script type="text/javascript">
@@ -70,7 +71,7 @@
 <div class="row">
   <div id="wrapper" class="span12">
     <div class="masthead">
-      <ul class="nav nav-pills pull-right botones">
+      <ul class="nav nav-pills pull-right botones" style="font-size: 14px">
         <li><%= link_to('Inicio', root_path) %></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Proyecto<b class="caret"></b></a>
@@ -114,6 +115,7 @@
   </div>
 
   <div class="span12">
+    <br><br>
   <%= yield %>
  </div>
 

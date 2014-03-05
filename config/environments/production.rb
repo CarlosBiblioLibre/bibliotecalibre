@@ -68,9 +68,9 @@ BiblioLibre::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => 'biblio-libre',
-      :access_key_id => 'AKIAJUQBEUNVIBZ6KSLQ',
-      :secret_access_key => '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'
+      :bucket => 'bibliorock',
+      :access_key_id => 'AKIAJHV5LSTQ2YNQB4RA',
+      :secret_access_key => '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'
     }
   }
 end
