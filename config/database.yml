@@ -9,6 +9,7 @@
 #  database: db/development.sqlite3
 #  pool: 5
 #  timeout: 5000
+host: localhost
 
 development:
   adapter: postgresql
