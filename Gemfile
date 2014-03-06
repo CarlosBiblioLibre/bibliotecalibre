@@ -10,6 +10,8 @@ gem 'thin'
 
 gem 'prawn'
 
+gem 'gibbon', github: "amro/gibbon"
+
 gem 'tinymce-rails'
 
 # Bundle edge Rails instead:
