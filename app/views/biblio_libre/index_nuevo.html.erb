@@ -1,5 +1,5 @@
 	<div class="row">
-		<div class="span12 text-center" align="center">
+		<div class="span8">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
 
@@ -15,7 +15,7 @@
 					-->
 
 					<div class="item active" align="center">
-						<a href="<%= que_es_path %>"><img src="https://s3.amazonaws.com/bibliorock/lienzo_web-02.jpg" width="770" height="340" alt="" /></a>
+						<a href="<%= que_es_path %>"><iframe width="770px" height="340px" src="//www.youtube.com/embed/70fdIG57iiw" frameborder="0" allowfullscreen alt="" /></iframe></a>
 					</div>
 
 					<div class="item">
@@ -25,12 +25,26 @@
 					<div class="item">
 						<a href="http://www.catedraslibres.org"><img src="/assets/CL_Web-05.png" width="770" height="340" alt="" /></a>
 					</div>
-
 				</div>
 
 				<a class="left carousel-control" style="top: 50%;" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 				<a class="right carousel-control" style="top: 50%;" href="#myCarousel" data-slide="next">&rsaquo;</a>
-
+			</div>
+		</div>
+		<div class="span4">
+			<div class="span4" style="padding: 0;">
+					<a href="#modal_code" role="button" class="btn btn-large btn-block btn-primary" style="width: 343px;" data-toggle="modal">Registra libros</a>
+			</div>
+					<div class="span2" style="margin-top: 10px">
+					<%= link_to 'Libera tus libros', new_book_and_release_path, { class: "btn btn-large btn-block btn-primary", style: "color: white; width: 143px" } %>
+					</div>
+					<div class="span1 pull-right" style="margin-top: 10px">
+					<%= link_to 'Dona tus libros', dona_path, { class: "btn btn-large btn-block btn-primary", style: "width: 143px;" } %>
+					</div>
+					<br><br>
+					<div class="span6" style="margin-top: 12px">
+					<a href="/assets/libro.pdf"><img src="/assets/banner libro.png" width="370px" alt="" /></a>
+					</div>
 			</div>
 		</div>
 	</div>
