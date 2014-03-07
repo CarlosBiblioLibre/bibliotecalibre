@@ -55,18 +55,19 @@
 				<div class="span8">
 					<h3>Novedades</h3>
 
+					<% @posts.each do |post| %>
 					<div class="row">
 						<div class="span8">
 							<div class="row">
 								<div class="span8">
-									<h4 style="margin-bottom: 5px;"><strong><%= link_to Post.find(10).title, Post.find(10) %></strong></h4>
+									<h4 style="margin-bottom: 5px;"><strong><%= link_to post.title, post %></strong></h4>
 								</div>
 							</div>
 							<div class="row">
 								<div class="span2">
 									<a href="<%= url_for(post) %>" class="thumbnail">
-										<% if Post.find(10).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-										<%= image_tag Post.find(10).small_picture.url(:thumb) %>
+										<% if post.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+										<%= image_tag post.small_picture.url(:thumb) %>
 										<% else %>
 										<img src="/assets/160x111.png" alt="">
 										<% end %>
@@ -74,7 +75,7 @@
 								</div>
 								<div class="span6">
 									<p>
-										<%= Post.find(10).description %>
+										<%= post.description %>
 									</p>
 									<p><a class="btn" href="<%= url_for(post) %>">Leer más</a></p>
 								</div>
@@ -82,6 +83,7 @@
 						</div>
 					</div>
 					<hr>
+					<% end %>
 
 				</div>
 			</div>
