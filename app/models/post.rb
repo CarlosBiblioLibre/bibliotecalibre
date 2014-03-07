@@ -36,4 +36,7 @@ class Post < ActiveRecord::Base
     square: '200x200>',
     medium: '300x300>'
   }
+
+  validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :small_picture, :content_type => /\Aimage\/.*\Z/
 end
