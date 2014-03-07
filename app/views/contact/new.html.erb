@@ -1,30 +1,30 @@
 <%= form_for @message, url: contact_path, html: {class: ""} do |form| %>
   <div class="row">
-    <div class="span12 well">
+    <div class="span8 offset2 well">
       <div class="row">
-        <div class="span12">
+        <div class="span8">
           <h4>¿Alguna duda o sugerencia? ¿Tienes libros en tu casa que quieras donar a nuestra biblioteca? Mándanos un mensaje y te responderemos a la brevedad.</h4>
           <br />
         </div>
       </div>
       <div class="row">
-        <div class="span5">
+        <div class="span3">
           <%= form.label :name, 'Nombre' %>
-          <%= form.text_field :name, class: "span4", placeholder: "Nombre" %>
+          <%= form.text_field :name, class: "span3", placeholder: "Nombre" %>
           <%= form.label :email %>
-          <%= form.text_field :email, class: "span4", placeholder: "Correo" %>
+          <%= form.text_field :email, class: "span3", placeholder: "Correo" %>
           <label>Asunto</label>
-          <%= form.text_field :subject, class: "span4" %>
+          <%= form.text_field :subject, class: "span3" %>
         </div>
-        <div class="span7">
+        <div class="span4">
           <div class="row">
-            <div class="span7">
+            <div class="span4">
               <label>Mensaje</label>
-              <%= form.text_area :body, class: "input-xlarge span7", rows: 10 %>
+              <%= form.text_area :body, class: "input-xlarge span5", rows: 10 %>
             </div>
           </div>
           <div class="row">
-            <div class="span7">
+            <div class="span4">
               <%= form.submit "Enviar", class: "btn btn-primary pull-right" %>
             </div>
           </div>
