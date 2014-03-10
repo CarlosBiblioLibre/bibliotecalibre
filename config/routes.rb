@@ -9,6 +9,8 @@ BiblioLibre::Application.routes.draw do
   get '/noticias/5' => 'biblio_libre#noticia5', :as => 'noticia5'
   get '/noticias/:id' => 'posts#noticia'
   get '/galeria1' => 'biblio_libre#galeria1'
+  get '/about' => 'biblio_libre#about'
+  get '/about/faqs' => 'about#faqs'
 
   get '/vota/:battle_id/:book' => 'battles#vote'
 
