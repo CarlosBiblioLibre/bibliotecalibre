@@ -85,14 +85,6 @@
       <ul class="nav nav-pills pull-right botones" style="font-size: 14px">
         <li><%= link_to('Inicio', root_path) %></li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Proyecto<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <!-- <li><a href="#">Manifiesto</a></li> -->
-            <li><%= link_to('Preguntas frecuentes', faq_path) %></li>
-            <!-- <li><a href="#">Equipo</a></li> -->
-          </ul>
-        </li>
-        <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Liberaciones<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><%= link_to('¿Qué es?', que_es_path) %></li>
@@ -108,7 +100,7 @@
          </ul>
        </li>
        <li><%= link_to('Colaboradores', colaboradores_path) %></li>
-       <li><%= link_to('Nosotros', '/about') %></li>
+       <li><%= link_to('Proyecto', '/about') %></li>
      </ul>
      <a href='<%= root_path %>'><img id="logo" src='/assets/BL_apaisado-03.png' height='70px' /></a>
    </div>
