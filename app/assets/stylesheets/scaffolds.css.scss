@@ -37,9 +37,6 @@ pre {
 
 a {
   color: #636363;
-  &:visited {
-    /* color: #666; */
-  }
   &:hover {
     color: #0055cc;
   }
@@ -272,3 +269,31 @@ div {
 #wrap > .container {
         padding-top: 60px;
       }
+
+tr {
+display: table-row;
+vertical-align: inherit;
+border-color: inherit;
+}
+
+div {
+display: block;
+}
+
+.pregu01 {
+font-family: Geneva, Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #49132A;
+border-bottom-width: 1px;
+border-bottom-style: dotted;
+border-bottom-color: #49132A;
+margin-bottom: 5px;
+}
+
+.pregu02 {
+font-family: Georgia, "Times New Roman", Times, serif;
+color: #7E113B;
+font-size: 11px;
+font-style: normal;
+font-weight: normal;
+}
