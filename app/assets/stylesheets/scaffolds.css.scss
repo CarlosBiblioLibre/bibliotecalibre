@@ -134,17 +134,19 @@ div {
     position: relative;
 }
 .view h2 {
-    text-transform: uppercase;
     color: #fff;
-    text-align: center;
+    font-family: Helvetica;
+    font-weight: 500;
+    text-align: left;
     position: relative;
-    font-size: 17px;
+    font-size: 15px;
     padding: 10px;
     background: rgba(0, 0, 0, 0.8);
-    margin: 20px 0 0 0
+    margin-top: 70px;
 }
+
 .view p {
-    font-family: Georgia, serif;
+    font-family: Helvetica Neue Lt Std 65 Medium;
     font-style: italic;
     font-size: 12px;
     position: relative;
@@ -169,14 +171,13 @@ div {
     transition: all 0.4s ease-in-out 0.5s; 
 }
 .view-sixth .mask{ 
-    background-color: rgba(146,96,91,0.5);
+    background-color: rgba(26,117,177, 0.4);
     opacity:0;
     transition: all 0.1s ease-in 0.1s;
 }
 .view-sixth h2{
     opacity:0;
     background: transparent;
-    margin: 20px 40px 0px 40px;
     transform: scale(10);
     transition: all 0.1s ease-in-out 0.1s;
 }
@@ -184,6 +185,7 @@ div {
     opacity:0;
     transform: scale(10);
     transition: all 0.1s ease-in-out 0.1s;
+    margin-top: -15px;
 }
 .view-sixth a.info { 
     opacity:0;
@@ -191,7 +193,7 @@ div {
     transition: all 0.3s ease-in-out 0.1s;
 }
 .view-sixth:hover .mask {  
-    opacity:100; 
+    opacity:1; 
     transition-delay: 0s;
 }                                                                            
 .view-sixth:hover img { 
