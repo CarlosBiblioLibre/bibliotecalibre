@@ -14,6 +14,7 @@ BiblioLibre::Application.routes.draw do
   get '/galeria3' => 'biblio_libre#galeria3'
   get '/about' => 'biblio_libre#about'
   get '/about/faqs' => 'about#faqs'
+  get '/about/equipo' => 'about#equipo'
   get '/bibliocabinas' => 'biblio_libre#bibliocabinas'
 
   get '/vota/:battle_id/:book' => 'battles#vote'
