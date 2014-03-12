@@ -86,7 +86,7 @@
 						<% if Post.find(i).tag_list == ["liberación"] %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-								<%= image_tag Post.find(i).small_picture.url(:thumb), Post.find(i) %>
+							<%= image_tag Post.find(i).small_picture.url(:thumb) %>
 							<% else %>
 								<img src="https://s3.amazonaws.com/bibliorock/Avatar-50.jpg" alt="">
 								<% end %>
