@@ -188,7 +188,8 @@
 						<img class="pull-left genero" src=<%= genre_to_img(finding.book.genre) %> alt="<%= @findings[0].book.genre%>" title="<%= @findings[0].book.genre%>" />
 						<% new_string = finding.book.title.slice(0,1).capitalize + finding.book.title.slice(1..-1) %>
 						<p style="font-size: 13px"><strong><%= new_string %></strong></p>
-						<p>Autor: <%=  finding.book.author %></p>
+						<% new_string2 = finding.book.author.slice(0,1).capitalize + finding.book.author.slice(1..-1) %>
+						<p>Autor: <%=  new_string2 %></p>
 						<p class="text-muted"><small>Hace <%= time_ago_in_words(finding.created_at.to_time) %></small></p>
 					</div>
 				<% end %>
