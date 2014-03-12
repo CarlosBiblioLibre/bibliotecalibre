@@ -186,7 +186,7 @@
 				<% @findings.each do |finding| %>
 					<div class="span4">
 						<img class="pull-left genero" src=<%= genre_to_img(finding.book.genre) %> alt="<%= @findings[0].book.genre%>" title="<%= @findings[0].book.genre%>" />
-						<% new_string = finding.book.title.split(/\s+/).each{ |word,i| word.capitalize! unless i > 0 }.join(' ') %>
+						<% new_string = finding.book.title.split(/\s+/).each{ |word,i| word.capitalize!}.join(' ') %>
 						<p style="font-size: 13px"><strong><%= new_string %></strong></p>
 						<% new_string2 = finding.book.author.slice(0,1).capitalize + finding.book.author.slice(1..-1) %>
 						<p>Autor: <%=  new_string2 %></p>
