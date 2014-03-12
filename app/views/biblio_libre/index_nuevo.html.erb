@@ -54,46 +54,113 @@
 	<div class="row">
 		<div class="span8"> <!-- columna 1 -->
 
-			<div class="row" style="margin-top:-55px"> <!-- noticias -->
-				<div class="span8">
-					<h3>Novedades</h3>
-
-					<% @posts.each do |post| %>
-					<div class="row">
-						<div class="span8">
-							<div class="row">
-								<div class="span8">
-									<h4 style="margin-bottom: 5px;"><strong><%= link_to post.title, post %></strong></h4>
-								</div>
-							</div>
-							<div class="row">
-								<div class="span2">
-									<a href="<%= url_for(post) %>" class="thumbnail">
-										<% if post.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-										<%= image_tag post.small_picture.url(:thumb) %>
-										<% else %>
-										<img src="/assets/160x111.png" alt="">
-										<% end %>
-									</a>
-								</div>
-								<div class="span6">
-									<p>
-										<%= post.description %>
-									</p>
-									<p><a class="btn" href="<%= url_for(post) %>">Leer más</a></p>
-								</div>
-							</div>
+			<div class="row" style="margin-top:-55px; margin-left:-50px"> <!-- noticias -->
+				<div class="span4">
+					<img src="https://s3.amazonaws.com/bibliorock/Textos-43.jpg" alt="" />
+					<br><br>
+					<% i=Post.last.id %>
+					<% while true %>
+						<% if Post.find(i).tag_list == ["liberación"] %>
+						<div class="span2" style="margin-left:-0px">
+							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+								<%= image_tag Post.find(i).small_picture.url(:thumb) %>
+							<% else %>
+								<img src="https://s3.amazonaws.com/bibliorock/Avatar-49.jpg" alt="">
+								<% end %>
 						</div>
-					</div>
-					<hr>
+							<h4 style="margin-bottom: 5px;"><strong><%= link_to Post.find(i).title, Post.find(i) %></strong></h4>
+							<p>
+								<%= Post.find(i).description %>
+							</p>
+							<% break %>
+						<% else %>
+							<% i=i-1 %>
+						<% end %>
 					<% end %>
-
+				</div>
+				<div class="span4">
+					<img src="https://s3.amazonaws.com/bibliorock/Textos-44.jpg" alt="" />
+					<br><br>
+					<% i=Post.last.id %>
+					<% while true %>
+						<% if Post.find(i).tag_list == ["liberación"] %>
+						<div class="span2" style="margin-left:-0px">
+							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+								<%= link_to image_tag Post.find(i).small_picture.url(:thumb), Post.find(i) %>
+							<% else %>
+								<img src="https://s3.amazonaws.com/bibliorock/Avatar-50.jpg" alt="">
+								<% end %>
+						</div>
+							<h4 style="margin-bottom: 5px;"><strong><%= link_to Post.find(i).title, Post.find(i) %></strong></h4>
+							<p>
+								<%= Post.find(i).description %>
+							</p>
+							<% break %>
+						<% else %>
+							<% i=i-1 %>
+						<% end %>
+					<% end %>
 				</div>
 			</div>
-
+			<br><br>
+			<div class="row" style="margin-left:-50px">
+				<div class="span8">
+					<img src="https://s3.amazonaws.com/bibliorock/Textos-45.jpg" alt="" />
+					<img src="https://s3.amazonaws.com/bibliorock/Textos-46.jpg" style="margin-top:10px" alt="" />
+				</div>
+			</div>
+			<br>
+			<div class="row" style="margin-left:-50px">
+				<div class="span4">
+					<% i=Post.last.id %>
+					<% while true %>
+						<% if Post.find(i).tag_list == ["liberación"] %>
+						<div class="span2" style="margin-left:-0px">
+							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+								<%= image_tag Post.find(i).small_picture.url(:thumb) %>
+							<% else %>
+								<img src="https://s3.amazonaws.com/bibliorock/Avatar-52.jpg" alt="">
+								<% end %>
+						</div>
+							<h4 style="margin-bottom: 5px;"><strong><%= link_to Post.find(i).title, Post.find(i) %></strong></h4>
+							<p>
+								<%= Post.find(i).description %>
+							</p>
+							<% break %>
+						<% else %>
+							<% i=i-1 %>
+						<% end %>
+					<% end %>
+				</div>
+				<div class="span4">
+					<% i=Post.last.id %>
+					<% while true %>
+						<% if Post.find(i).tag_list == ["liberación"] %>
+						<div class="span2" style="margin-left:-0px">
+							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+								<%= image_tag Post.find(i).small_picture.url(:thumb) %>
+							<% else %>
+								<img src="https://s3.amazonaws.com/bibliorock/Avatar-51.jpg" alt="">
+								<% end %>
+						</div>
+							<h4 style="margin-bottom: 5px;"><strong><%= link_to Post.find(i).title, Post.find(i) %></strong></h4>
+							<p>
+								<%= Post.find(i).description %>
+							</p>
+							<% break %>
+						<% else %>
+							<% i=i-1 %>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+			<br><br>
 			<div class="row">
 				<div class="span9" style="margin-left: 10px; margin-bottom: -128px">
-					<h3>Las paginas sociales de La Biblioteca Libre</h3><br />
+					<div class="row" style="margin-left:0px">
+						<img src="https://s3.amazonaws.com/bibliorock/Multimedia-47.jpg" alt="">
+					</div>
+					<br>
 					<a href="http://www.google.cl"><div id="view1" class="view view-sixth"> 
 						<a href="http://www.google.cl"><img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-23.jpg" width="166" height="128" style="vertical-align: text-top;" alt="" />
 						<div id="mask1" class="mask">  
@@ -237,11 +304,12 @@
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
 		</div>
 	</div>
-<br><br><br>
+<br><br>
 	<div class="row">
 		<div class="span12">
 			<!-- <hr /> -->
-			<h3>VIDEOS </h3>
+			<img src="https://s3.amazonaws.com/bibliorock/Multimedia-52.jpg" alt="" style="margin-left:-17px">
+			<br><br>
 			<div class="row">
 				<div class="span8" style="margin-left: 10px">
 					<div id="myCarousel2" class="carousel slide" data-ride="carousel" style="width: 1200px; height: 200px;">
