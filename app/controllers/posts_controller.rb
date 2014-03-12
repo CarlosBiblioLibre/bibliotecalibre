@@ -8,11 +8,10 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with(params[:tag])
     else
     @posts = Post.all
-    end
-
-    respond_to do |format|
+     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
+    end
     end
   end
 
