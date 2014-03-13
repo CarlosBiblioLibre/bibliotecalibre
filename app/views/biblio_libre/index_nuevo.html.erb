@@ -154,6 +154,51 @@
 					<% end %>
 				</div>
 			</div>
+			<br>
+			<div class="row" style="margin-left:-50px">
+				<div class="span4">
+					<% i=Post.last.id %>
+					<% while true %>
+						<% if Post.find(i).tag_list == ["comunidad1"] %>
+						<div class="span2" style="margin-left:-0px">
+							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+								<%= image_tag Post.find(i).small_picture.url %>
+							<% else %>
+								<img src="https://s3.amazonaws.com/bibliorock/Avatar-52.jpg" alt="">
+								<% end %>
+						</div>
+							<h4 style="margin-bottom: 5px;"><strong><%= link_to Post.find(i).title, Post.find(i) %></strong></h4>
+							<p>
+								<%= Post.find(i).description %>
+							</p>
+							<% break %>
+						<% else %>
+							<% i=i-1 %>
+						<% end %>
+					<% end %>
+				</div>
+				<div class="span4">
+					<% i=Post.last.id %>
+					<% while true %>
+						<% if Post.find(i).tag_list == ["comunidad2"] %>
+						<div class="span2" style="margin-left:-0px">
+							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+								<%= image_tag Post.find(i).small_picture.url %>
+							<% else %>
+								<img src="https://s3.amazonaws.com/bibliorock/Avatar-51.jpg" alt="">
+								<% end %>
+						</div>
+							<h4 style="margin-bottom: 5px;"><strong><%= link_to Post.find(i).title, Post.find(i) %></strong></h4>
+							<p>
+								<%= Post.find(i).description %>
+							</p>
+							<% break %>
+						<% else %>
+							<% i=i-1 %>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
 			<br><br>
 			<div class="row">
 				<div class="span9" style="margin-left: 10px; margin-bottom: -128px">
