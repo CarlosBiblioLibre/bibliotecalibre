@@ -83,7 +83,7 @@
 					<br><br>
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["liberación"] %>
+						<% if Post.find(i).tag_list == ["noticias"] %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 							<%= image_tag Post.find(i).small_picture.url %>
