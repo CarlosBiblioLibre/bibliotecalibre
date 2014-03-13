@@ -12,6 +12,7 @@ BiblioLibre::Application.routes.draw do
   get '/galeria1' => 'biblio_libre#galeria1'
   get '/galeria2' => 'biblio_libre#galeria2'
   get '/galeria3' => 'biblio_libre#galeria3'
+  get '/galeria4' => 'biblio_libre#galeria4'
   get '/about' => 'biblio_libre#about'
   get '/about/faqs' => 'about#faqs'
   get '/about/equipo' => 'about#equipo'
