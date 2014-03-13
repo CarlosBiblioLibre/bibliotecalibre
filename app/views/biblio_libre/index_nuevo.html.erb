@@ -83,7 +83,7 @@
 					<br><br>
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["noticias"] %>
+						<% if Post.find(i).tag_list == ["liberación"] %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 							<%= image_tag Post.find(i).small_picture.url %>
@@ -114,7 +114,7 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["comunidad1"] %>
+						<% if Post.find(i).tag_list == ["liberación"] %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 								<%= image_tag Post.find(i).small_picture.url %>
@@ -135,7 +135,7 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["comunidad2"] %>
+						<% if Post.find(i).tag_list == ["liberación"] %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 								<%= image_tag Post.find(i).small_picture.url %>
