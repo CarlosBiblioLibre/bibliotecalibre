@@ -6,8 +6,8 @@
 			 	<%=raw @post.bajada %>
 			 	<br><br>
 			 	<%= image_tag @post.small_picture.url(:thumb) %>
-			 	<%=raw @post.autor %>
-			 	<br><br>
+			 	<%= @post.autor %>
+			 	<br>
 				<%=raw  @post.content %>
 		</div>
 		<div class="span4 offset1">
