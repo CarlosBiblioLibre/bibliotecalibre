@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140312144115) do
+ActiveRecord::Schema.define(:version => 20140314171856) do
 
   create_table "battles", :force => true do |t|
     t.string   "title"
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(:version => 20140312144115) do
     t.integer  "small_picture_file_size"
     t.datetime "small_picture_updated_at"
     t.text     "description"
+    t.string   "kind"
+    t.text     "bajada"
   end
 
   create_table "releases", :force => true do |t|

@@ -19,7 +19,7 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :content, :description, :title, :picture, :small_picture, :tag_list
+  attr_accessible :content, :description, :title, :picture, :small_picture, :tag_list, :kind, :bajada
   acts_as_taggable
   has_attached_file :picture, styles: {
     thumb: '100x100>',
