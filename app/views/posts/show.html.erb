@@ -4,9 +4,9 @@
 			 	<h2 style="color:#727272"><%= @post.title %></h2>
 			 	<br />
 			 	<%=raw @post.bajada %>
-			 	<br><br>
+			 	<br>
 			 	<%= image_tag @post.small_picture.url(:thumb) %>
-			 	<%= @post.autor %>
+			 	<p><small><%= @post.autor %></small></p>
 			 	<br><br>
 				<%=raw  @post.content %>
 		</div>
