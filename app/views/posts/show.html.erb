@@ -23,15 +23,19 @@
 			<% end %>
 			<br>
 			<div class="row">
-				<% @posts.each do |post| %>
+				<% i=1 %>
+				<% while i <= Post.last.id %>
 					<% if @post.kind == "columna" %>
 						<div class="span2">
-							<%= image_tag @post.small_picture.url(:thumb) %>
+							<%= image_tag @post.picture.url(:thumb) %>
 						</div>
 						<div class="span2">
 							<%= @post.title %>
 						</div>
-						<br> 
+						<% i=i+1 %>
+						<br>
+					<% else %>
+						<% i=i+1 %>
 					<% end %>
 				<% end %>
 			</div>
