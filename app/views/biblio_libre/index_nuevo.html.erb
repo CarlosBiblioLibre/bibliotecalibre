@@ -62,7 +62,7 @@
 					<br><br>
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["liberación"] %>
+						<% if Post.find(i).kind == "liberación" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 								<%= link_to (image_tag Post.find(i).small_picture.url), Post.find(i) %>
@@ -88,7 +88,7 @@
 					<br><br>
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["noticias"] %>
+						<% if Post.find(i).kind == "noticia" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 								<%= link_to (image_tag Post.find(i).small_picture.url), Post.find(i) %>
@@ -122,7 +122,7 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["comunidad1"] %>
+						<% if Post.find(i).kind == "comunidad 1" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 								<%= link_to (image_tag Post.find(i).small_picture.url), Post.find(i) %>
@@ -146,7 +146,7 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["comunidad2"] %>
+						<% if Post.find(i).kind == "comunidad 2" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 									<%= link_to (image_tag Post.find(i).small_picture.url), Post.find(i) %>
@@ -173,7 +173,7 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["comunidad3"] %>
+						<% if Post.find(i).kind == "columna" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 									<%= link_to (image_tag Post.find(i).small_picture.url), Post.find(i) %>
@@ -197,7 +197,7 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).tag_list == ["comunidad4"] %>
+						<% if Post.find(i).kind == "comunidad 3" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 								<%= link_to (image_tag Post.find(i).small_picture.url), Post.find(i) %>
