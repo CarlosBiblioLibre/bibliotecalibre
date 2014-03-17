@@ -21,6 +21,20 @@
 			<% if @post.picture.url(:large) != "/pictures/large/missing.png" %>
 			 	<%= image_tag @post.picture.url(:large) %>
 			<% end %>
+			<br>
+			<div class="row">
+				<% @posts.each do |post| %>
+					<% if @post.kind == "columna" %>
+						<div class="span2">
+							<%= @post.small_picture.url(:thumb) %>
+						</div>
+						<div class="span2">
+							<%= @post.title %>
+						</div>
+						<br> 
+					<% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 	<br>

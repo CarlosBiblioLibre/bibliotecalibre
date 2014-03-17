@@ -18,6 +18,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+    @posts = Post.all
+    end
     @post = Post.find(params[:id])
 
     @og_description = @post.description
