@@ -21,17 +21,17 @@
 			<% if @post.picture.url(:large) != "/pictures/large/missing.png" %>
 			 	<%= image_tag @post.picture.url(:large) %>
 			<% end %>
-			<br><br>
+			<br><br><br>
 			<h3> Más columnas </h3>
 			<br>
 			<div class="row">
-				<% i=2 %>
+				<% i=1 %>
 				<% while i <= Post.last.id %>
 					<% if (Post.find(i).kind == "columna" && i!=@post.id) %>
 						<div class="span1">
 							<%= link_to (image_tag Post.find(i).picture.url(:thumb)), Post.find(i) %>
 						</div>
-						<div class="span2" style="margin-left: -5px">
+						<div class="span2" style="margin-left: 0px">
 							<%= link_to (Post.find(i).title), Post.find(i) %>
 						</div>
 						<% i=i+1 %>
