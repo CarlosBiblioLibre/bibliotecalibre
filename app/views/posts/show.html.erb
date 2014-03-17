@@ -57,6 +57,67 @@
 			<div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="5" data-colorscheme="light"></div>
 		</div>
 	</div>
+
+<% elsif (@post.kind == "comunidad 1" or @post.kind == "comunidad 2" or @post.kind == "comunidad 3") %>
+	<div class="row">
+		<div class="span6 offset1">
+			 	<h2 style="color:#727272"><%= @post.title %></h2>
+			 	<br />
+			 	<%=raw @post.bajada %>
+			 	<br>
+			 	<div class="row">
+			 		<div class="span1">
+			 			<%= image_tag @post.small_picture.url(:thumb) %>
+			 		</div>
+			 		<div class="span3">
+			 			<p style="color:#fff">.</p>
+			 			<p><small><%= @post.autor %></small></p>
+			 		</div>
+			 	</div>
+			 	<br><br>
+				<%=raw  @post.content %>
+		</div>
+		<div class="span4 offset1">
+			<% if @post.picture.url(:large) != "/pictures/large/missing.png" %>
+			 	<%= image_tag @post.picture.url(:large) %>
+			<% end %>
+			<br><br><br>
+			<h3> Más comunidad </h3>
+			<br>
+			<div class="row">
+				<% i=2 %>
+				<% while i <= Post.last.id %>
+					<% if ((Post.find(i).kind == "comunidad 1" or Post.find(i).kind == "comunidad 2" or Post.find(i).kind == "comunidad 3") && i!=@post.id) %>
+						<div class="span1">
+							<%= link_to (image_tag Post.find(i).picture.url(:thumb)), Post.find(i) %>
+						</div>
+						<div class="span2" style="margin-left: 5px">
+							<%= link_to (Post.find(i).title), Post.find(i) %>
+						</div>
+						<% i=i+1 %>
+						<br>
+					<% else %>
+						<% i=i+1 %>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="span6 offset1">
+			<hr />
+				<div class="fb-like" data-href="<%= request.original_url %>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+			<hr />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span6 offset1">
+			<div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="5" data-colorscheme="light"></div>
+		</div>
+	</div>
+	
 <% else %>
 	<div class="row">
 		<div class="span6 offset1">
