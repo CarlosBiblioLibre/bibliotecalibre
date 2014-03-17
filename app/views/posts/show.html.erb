@@ -25,7 +25,7 @@
 			<div class="row">
 				<% i=2 %>
 				<% while i <= Post.last.id %>
-					<% if Post.find(i).kind == "columna" %>
+					<% if (Post.find(i).kind == "columna" && i!=@post.id) %>
 						<div class="span2">
 							<%= image_tag Post.find(i).picture.url(:thumb) %>
 						</div>
