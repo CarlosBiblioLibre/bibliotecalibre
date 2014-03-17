@@ -65,7 +65,6 @@
 			 	<br />
 				<%=raw  @post.content %>
 		</div>
-	</div>
 		<div class="span4 offset1">
 			<% if @post.picture.url(:large) != "/pictures/large/missing.png" %>
 			 	<%= image_tag @post.picture.url(:large) %>
