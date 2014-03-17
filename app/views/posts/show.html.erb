@@ -24,7 +24,7 @@
 			<br>
 			<div class="row">
 				<% i=1 %>
-				<% while i <= Post.last.id %>
+				<% while i <= 8 %>
 					<% if @post.kind == "columna" %>
 						<div class="span2">
 							<%= image_tag @post.picture.url(:thumb) %>
