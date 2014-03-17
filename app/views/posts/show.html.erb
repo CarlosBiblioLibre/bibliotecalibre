@@ -26,7 +26,7 @@
 				<% @posts.each do |post| %>
 					<% if @post.kind == "columna" %>
 						<div class="span2">
-							<%= @post.small_picture.url(:thumb) %>
+							<%= image_tag @post.small_picture.url(:thumb) %>
 						</div>
 						<div class="span2">
 							<%= @post.title %>
