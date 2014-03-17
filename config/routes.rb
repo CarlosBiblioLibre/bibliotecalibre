@@ -2,7 +2,7 @@ BiblioLibre::Application.routes.draw do
 
   resources :posts
 
-  get 'tags/:tag' => 'posts#index', as: :tag
+  get 'tags/:tag' => 'biblio_libre#comunidad', as: :tag
   get '/noticias/1' => 'biblio_libre#noticia1', :as => 'noticia1'
   get '/noticias/2' => 'biblio_libre#noticia2', :as => 'noticia2'
   get '/noticias/3' => 'biblio_libre#noticia3', :as => 'noticia3'
