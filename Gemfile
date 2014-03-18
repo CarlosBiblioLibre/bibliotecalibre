@@ -12,6 +12,11 @@ gem 'prawn'
 
 gem 'tinymce-rails'
 
+gem 'tinymce-rails-imageupload'
+
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.14'
+
 gem 'acts-as-taggable-on'
 
 # Bundle edge Rails instead:
