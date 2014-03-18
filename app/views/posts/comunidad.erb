@@ -7,12 +7,8 @@
 	<br><br>
 		<% @posts.each do |post| %>
 		<div class="row">
-			<div class="span3 offset1">
-				<% if post.picture_file_name != nil %>
-					<%= link_to (image_tag post.picture.url(:medium)), post %>
-				<% elsif post.small_picture_file_name != nil %>
-					<%= link_to (image_tag post.small_picture.url(:medium)), post %>
-				<% end %>
+			<div class="span1 offset1">
+				<%= link_to (image_tag post.picture.url(:large)), post %>
 			</div>
 			<div class="span4" style="margin-left: 8px">
 				<%= link_to (post.title), post %>
