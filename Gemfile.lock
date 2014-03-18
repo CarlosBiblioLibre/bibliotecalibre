@@ -62,9 +62,6 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    dragonfly (0.9.15)
-      multi_json (~> 1.0)
-      rack
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -147,9 +144,6 @@ GEM
     tilt (1.4.1)
     tinymce-rails (4.0.18)
       railties (>= 3.1.1)
-    tinymce-rails-imageupload (3.5.8.3)
-      railties (>= 3.1)
-      tinymce-rails (>= 3.4.9)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -172,18 +166,15 @@ DEPENDENCIES
   bootstrap-sass (~> 2.0.2)
   coffee-rails (~> 3.2.1)
   devise
-  dragonfly (~> 0.9.14)
   jquery-rails
   paperclip
   pg
   prawn
   quiet_assets
-  rack-cache
   rails (= 3.2.11)
   rails-i18n
   sass-rails (~> 3.2.3)
   sqlite3
   thin
   tinymce-rails
-  tinymce-rails-imageupload
   uglifier (>= 1.0.3)
