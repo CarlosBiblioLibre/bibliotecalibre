@@ -43,6 +43,16 @@
 				<% end %>
 			</div>
 		</div>
+	<br>
+	<div class="row">
+		<div class="span6 offset1">
+			<p>
+			Etiquetas:
+			<% @post.tag_list.each do |t| %>
+				<%= link_to t, tag_path(t), {:style=>'color:#ff9900;', :class => "css_class"} %>
+			<% end %>
+			</p>
+		</div>
 	</div>
 	<br>
 	<div class="row">
