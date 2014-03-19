@@ -18,10 +18,9 @@ BiblioLibre::Application.configure do
   config.assets.compile = true
 
   # Generate digests for assets URLs
-    config.assets.digest = false
+  config.assets.digest = true
 
-  # Add to settle tinymce issue
-  config.assets.debug = true
+  config.assets.precompile += %w[tinymce/tiny_mce.js]
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
