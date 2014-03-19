@@ -1,6 +1,8 @@
-//= require_tree .
 //= require_self
-@import "bootstrap-responsive";
+//= require bootstrap_and_overrrides
+//= require_tree .
+
+
 
 html, body {
 	height: 100%;
