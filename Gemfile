@@ -10,8 +10,6 @@ gem 'thin'
 
 gem 'prawn'
 
-gem 'tinymce-rails', '3.5.9'
-
 gem 'acts-as-taggable-on'
 
 # Bundle edge Rails instead:
