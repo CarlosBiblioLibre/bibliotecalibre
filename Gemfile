@@ -27,6 +27,7 @@ gem 'devise'
 
 gem 'rails-i18n'
 
+gem 'tinymce-rails'
 
 
 group :development do
