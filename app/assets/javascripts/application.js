@@ -3,4 +3,4 @@
 //= require bootstrap
 //= require_tree .
 //= require jquery.cookie.js
-//= require tinymce
+//= require tinymce-jquery
