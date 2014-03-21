@@ -1,0 +1,22 @@
+<div class="span10 offset1">
+	<div class="row">
+		<div class="span2">
+				<%= image_tag Post.find(1).small_picture.url %>
+				<br><br>
+				<%= Post.find(1).title %>
+		</div>
+		<div class="span1">
+			<%= Post.find(1).hearts.count %> Votos
+		</div>
+	</div>
+	<br><br>
+	<div class="row">
+		<div class="span2">
+				<%= image_tag Post.find(2).small_picture.url %>
+				<br><br>
+				<%= Post.find(2).title %>
+		</div>
+		<div class="span1">
+			<%= Post.find(2).hearts.count %> Votos
+		</div>
+	</div>

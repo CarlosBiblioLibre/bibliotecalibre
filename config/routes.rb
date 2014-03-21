@@ -1,6 +1,7 @@
 BiblioLibre::Application.routes.draw do
 
   resources :posts
+  resources :hearts, only: :create
 
   get 'tags/:tag' => 'posts#comunidad', as: :tag
   get '/posts/comunidad' => 'posts#comunidad'
@@ -19,6 +20,8 @@ BiblioLibre::Application.routes.draw do
   get '/galeria6' => 'biblio_libre#galeria6'
   get '/galeria7' => 'biblio_libre#galeria7'
   get '/sociales' => 'biblio_libre#sociales'
+  get '/batalla' => 'biblio_libre#batalla'
+  get '/resultados' => 'biblio_libre#resultados'
   get '/about' => 'biblio_libre#about'
   get '/galerias' => 'biblio_libre#galerias'
   get '/comunidad' => 'biblio_libre#comunidad'
