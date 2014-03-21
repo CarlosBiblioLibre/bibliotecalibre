@@ -5,27 +5,27 @@
 	<br><br>
 	<div class="row">
 		<div class="span2">
-			<%= image_tag Post.find(1).small_picture.url %>
+			<%= image_tag Post.find(3).small_picture.url %>
 			<br><br>
-			<%= Post.find(1).title %>
+			<%= Post.find(3).title %>
 		</div>
 		<div class="span2 offset1">
-			<%= image_tag Post.find(2).small_picture.url %>
+			<%= image_tag Post.find(4).small_picture.url %>
 			<br><br>
-			<%= Post.find(2).title %>
+			<%= Post.find(4).title %>
 		</div>
 	</div>
 	<br><br>
 	<div class="row">
 		<div class="span2">
 		<%= form_for(Heart.new) do |f| %>
-			<%= f.hidden_field :post_id, value: Post.find(1).id %>
+			<%= f.hidden_field :post_id, value: Post.find(3).id %>
 			<%= f.submit 'Votar', class: 'btn btn-danger' %>
 		<% end %>
 		</div>
 		<div class="span2 offset1">
 		<%= form_for(Heart.new) do |f| %>
-			<%= f.hidden_field :post_id, value: Post.find(2).id %>
+			<%= f.hidden_field :post_id, value: Post.find(4).id %>
 			<%= f.submit 'Votar', class: 'btn btn-danger' %>
 		<% end %>
 		</div>
