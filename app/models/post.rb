@@ -21,6 +21,7 @@
 class Post < ActiveRecord::Base
   attr_accessible :content, :description, :title, :picture, :small_picture, :tag_list, :kind, :bajada, :autor
   acts_as_taggable
+  acts_as_votable
   has_many :hearts
   has_attached_file :picture, styles: {
     thumb: '100x100>',
