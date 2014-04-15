@@ -57,7 +57,7 @@
 					<br><br>
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if Post.find(i).kind == "liberación" %>
+						<% if Post.find(i).kind == "liberación" && Post.id != 10 %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
 								<%= link_to (image_tag Post.find(i).small_picture.url), Post.find(i) %>
