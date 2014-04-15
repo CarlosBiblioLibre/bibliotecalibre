@@ -57,7 +57,9 @@
 					<br><br>
 					<% i=Post.last.id %>
 					<% while true %>
-						<% if i != 10 %>
+						<% if i == 10 %>
+							<% i=i-1 %>
+						<% end %>
 						<% if Post.find(i).kind == "liberación" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
@@ -76,7 +78,6 @@
 							<% if i==1 %>
 								<% break %>
 							<% end %>
-						<% end %>
 						<% end %>
 					<% end %>
 				</div>
