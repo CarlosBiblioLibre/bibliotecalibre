@@ -128,6 +128,39 @@
 			<div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="5" data-colorscheme="light"></div>
 		</div>
 	</div>
+
+<% elsif @post.kind == "especial" %>
+	<div class="row">
+		<div class="span6 offset1">
+			<h2 style="color:#727272"><%= @post.title %></h2>
+			<br />
+		</div>
+	</div>
+	<div class="row">
+		<%= image_tag @post.picture.url(:large) %>
+	</div>
+	<div class="row">
+		<div class="span6 offset1">
+			<p>
+			Etiquetas:
+			<%= raw @post.tag_list.map { |t| link_to t, tag_path(t), {:style=>'color:#ff9900;', :class => "css_class"}}.join (', ') %>
+			</p>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="span6 offset1">
+			<hr />
+				<div class="fb-like" data-href="<%= request.original_url %>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+			<hr />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span6 offset1">
+			<div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="5" data-colorscheme="light"></div>
+		</div>
+	</div>
 	
 <% else %>
 	<div class="row">
