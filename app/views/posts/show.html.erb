@@ -26,6 +26,9 @@
 			<br>
 				<% i=2 %>
 				<% while i <= Post.last.id %>
+				<% if i == 10 %>
+							<% i=i+1 %>
+						<% end %>
 					<% if (Post.find(i).kind == "columna" && i!=@post.id) %>
 						<div class="row">
 						<div class="span1">
@@ -83,6 +86,9 @@
 			<br>
 				<% i=2 %>
 				<% while i <= Post.last.id %>
+				<% if i == 10 %>
+							<% i=i+1 %>
+						<% end %>
 					<% if ((Post.find(i).kind == "comunidad 1" or Post.find(i).kind == "comunidad 2" or Post.find(i).kind == "comunidad 3") && i!=@post.id) %>
 						<div class="row">
 						<div class="span1">
