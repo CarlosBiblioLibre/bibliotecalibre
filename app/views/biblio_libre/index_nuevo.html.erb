@@ -86,6 +86,9 @@
 					<br><br>
 					<% i=Post.last.id %>
 					<% while true %>
+					<% if i == 10 %>
+							<% i=i-1 %>
+						<% end %>
 						<% if Post.find(i).kind == "noticia" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
@@ -120,6 +123,9 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
+					<% if i == 10 %>
+							<% i=i-1 %>
+						<% end %>
 						<% if Post.find(i).kind == "comunidad 1" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
@@ -144,6 +150,9 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
+					<% if i == 10 %>
+							<% i=i-1 %>
+						<% end %>
 						<% if Post.find(i).kind == "comunidad 2" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
@@ -171,6 +180,9 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
+					<% if i == 10 %>
+							<% i=i-1 %>
+						<% end %>
 						<% if Post.find(i).kind == "columna" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
@@ -195,6 +207,9 @@
 				<div class="span4">
 					<% i=Post.last.id %>
 					<% while true %>
+					<% if i == 10 %>
+							<% i=i-1 %>
+						<% end %>
 						<% if Post.find(i).kind == "comunidad 3" %>
 						<div class="span2" style="margin-left:-0px">
 							<% if Post.find(i).small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
