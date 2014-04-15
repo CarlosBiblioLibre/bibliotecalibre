@@ -177,14 +177,6 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="row">
-		<div class="span6 offset1">
-			<p>
-			Etiquetas:
-			<%= raw @post.tag_list.map { |t| link_to t, tag_path(t), {:style=>'color:#ff9900;', :class => "css_class"}}.join (', ') %>
-			</p>
-		</div>
-	</div>
 	<br>
 	<div class="row">
 		<div class="span6 offset1">
