@@ -16,6 +16,9 @@
 #  small_picture_file_size    :integer
 #  small_picture_updated_at   :datetime
 #  description                :text
+#  kind                       :string(255)
+#  bajada                     :text
+#  autor                      :text
 #
 
 require 'test_helper'

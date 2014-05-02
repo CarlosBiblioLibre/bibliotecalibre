@@ -16,6 +16,9 @@
 #  small_picture_file_size    :integer
 #  small_picture_updated_at   :datetime
 #  description                :text
+#  kind                       :string(255)
+#  bajada                     :text
+#  autor                      :text
 #
 
 class Post < ActiveRecord::Base
@@ -41,4 +44,13 @@ class Post < ActiveRecord::Base
 
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates_attachment_content_type :small_picture, :content_type => /\Aimage\/.*\Z/
+
+  def self.byKind kind, n=1
+    if n == 1
+      Post.where(kind: kind).order('created_at DESC').first
+    else
+      Post.where(kind: kind).order('created_at DESC').take(n)
+    end
+  end
+
 end

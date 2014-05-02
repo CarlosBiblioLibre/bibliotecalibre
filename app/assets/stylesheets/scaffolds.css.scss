@@ -61,7 +61,6 @@ div {
     position: relative;
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
-    background: #fff url(../images/bgimg.jpg) no-repeat center center
 }
 
 #view1.view{
@@ -173,10 +172,10 @@ div {
     box-shadow: 0 0 5px #000
 }
 
-.view-sixth img { 
-    transition: all 0.4s ease-in-out 0.5s; 
+.view-sixth img {
+    transition: all 0.4s ease-in-out 0.5s;
 }
-.view-sixth .mask{ 
+.view-sixth .mask{
     background-color: rgba(26,117,177, 1);
     opacity:0;
     transition: all 0.1s ease-in 0.1s;
@@ -187,35 +186,35 @@ div {
     transform: scale(10);
     transition: all 0.1s ease-in-out 0.1s;
 }
-.view-sixth p { 
+.view-sixth p {
     opacity:0;
     transform: scale(10);
     transition: all 0.1s ease-in-out 0.1s;
     margin-top: -15px;
 }
-.view-sixth a.info { 
+.view-sixth a.info {
     opacity:0;
     transform: translateY(100px);
     transition: all 0.3s ease-in-out 0.1s;
 }
-.view-sixth:hover .mask {  
-    opacity:1; 
+.view-sixth:hover .mask {
+    opacity:1;
     transition-delay: 0s;
-}                                                                            
-.view-sixth:hover img { 
-    transition-delay: 0s; 
 }
-.view-sixth:hover h2 { 
+.view-sixth:hover img {
+    transition-delay: 0s;
+}
+.view-sixth:hover h2 {
     opacity: 1;
     transform: scale(1);
     transition-delay: 0.1s;
 }
-.view-sixth:hover p { 
-    opacity:1; 
+.view-sixth:hover p {
+    opacity:1;
     transform: scale(1);
     transition-delay: 0.2s;
 }
-.view-sixth:hover a.info { 
+.view-sixth:hover a.info {
     opacity:1;
     transform: translateY(0px);
     transition-delay: 0.3s;
