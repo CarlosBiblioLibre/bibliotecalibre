@@ -1,6 +1,5 @@
 //= require_tree .
 //= require_self
-@import "bootstrap-responsive";
 
 html, body {
 	height: 100%;
@@ -11,7 +10,6 @@ html, body {
   background-color: #eee;
   /* padding: 20px; */
   height: 100%;
-  width: 100%;
   /* margin: 0px -20px;  negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;

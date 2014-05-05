@@ -1,6 +1,8 @@
+$gridColumnWidth: 70px;
+$gridGutterWidth: 30px;
+
 @import "bootstrap";
 body { padding-top: 10px; }
-@import "bootstrap-responsive";
 
 .accordion-inner {
 	background-color: #00c2df;
@@ -20,4 +22,9 @@ body { padding-top: 10px; }
 
 .table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th {
   background-color: #4DA6AD;
+}
+
+
+.content {
+  width: 1170px !important;
 }
