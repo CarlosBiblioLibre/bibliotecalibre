@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'paperclip'
 gem 'aws-sdk'
 
@@ -13,6 +12,8 @@ gem 'prawn'
 gem 'acts-as-taggable-on'
 
 gem 'acts_as_votable'
+
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

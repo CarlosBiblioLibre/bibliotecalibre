@@ -143,6 +143,9 @@ GEM
     tilt (1.4.1)
     tinymce-rails (4.0.19)
       railties (>= 3.1.1)
+    tinymce-rails-imageupload (4.0.16.beta)
+      railties (>= 3.2, < 5)
+      tinymce-rails (~> 4.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -177,4 +180,5 @@ DEPENDENCIES
   sqlite3
   thin
   tinymce-rails
+  tinymce-rails-imageupload (~> 4.0.0.beta)
   uglifier (>= 1.0.3)

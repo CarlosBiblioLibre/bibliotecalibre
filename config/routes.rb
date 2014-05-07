@@ -29,6 +29,9 @@ BiblioLibre::Application.routes.draw do
   get '/about/equipo' => 'about#equipo'
   get '/bibliocabinas' => 'biblio_libre#bibliocabinas'
 
+
+  post '/tinymce_assets' => 'biblio_libre#uploads'
+
   get '/vota/:battle_id/:book' => 'battles#vote'
 
   get '/zohoverify/verifyforzoho.html', to: redirect('/assets/verifyforzoho.html')

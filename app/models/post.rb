@@ -26,6 +26,7 @@ class Post < ActiveRecord::Base
   acts_as_taggable
   acts_as_votable
   has_many :hearts
+
   has_attached_file :picture, styles: {
     thumb: '100x100>',
     square: '200x200#',
@@ -33,8 +34,6 @@ class Post < ActiveRecord::Base
     large: '1170x390'
   }
 
-
-  # thumb: '260x180>',
   has_attached_file :small_picture, styles: {
     thumb: '160x111>',
     face: '320x222',
