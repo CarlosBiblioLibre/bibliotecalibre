@@ -13,8 +13,6 @@ gem 'acts-as-taggable-on'
 
 gem 'acts_as_votable'
 
-gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -31,7 +29,7 @@ gem 'devise'
 gem 'rails-i18n'
 
 gem 'tinymce-rails'
-
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 
 group :development do
   gem 'annotate', ">=2.5.0"
