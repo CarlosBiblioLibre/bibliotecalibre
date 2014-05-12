@@ -46,39 +46,40 @@ $ ->
 				error: (jqXHR, textStatus, errorThrown) ->
 					console.log "hola2"
 
-	$("#battle_chart").highcharts
-    chart:
-      type: "bar"
-    credits:
-      enabled: false
-    title:
-      text: ""
-    xAxis:
-      categories: [""]
-      labels:
-        enabled: false
-    yAxis:
-      min: 0
-      title:
-        text: ""
-      labels:
-        enabled: false
-    tooltip:
-      enabled: false
-    plotOptions:
-      series:
-        stacking: "percent"
-      bar:
-        pointWidth: 80
-    series: [
-    	{
-        name: $('#chart_data').data('book2n')
-        data: [$('#chart_data').data('book2c')]
-      }
-      {
-        name: $('#chart_data').data('book1n')
-        data: [$('#chart_data').data('book1c')]
-      }
-    ]
+	if $('#battle_chart').size() > 0
+		$("#battle_chart").highcharts
+	    chart:
+	      type: "bar"
+	    credits:
+	      enabled: false
+	    title:
+	      text: ""
+	    xAxis:
+	      categories: [""]
+	      labels:
+	        enabled: false
+	    yAxis:
+	      min: 0
+	      title:
+	        text: ""
+	      labels:
+	        enabled: false
+	    tooltip:
+	      enabled: false
+	    plotOptions:
+	      series:
+	        stacking: "percent"
+	      bar:
+	        pointWidth: 80
+	    series: [
+	    	{
+	        name: $('#chart_data').data('book2n')
+	        data: [$('#chart_data').data('book2c')]
+	      }
+	      {
+	        name: $('#chart_data').data('book1n')
+	        data: [$('#chart_data').data('book1c')]
+	      }
+	    ]
 
   return
