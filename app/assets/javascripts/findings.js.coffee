@@ -123,3 +123,13 @@ $ ->
   $('#flickr_badge_wrapper').find('a').click () ->
     !window.open(this)
     console.log("click!")
+
+  foundFBComs = false
+  $(".fb-comments-unloaded").each ->
+    $fbCom = $(this)
+    contWidth = $fbCom.parent().width()
+    $fbCom.attr("data-width", contWidth).removeClass("fb-comments-unloaded").addClass "fb-comments"
+    foundFBComs = true
+    return
+
+  FB.XFBML.parse()  if foundFBComs and typeof FB isnt "undefined"

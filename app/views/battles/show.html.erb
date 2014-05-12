@@ -1,3 +1,11 @@
+<%= content_tag "div",
+		id: "chart_data",
+		data: {
+			book1c: @battle.book1_count,
+			book2c: @battle.book2_count,
+			book1n: @battle.book1,
+			book2n: @battle.book2 }	do %>
+<% end %>
 
 <div id="battle" class="row" data-battle="<%= @battle.id %>" >
 	<div class="span12" style="text-align: center;">
@@ -12,7 +20,7 @@
 		<p id="notice"><%= notice %></p>
 		<h3><%= @battle.title %></h3>
 		<p>
-			<%= @battle.content %>
+			<%=raw @battle.content %>
 		</p>
 
 	</div>
@@ -27,6 +35,7 @@
 		</div>
 		<h4 style="text-align: center;"><%= @battle.book1 %></h4>
 		<h4 id='book1_count' style="text-align: center;"><%= @battle.book1_count %></h4>
+		<br />
 		<div class="centered">
 			<%= link_to 'Vota!', '#', { id: "vote1", class: "btn btn-large btn-block btn-primary", style: "text-align: center	" } %>
 		</div>
@@ -39,11 +48,26 @@
 		</div>
 		<h4 style="text-align: center;"><%= @battle.book2 %></h4>
 		<h4 id='book2_count' style="text-align: center;"><%= @battle.book2_count %></h4>
+		<br />
 		<div class="centered">
 			<%= link_to 'Vota!', '#', { id: "vote2", class: "btn btn-large btn-block btn-primary"} %>
 		</div>
 	</div>
 </div>
+
+<!--
+<% if (@battle.book1_count+@battle.book2_count)>0 %>
+	<div class="row">
+		<br />
+		<div class="span12 progress">
+	  	<div class="bar bar-warning" style="width:<%= (@battle.book1_count*100/(@battle.book1_count+@battle.book2_count))%>%;"></div>
+	  	<div class="bar bar-danger" style="width:<%= (@battle.book2_count*100/(@battle.book1_count+@battle.book2_count))%>%;"></div>
+		</div>
+	</div>
+<% end %>
+-->
+
+<div id="battle_chart" style="min-width: 310px; height: 80px; margin: 0 auto"></div>
 
 <div class="row">
 	<div class="span12">
@@ -53,7 +77,7 @@
 
 <div class="row">
 	<div class="span12">
-		<div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="15" data-colorscheme="light"></div>
+		<div class="fb-comments-unloaded" data-href="<%= request.url.split('?').first %>" data-numposts="15" data-colorscheme="light"></div>
 	</div>
 </div>
 

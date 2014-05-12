@@ -45,4 +45,8 @@ class Battle < ActiveRecord::Base
     medium: '300x300>'
   }
 
+  validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :book1_picture, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :book2_picture, :content_type => /\Aimage\/.*\Z/
+
 end

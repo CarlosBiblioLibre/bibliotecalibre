@@ -1,5 +1,5 @@
 class BattlesController < ApplicationController
-  #before_filter :authenticate_user!, except: [:noticia, :show]
+  before_filter :authenticate_user!, except: [:vote, :show]
 
   # GET /battles
   # GET /battles.json

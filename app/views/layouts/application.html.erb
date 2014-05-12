@@ -46,7 +46,7 @@
   <link rel="shortcut icon" href="https://s3.amazonaws.com/bibliorock/favicon.ico" />
   <%= stylesheet_link_tag "nuevo", :media => "all" %>
   <%= csrf_meta_tags %>
-  <br>
+  <br />
   <%= yield(:head) %>
 
   <script type="text/javascript">
@@ -73,6 +73,7 @@
     }
 //-->
 </script>
+
 <div class="container">
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -122,24 +123,18 @@
   </div>
 
   <div class="span12">
-    <br><br>
+    <br /><br />
   <%= yield %>
  </div>
 
   <div class="span12">
+    <br /><br />
     <div class="row">
       <div class="span12">
-        <!-- <hr /> -->
-        <br />
-      </div>
-    </div>
-    <br><br>
-    <div class="row">
-      <div class="span12" style="margin-left:0px">
         <div class="well">
           <div class="row">
             <div class="span4">
-              <br>
+              <br />
               <a href="http://catedraslibres.org/"><img src="/assets/catedras.png" style="margin-top:0px"/></a>
             </div>
             <div class="span3">
@@ -162,6 +157,7 @@
   </div>
 <%= javascript_include_tag "application" %>
 <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyCjFGRwHIUl0nLB59JL-4bWR-w2qc1auqo&sensor=true" %>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
 </div>
 </body>
 </head>

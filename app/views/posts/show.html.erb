@@ -188,8 +188,8 @@
 	</div>
 
 	<div class="row">
-		<div class="span6 offset1">
-			<div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="5" data-colorscheme="light"></div>
+		<div class="span11 offset1">
+			<div class="fb-comments-unloaded" data-href="<%= request.url.split('?').first %>" data-numposts="5" data-colorscheme="light"></div>
 		</div>
 	</div>
 <% end %>

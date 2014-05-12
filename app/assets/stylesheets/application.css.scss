@@ -29,3 +29,14 @@ html, body {
 {
     text-align:center;
 }
+
+
+/* Set inline instead of inline-block */
+.fb-comments.fb_iframe_widget{
+    display: inline !important;
+}
+
+.fb-comments.fb_iframe_widget span,
+.fb_iframe_widget iframe {
+    width: 100% !important;
+}
