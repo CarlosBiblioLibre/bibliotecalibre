@@ -15,382 +15,385 @@
 							<div class="item active" align="center">
 								<a href="/posts/11"><img src="https://s3.amazonaws.com/bibliorock/BL_Liberacio%CC%81n+CPRD_Afiche_Web_Pequen%CC%83o.jpg" width="770" height="340" alt="" /></a>
 							</div>
-							-->
+						-->
 
-							<div class="item active" align="center">
-								<a href="http://www.catedraslibres.org"><img src="https://s3.amazonaws.com/bibliorock/Liberacio%CC%81n_Colegios-82-82.jpg" width="770" height="340" alt="" /></a>
-							</div>
-							<div class="item">
-								<a href="http://www.catedraslibres.org"><img src="https://s3.amazonaws.com/bibliorock/Portada-30.jpg" width="770" height="340" alt="" /></a>
-							</div>
-
-							<div class="item">
-								<a href="<%= que_es_path %>"><img src="https://s3.amazonaws.com/bibliorock/BL_web_Funciona.jpg" width="770" height="340" alt="" /></a>
-							</div>
-							<div class="item">
-								<a href="http://www.labibliotecalibre.cl/posts/10"><img src="https://s3.amazonaws.com/bibliorock/Providencia-13.jpg" width="770" height="340" alt="" /></a>
-							</div>
+						<div class="item active" align="center">
+							<a href="http://www.catedraslibres.org"><img src="https://s3.amazonaws.com/bibliorock/Liberacio%CC%81n_Colegios-82-82.jpg" width="770" height="340" alt="" /></a>
+						</div>
+						<div class="item">
+							<a href="http://www.catedraslibres.org"><img src="https://s3.amazonaws.com/bibliorock/Portada-30.jpg" width="770" height="340" alt="" /></a>
 						</div>
 
-						<a class="left carousel-control" style="top: 50%;" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-						<a class="right carousel-control" style="top: 50%;" href="#myCarousel" data-slide="next">&rsaquo;</a>
-					</div> <!-- carousel -->
-				</div>
-			</div> <!-- carousel row -->
-
-			<div class="row"> <!-- registra/libera/dona -->
-				<div class="span8">
-					<a href="#modal_code" data-toggle="modal"><img src="https://s3.amazonaws.com/bibliorock/Boto%CC%81n3-1.jpg" alt=""></a>
-					<a href="/libera"><img src="https://s3.amazonaws.com/bibliorock/Boto%CC%81n3-2.jpg"  alt="" style="margin-left: 20px;"></a>
-					<a href="/dona"><img src="https://s3.amazonaws.com/bibliorock/Boto%CC%81n3-3.jpg" alt="" style="margin-left: 20px;"></a>
-				</div>
-			</div>
-
-			<div class="row" > <!-- post row 1 -->
-				<br />
-				<div class="span4">
-					<img src="https://s3.amazonaws.com/bibliorock/Textos-43.jpg" alt="" />
-					<br /><br />
-					<% if not @post_liberacion.blank?  %>
-						<div class="span2" style="margin-left:-0px">
-							<% if @post_liberacion.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-								<%= link_to (image_tag @post_liberacion.small_picture.url), @post_liberacion %>
-							<% else %>
-								<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-49.jpg"), @post_liberacion %>
-								<% end %>
+						<div class="item">
+							<a href="<%= que_es_path %>"><img src="https://s3.amazonaws.com/bibliorock/BL_web_Funciona.jpg" width="770" height="340" alt="" /></a>
 						</div>
-						<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_liberacion.title, @post_liberacion %></strong></h4>
-						<p>
-							<%= @post_liberacion.description %>
-						</p>
-					<% end %>
-				</div>
-
-				<div class="span4">
-					<img src="https://s3.amazonaws.com/bibliorock/Textos-44.jpg" alt="" />
-					<br /><br />
-						<% if not @post_noticia.blank?  %>
-						<div class="span2" style="margin-left:-0px">
-							<% if @post_noticia.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-								<%= link_to (image_tag @post_noticia.small_picture.url), @post_noticia %>
-							<% else %>
-								<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-50.jpg"), @post_noticia %>
-								<% end %>
+						<div class="item">
+							<a href="http://www.labibliotecalibre.cl/posts/10"><img src="https://s3.amazonaws.com/bibliorock/Providencia-13.jpg" width="770" height="340" alt="" /></a>
 						</div>
-							<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_noticia.title, @post_noticia %></strong></h4>
-							<p>
-								<%= @post_noticia.description %>
-							</p>
-					<% end %>
-					<br /><br />
-				</div>
-			</div> <!-- posts row 1 -->
-
-			<div class="row" style=""> <!-- post header 1 -->
-					<br />
-					<div class="span8">
-						<img src="https://s3.amazonaws.com/bibliorock/Textos-45.jpg" alt="" />
-						<img src="https://s3.amazonaws.com/bibliorock/Textos-46.jpg" style="margin-top:10px" alt="" />
 					</div>
+
+					<a class="left carousel-control" style="top: 50%;" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+					<a class="right carousel-control" style="top: 50%;" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				</div> <!-- carousel -->
 			</div>
+		</div> <!-- carousel row -->
 
-			<div class="row"> <!-- posts row 2 -->
-				<br />
-				<div class="span4">
-					<% if not @post_com1.blank? %>
-						<div class="span2" style="margin-left:-0px">
-							<% if @post_com1.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-								<%= link_to (image_tag @post_com1.small_picture.url), @post_com1 %>
-							<% else %>
-								<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @post_com1 %>
-							<% end %>
-						</div>
-						<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_com1.title, @post_com1 %></strong></h4>
-						<p>
-							<%= @post_com1.description %>
-						</p>
-					<% end %>
-				</div>
+		<div class="row"> <!-- registra/libera/dona -->
+			<div class="span8">
+				<a href="#modal_code" data-toggle="modal"><img src="https://s3.amazonaws.com/bibliorock/Boto%CC%81n3-1.jpg" alt=""></a>
+				<a href="/libera"><img src="https://s3.amazonaws.com/bibliorock/Boto%CC%81n3-2.jpg"  alt="" style="margin-left: 20px;"></a>
+				<a href="/dona"><img src="https://s3.amazonaws.com/bibliorock/Boto%CC%81n3-3.jpg" alt="" style="margin-left: 20px;"></a>
+			</div>
+		</div>
 
-				<div class="span4">
-					<% if not @post_com2.blank? %>
-						<div class="span2" style="margin-left:-0px">
-							<% if @post_com2.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-									<%= link_to (image_tag @post_com2.small_picture.url), @post_com2 %>
-							<% else %>
-								<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-51.jpg"), @post_com2 %>
-								<% end %>
-						</div>
-						<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_com2.title, @post_com2 %></strong></h4>
-						<p>
-							<%= @post_com2.description %>
-						</p>
-					<% end %>
-				</div>
-
-			</div> <!-- posts row 2 -->
-
-			<div class="row"> <!-- posts row 3 -->
+		<div class="row" > <!-- post row 1 -->
 			<br />
-				<div class="span4">
-					<% if not @post_columna.blank? %>
-					<div class="span2" style="margin-left:-0px">
-						<% if @post_columna.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-								<%= link_to (image_tag @post_columna.small_picture.url), @post_columna %>
-						<% else %>
-							<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @post_columna %>
-						<% end %>
-					</div>
-					<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_columna.title, @post_columna %></strong></h4>
-					<p>
-						<%= @post_columna.description %>
-					</p>
+			<div class="span4">
+				<img src="https://s3.amazonaws.com/bibliorock/Textos-43.jpg" alt="" />
+				<br /><br />
+				<% if not @post_liberacion.blank?  %>
+				<div class="span2" style="margin-left:-0px">
+					<% if @post_liberacion.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @post_liberacion.small_picture.url), @post_liberacion %>
+					<% else %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-49.jpg"), @post_liberacion %>
 					<% end %>
 				</div>
-				<div class="span4">
-					<% if not @post_com3.blank? %>
-					<div class="span2" style="margin-left:-0px">
-							<% if @post_com3.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-								<%= link_to (image_tag @post_com3.small_picture.url), @post_com3 %>
-							<% else %>
-								<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-51.jpg"), @post_com3 %>
-								<% end %>
-						</div>
-						<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_com3.title, @post_com3 %></strong></h4>
-						<p>
-							<%= @post_com3.description %>
-						</p>
-					<% end %>
-				</div>
-			</div> <!-- posts row 3 -->
-
-			<div class="row"> <!-- galerias header -->
-			 	<br />
-				<div class="span8">
-					<a href="/galerias"><img src="https://s3.amazonaws.com/bibliorock/Multi-47.jpg" alt=""></a>
-				</div>
-				<br />
-			</div>
-
-			<div class="row">
-				<div class="span8" style="margin-bottom: -128px">
-					<br />
-					<div id="view1" class="view view-sixth">
-						<a href="/galeria6">
-							<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-23.jpg" width="160" height="128" style="vertical-align: text-top;" alt="" />
-							<div id="mask1" class="mask">
-     						<h2>Museo de la Educación</h2>
-     					</div>
-     				</a>
-     			</div>
-     			<div id="view1" class="view view-sixth" style="margin-left:5px">
-						<a href="/galeria5">
-							<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-24.jpg" width="166" height="128" style="vertical-align: text-top;" alt="" />
-							<div id="mask1" class="mask">
-     						<h2>Premios de Literatura</h2>
-     					</div>
-     				</a>
-     			</div>
-     			<div id="view1" class="view view-sixth" style="margin-left:5px">
-						<a href="/galeria3">
-							<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-25.jpg" width="166" height="128" style="vertical-align: text-top" alt="" />
-							<div id="mask1" class="mask">
-     						<h2>Parque Forestal</h2>
-     					</div>
-     				</a>
-     			</div>
-     			<div id="view2" class="view view-sixth" style="margin-left:5px">
-						<a href="/galeria7">
-							<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-19.jpg" width="260" height="260" style="vertical-align: text-top" alt="" />
-							<div id="mask2" class="mask">
-     						<h2>GAM</h2>
-     					</div>
-     				</a>
-     			</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="span8" style="margin-top: 0px;">
-					<div id="view3" class="view view-sixth">
-						<a href="/bibliocabinas">
-							<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-18.jpg" width="362" height="290" style="vertical-align: text-top" alt="" />
-							<div id="mask3" class="mask">
-	     					<h2>Bibliocabinas</h2>
-	     				</div>
-     				</a>
-     			</div>
-     			<div id="view4" class="view view-sixth" style="margin-left:5px">
-						<a href="/sociales">
-							<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-20.jpg" width="122" height="128" style="vertical-align: text-top;" alt="" />
-							<div id="mask4" class="mask">
-   							<h2>Sociales</h2>
-   						</div>
-   					</a>
-     			</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="span8" style="margin-top: -160px;">
-					<div id="view5" class="view view-sixth" style="margin-left: 367px">
-						<a href="/galeria4"><img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-21.jpg" width="192" height="160" style="vertical-align: text-top;" alt="" />
-							<div id="mask5" class="mask">
-     						<h2>Barrio Concha y Toro</h2>
-     					</div>
-     				</a>
-     			</div>
-     			<div id="view5" class="view view-sixth" style="margin-left:4px">
-						<a href="/galeria2"><img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-22.jpg" width="194" height="160" style="vertical-align: text-top;" alt="" />
-							<div id="mask5" class="mask">
-     						<h2>Centro Cultural La Moneda</h2>
-     					</div>
-     				</a>
-     			</div>
-				</div>
-			</div>
-
-
-		</div> <!-- column 1 -->
-
-		<div class="span4"> <!-- column 2 -->
-
-			<div class="row">
-				<div class="span4">
-					<a href="/bibliocabinas"><img src="https://s3.amazonaws.com/bibliorock/Bibliocabinas-40.jpg" width="370px" alt="" /></a>
-				</div>
-			</div>
-
-			<div class="row" >
-				<div class="span4">
-					<br />
-					<a href="http://www.bibliorock.cl/"><img src="/assets/banner bibliorock.jpg" width="370px" alt="" /></a>
-				</div>
-				<div class="span4" style="margin-left: 0px; margin-top:20px">
-					<div class="span4">
-						<a href="/assets/libro.pdf"><img src="/assets/banner libro.png" width="370px" alt="" /></a>
-					</div>
-				</div>
-				<div class="span4" style="margin-left: 0px; margin-top:20px">
-					<div class="span4">
-						<a href="http://www.mangacorta.cl/?utm_source=Bibliotecalibre&utm_medium=banner&utm_campaign=Bibliotecalibre"><img src="https://s3.amazonaws.com/bibliorock/banner-libros1_mini.jpg" width="370px" alt="" /></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<br />
-				<div class="span4">
-					<img src="https://s3.amazonaws.com/bibliorock/U%CC%81ltimos+Libros+Encontrados-53.jpg" alt="" />
-				</div>
-			</div>
-			<br />
-			<div class="row" style="font-size: 10px;">
-				<% @findings.each do |finding| %>
-					<div class="span4">
-						<img class="pull-left genero" src=<%= genre_to_img(finding.book.genre) %> alt="<%= @findings[0].book.genre%>" title="<%= @findings[0].book.genre%>" />
-						<% new_string = finding.book.title.split(/\s+/).each{ |word,i| word.capitalize!}.join(' ') %>
-						<p style="font-size: 13px"><strong><%= new_string %></strong></p>
-						<% new_string2 = finding.book.author.split(/\s+/).each{ |word,i| word.capitalize!}.join(' ') %>
-						<p>Autor: <%=  new_string2 %></p>
-						<p class="text-muted"><small>Hace <%= time_ago_in_words(finding.created_at.to_time) %></small></p>
-					</div>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_liberacion.title, @post_liberacion %></strong></h4>
+				<p>
+					<%= @post_liberacion.description %>
+				</p>
 				<% end %>
 			</div>
 
-			<br />
-			<div class="row">
-				<div class="span4">
-					<a href="/map"><img src="/assets/Banner Mapa-05.png" alt="" /></a>
+			<div class="span4">
+				<img src="https://s3.amazonaws.com/bibliorock/Textos-44.jpg" alt="" />
+				<br /><br />
+				<% if not @post_noticia.blank?  %>
+				<div class="span2" style="margin-left:-0px">
+					<% if @post_noticia.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @post_noticia.small_picture.url), @post_noticia %>
+					<% else %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-50.jpg"), @post_noticia %>
+					<% end %>
 				</div>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_noticia.title, @post_noticia %></strong></h4>
+				<p>
+					<%= @post_noticia.description %>
+				</p>
+				<% end %>
+				<br /><br />
+			</div>
+		</div> <!-- posts row 1 -->
+
+		<div class="row" style=""> <!-- post header 1 -->
+			<br />
+			<div class="span8">
+				<img src="https://s3.amazonaws.com/bibliorock/Textos-45.jpg" alt="" />
+				<img src="https://s3.amazonaws.com/bibliorock/Textos-46.jpg" style="margin-top:10px" alt="" />
+			</div>
+		</div>
+
+		<div class="row"> <!-- posts row 2 -->
+			<br />
+			<div class="span4">
+				<% if not @post_com1.blank? %>
+				<div class="span2" style="margin-left:-0px">
+					<% if @post_com1.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @post_com1.small_picture.url), @post_com1 %>
+					<% else %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @post_com1 %>
+					<% end %>
+				</div>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_com1.title, @post_com1 %></strong></h4>
+				<p>
+					<%= @post_com1.description %>
+				</p>
+				<% end %>
 			</div>
 
+			<div class="span4">
+				<% if not @post_com2.blank? %>
+				<div class="span2" style="margin-left:-0px">
+					<% if @post_com2.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @post_com2.small_picture.url), @post_com2 %>
+					<% else %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-51.jpg"), @post_com2 %>
+					<% end %>
+				</div>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_com2.title, @post_com2 %></strong></h4>
+				<p>
+					<%= @post_com2.description %>
+				</p>
+				<% end %>
+			</div>
+
+		</div> <!-- posts row 2 -->
+
+		<div class="row"> <!-- posts row 3 -->
+			<br />
+			<div class="span4">
+				<% if not @post_columna.blank? %>
+				<div class="span2" style="margin-left:-0px">
+					<% if @post_columna.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @post_columna.small_picture.url), @post_columna %>
+					<% else %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @post_columna %>
+					<% end %>
+				</div>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_columna.title, @post_columna %></strong></h4>
+				<p>
+					<%= @post_columna.description %>
+				</p>
+				<% end %>
+			</div>
+			<div class="span4">
+				<% if not @post_com3.blank? %>
+				<div class="span2" style="margin-left:-0px">
+					<% if @post_com3.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @post_com3.small_picture.url), @post_com3 %>
+					<% else %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-51.jpg"), @post_com3 %>
+					<% end %>
+				</div>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_com3.title, @post_com3 %></strong></h4>
+				<p>
+					<%= @post_com3.description %>
+				</p>
+				<% end %>
+			</div>
+		</div> <!-- posts row 3 -->
+
+		<div class="row"> <!-- galerias header -->
+			<br />
+			<div class="span8">
+				<a href="/galerias"><img src="https://s3.amazonaws.com/bibliorock/Multi-47.jpg" alt=""></a>
+			</div>
+			<br />
 		</div>
+
+		<div class="row">
+			<div class="span8" style="margin-bottom: -128px">
+				<br />
+				<div id="view1" class="view view-sixth">
+					<a href="/galeria6">
+						<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-23.jpg" width="160" height="128" style="vertical-align: text-top;" alt="" />
+						<div id="mask1" class="mask">
+							<h2>Museo de la Educación</h2>
+						</div>
+					</a>
+				</div>
+				<div id="view1" class="view view-sixth" style="margin-left:5px">
+					<a href="/galeria5">
+						<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-24.jpg" width="166" height="128" style="vertical-align: text-top;" alt="" />
+						<div id="mask1" class="mask">
+							<h2>Premios de Literatura</h2>
+						</div>
+					</a>
+				</div>
+				<div id="view1" class="view view-sixth" style="margin-left:5px">
+					<a href="/galeria3">
+						<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-25.jpg" width="166" height="128" style="vertical-align: text-top" alt="" />
+						<div id="mask1" class="mask">
+							<h2>Parque Forestal</h2>
+						</div>
+					</a>
+				</div>
+				<div id="view2" class="view view-sixth" style="margin-left:5px">
+					<a href="/galeria7">
+						<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-19.jpg" width="260" height="260" style="vertical-align: text-top" alt="" />
+						<div id="mask2" class="mask">
+							<h2>GAM</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span8" style="margin-top: 0px;">
+				<div id="view3" class="view view-sixth">
+					<a href="/bibliocabinas">
+						<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-18.jpg" width="362" height="290" style="vertical-align: text-top" alt="" />
+						<div id="mask3" class="mask">
+							<h2>Bibliocabinas</h2>
+						</div>
+					</a>
+				</div>
+				<div id="view4" class="view view-sixth" style="margin-left:5px">
+					<a href="/sociales">
+						<img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-20.jpg" width="122" height="128" style="vertical-align: text-top;" alt="" />
+						<div id="mask4" class="mask">
+							<h2>Sociales</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span8" style="margin-top: -160px;">
+				<div id="view5" class="view view-sixth" style="margin-left: 367px">
+					<a href="/galeria4"><img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-21.jpg" width="192" height="160" style="vertical-align: text-top;" alt="" />
+						<div id="mask5" class="mask">
+							<h2>Barrio Concha y Toro</h2>
+						</div>
+					</a>
+				</div>
+				<div id="view5" class="view view-sixth" style="margin-left:4px">
+					<a href="/galeria2"><img src="https://s3.amazonaws.com/bibliorock/fotos_social/lienzo_web-22.jpg" width="194" height="160" style="vertical-align: text-top;" alt="" />
+						<div id="mask5" class="mask">
+							<h2>Centro Cultural La Moneda</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+
+	</div> <!-- column 1 -->
+
+	<div class="span4"> <!-- column 2 -->
+
+		<div class="row">
+			<div class="span4">
+				<a href="/bibliocabinas"><img src="https://s3.amazonaws.com/bibliorock/Bibliocabinas-40.jpg" width="370px" alt="" /></a>
+			</div>
+		</div>
+
+		<div class="row" >
+			<div class="span4">
+				<br />
+				<a href="http://www.bibliorock.cl/"><img src="/assets/banner bibliorock.jpg" width="370px" alt="" /></a>
+			</div>
+			<div class="span4" style="margin-left: 0px; margin-top:20px">
+				<div class="span4">
+					<a href="/assets/libro.pdf"><img src="/assets/banner libro.png" width="370px" alt="" /></a>
+				</div>
+			</div>
+			<div class="span4" style="margin-left: 0px; margin-top:20px">
+				<div class="span4">
+					<a href="http://www.mangacorta.cl/?utm_source=Bibliotecalibre&utm_medium=banner&utm_campaign=Bibliotecalibre"><img src="https://s3.amazonaws.com/bibliorock/banner-libros1_mini.jpg" width="370px" alt="" /></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<br />
+			<div class="span4">
+				<img src="https://s3.amazonaws.com/bibliorock/U%CC%81ltimos+Libros+Encontrados-53.jpg" alt="" />
+			</div>
+		</div>
+		<br />
+		<div class="row" style="font-size: 10px;">
+			<% @findings.each do |finding| %>
+			<div class="span4">
+				<img class="pull-left genero" src=<%= genre_to_img(finding.book.genre) %> alt="<%= @findings[0].book.genre%>" title="<%= @findings[0].book.genre%>" />
+				<% new_string = finding.book.title.split(/\s+/).each{ |word,i| word.capitalize!}.join(' ') %>
+				<p style="font-size: 13px"><strong><%= new_string %></strong></p>
+				<% new_string2 = finding.book.author.split(/\s+/).each{ |word,i| word.capitalize!}.join(' ') %>
+				<p>Autor: <%=  new_string2 %></p>
+				<p class="text-muted"><small>Hace <%= time_ago_in_words(finding.created_at.to_time) %></small></p>
+			</div>
+			<% end %>
+		</div>
+
+		<br />
+		<div class="row">
+			<div class="span4">
+				<a href="/map"><img src="/assets/Banner Mapa-05.png" alt="" /></a>
+			</div>
+		</div>
+
+	</div>
 </div> <!-- big container -->
 
 
-	<!-- Modal -->
-	<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Ingresa el código del libro:</h3>
-		</div>
-		<form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
-			<div class="modal-body">
-				<div class=".control-group">
-					<%= label_tag :code, 'Código:', class: "control-label" %>
-					<div class="controls">
-						<%= text_field_tag :code, "" ,style: "text-transform:uppercase;" %>
-					</div>
+<!-- Modal -->
+<div id="modal_code" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Ingresa el código del libro:</h3>
+	</div>
+	<form id="new_finding_form" class="form form-horizontal"  action="/check_code" method="get">
+		<div class="modal-body">
+			<div class=".control-group">
+				<%= label_tag :code, 'Código:', class: "control-label" %>
+				<div class="controls">
+					<%= text_field_tag :code, "" ,style: "text-transform:uppercase;" %>
 				</div>
 			</div>
-			<div class="modal-footer">
-				<button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-				<input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
-			</div>
-		</form>
-	</div>
-
-	<!-- Modal -->
-	<div id="modal_prox" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Próximamente</h3>
-		</div>
-		<div class="modal-body">
-			¡Próximamente podrás liberar tus propios libros! Prontamente te diremos como hacerlo :)
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+			<input id="form_submit" class="btn btn-primary" name="commit" type="submit" value="Continuar" />
 		</div>
+	</form>
+</div>
+
+<!-- Modal -->
+<div id="modal_prox" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Próximamente</h3>
 	</div>
+	<div class="modal-body">
+		¡Próximamente podrás liberar tus propios libros! Prontamente te diremos como hacerlo :)
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	</div>
+</div>
 
 
-	<div class="row"> <!-- videos -->
-		<br />
-		<div class="span12">
-			<!-- <hr /> -->
-			<img src="https://s3.amazonaws.com/bibliorock/Multi-52.jpg" alt="">
-			<br /><br />
-			<div class="row">
-				<div class="span8" style="margin-left: 10px">
-					<div id="myCarousel2" class="carousel slide" data-ride="carousel" style="width: 1200px; height: 200px;">
-						<div class="carousel-inner">
-							<div class="item active" style="margin-top: 10px">
-								<div class="span4">
+<div class="row"> <!-- videos -->
+	<br />
+	<div class="span12">
+		<!-- <hr /> -->
+		<img src="https://s3.amazonaws.com/bibliorock/Multi-52.jpg" alt="">
+		<br /><br />
+		<div class="row">
+			<div class="span8" style="margin-left: 10px">
+				<div id="myCarousel2" class="carousel slide" data-ride="carousel" style="width: 1200px; height: 200px;">
+					<div class="carousel-inner">
+						<div class="item active" style="margin-top: 10px">
+							<div class="span4">
+								<iframe width="300px" height="200px" src="//www.youtube.com/embed/Ftc6IBCjzCk" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<div class="span4">
 								<iframe width="300px" height="200px" src="//www.youtube.com/embed/mMWegemip7c" frameborder="0" allowfullscreen></iframe>
 							</div>
 							<div class="span4">
-							<iframe width="300px" height="200px" src="//www.youtube.com/embed/3wfy46bj_-o" frameborder="0" allowfullscreen></iframe>
-							</div>
-							<div class="span4">
-							<iframe width="80%" height="200px" src="//www.youtube.com/embed/_SWGaAREyeM" frameborder="0" allowfullscreen></iframe>
+								<iframe width="300px" height="200px" src="//www.youtube.com/embed/3wfy46bj_-o" frameborder="0" allowfullscreen></iframe>
 							</div>
 						</div>
 						<div class="item" style="margin-top: 10px">
 							<div class="span4">
-							<iframe width="300px" height="200px" src="//www.youtube.com/embed/2vRmkYQZlJE" frameborder="0" allowfullscreen></iframe>
-						</div>
-						<div class="span4">
-							<iframe width="300px" height="200px" src="//www.youtube.com/embed/bfsPOfwoyUE" frameborder="0" allowfullscreen></iframe>
-						</div>
-						<div class="span4">
-							<iframe width="300px" height="200px" src="//www.youtube.com/embed/VOAI6O68vxw" frameborder="0" allowfullscreen></iframe>
-						</div>
+								<iframe width="80%" height="200px" src="//www.youtube.com/embed/_SWGaAREyeM" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<div class="span4">
+								<iframe width="300px" height="200px" src="//www.youtube.com/embed/2vRmkYQZlJE" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<div class="span4">
+								<iframe width="300px" height="200px" src="//www.youtube.com/embed/bfsPOfwoyUE" frameborder="0" allowfullscreen></iframe>
+							</div>
 						</div>
 						<div class="item" style="margin-top: 10px">
 							<div class="span4">
-							<iframe width="300px" height="200px" src="//www.youtube.com/embed/KnWuXrXrbD4" frameborder="0" allowfullscreen></iframe>
-						</div>
-						<div class="span4">
-							<iframe width="300px" height="200px" src="//www.youtube.com/embed/aL4uhSID5LM" frameborder="0" allowfullscreen></iframe>
+								<iframe width="300px" height="200px" src="//www.youtube.com/embed/VOAI6O68vxw" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<div class="span4">
+								<iframe width="300px" height="200px" src="//www.youtube.com/embed/KnWuXrXrbD4" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<div class="span4">
+								<iframe width="300px" height="200px" src="//www.youtube.com/embed/aL4uhSID5LM" frameborder="0" allowfullscreen></iframe>
+							</div>
 						</div>
 					</div>
-						</div>
-						<a class="left carousel-control" style="top: 50%;" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
-				<a class="right carousel-control" style="top: 50%;" href="#myCarousel2" data-slide="next">&rsaquo;</a>
-					</div>
+					<a class="left carousel-control" style="top: 50%;" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
+					<a class="right carousel-control" style="top: 50%;" href="#myCarousel2" data-slide="next">&rsaquo;</a>
 				</div>
 			</div>
 		</div>
-	</div> <!-- videos -->
+	</div>
+</div> <!-- videos -->
