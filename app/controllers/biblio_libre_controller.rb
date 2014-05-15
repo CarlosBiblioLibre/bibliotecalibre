@@ -1,5 +1,5 @@
 class BiblioLibreController < ApplicationController
-	before_filter :authenticate_user!, except: [:index, :index_nuevo]
+	before_filter :authenticate_user!, except: [:index, :index_nuevo, :colaboradores, :about, :bibliotecas, :invitanos]
 
 	def index
 		@findings = Finding.last(4).reverse
@@ -41,6 +41,12 @@ class BiblioLibreController < ApplicationController
         url: image.image.url
       }
     }, content_type: "text/html"
+  end
+
+  def colaboradores
+  end
+
+  def about
   end
 
 end
