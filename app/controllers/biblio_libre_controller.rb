@@ -1,5 +1,8 @@
 class BiblioLibreController < ApplicationController
-	before_filter :authenticate_user!, except: [:index, :index_nuevo, :colaboradores, :about, :bibliotecas, :invitanos, :que_es]
+	before_filter :authenticate_user!, except: [:index, :index_nuevo, :colaboradores,
+																							:about, :bibliotecas, :invitanos, :que_es, :galerias,
+																							:galeria1, :galeria2, :galeria3, :galeria4, :galeria5,
+																							:galeria6, :galeria7, :sociales, :bibliocabinas]
 
 	def index
 		@findings = Finding.last(4).reverse
