@@ -1,20 +1,21 @@
 <div class="row">
-  <h2>¡Tienes un libro nuevo!</h2>
-  <p>El libro que tienes aún no ha sido ingresado a nuestro sistema, debe ser su primera liberación, ayúdanos completando el siguiente formulario. ¡Muchas gracias!</p>
+  <div class="span12">
+    <h2>¡Tienes un libro nuevo!</h2>
+    <p>El libro que tienes aún no ha sido ingresado a nuestro sistema, debe ser su primera liberación, ayúdanos completando el siguiente formulario. ¡Muchas gracias!</p>
+  </div>
 </div>
-
 <div class="row">
-  <%= form_for(@book) do |f| %>
+  <div class="span12">
+    <%= form_for(@book) do |f| %>
     <% if @book.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
-        <ul>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <ul>
         <% @book.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <li><%= msg %></li>
         <% end %>
-        </ul>
-      </div>
+      </ul>
+    </div>
     <% end %>
     <%= f.hidden_field(:code, value: params[:code]) %>
     <div class="row">
@@ -38,33 +39,32 @@
         <%= u.select :how, Finding.how_options %>
       </div>
     </div>
-       <div class="row">
-          <div class="field span6">
-            <%= u.label :username, '¿Cómo te llamas?' %><br />
-            <%= u.text_field :username %>
-          </div>
-          <div class="field span6">
-            <%= u.label :email, '¿Tu correo electrónico?' %><br />
-            <%= u.text_field :email %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="span6">
-            <div class="field" style="height:100%;">
-              <%= u.label :location, '¿Dónde lo encontraste? (Haz clic en el mapa)' %>
-              <%= u.hidden_field :location %>
-              <br />
-              <div id="map_canvas"></div>
-            </div>
-          </div>
+    <div class="row">
+      <div class="field span6">
+        <%= u.label :username, '¿Cómo te llamas?' %><br />
+        <%= u.text_field :username %>
       </div>
+      <div class="field span6">
+        <%= u.label :email, '¿Tu correo electrónico?' %><br />
+        <%= u.text_field :email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <div class="field" style="height:100%;">
+          <%= u.label :location, '¿Dónde lo encontraste? (Haz clic en el mapa)' %>
+          <%= u.hidden_field :location %>
+          <br />
+          <div id="map_canvas"></div>
+        </div>
+      </div>
+    </div>
     <% end %>
-
     <div class="actions row">
       <div class="span6">
         <input name="commit" type="submit" value="Ingresar datos">
       </div>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

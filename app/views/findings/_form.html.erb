@@ -1,8 +1,10 @@
+
 <%= form_for(@finding) do |f| %>
 <div class="row">
   <div class="span6">
     <% if @finding.errors.any? %>
       <div class="row">
+        <div class="span6">
         <div id="error_explanation">
           <h2>No se pudo guardar:</h2>
           <ul>
@@ -11,9 +13,11 @@
           <% end %>
           </ul>
         </div>
+        </div>
       </div>
     <% end %>
     <div class="row">
+    <div class="span6">
       <% if not params[:code].present? %>
         <div class="field">
           <%= f.label :book_id, 'Ingresa el código del libro' %><br />
@@ -39,25 +43,32 @@
         </div>
       <% end %>
     </div>
+    </div>
 
     <div class="row">
+    <div class="span6">
       <div class="field">
         <%= f.label :how, '¿Cómo te llego el libro?' %><br />
         <%= f.select :how, Finding.how_options %>
       </div>
     </div>
+    </div>
     <div class="row">
+    <div class="span6">
       <div class="field">
         <%= f.label :username, '¿Cómo te llamas?' %><br />
         <%= f.text_field :username %>
       </div>
     </div>
+    </div>
 
     <div class="row">
+    <div class="span6">
       <div class="field">
         <%= f.label :email, '¿Tu correo electrónico?' %><br />
         <%= f.text_field :email %>
       </div>
+    </div>
     </div>
   </div>
   <div class="span6">
