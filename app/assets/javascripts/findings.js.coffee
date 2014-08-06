@@ -87,15 +87,28 @@ $ ->
       # window.map.setCenter(event.latLng)
     getLocation()
 
+  window.findings_counter = 0
   if $('#findings_map_canvas').size() > 0
     window.findings_map = new google.maps.Map($('#findings_map_canvas')[0], mapOptions)
 
     for finding in $('#findings_map_canvas').data('findings')
       do (finding) ->
         if (finding != "")
-          new google.maps.Marker
-            position: new google.maps.LatLng(finding.split(',')[0].substring(1), finding.split(',')[1].substring(1, finding.split(',')[1].length - 1) )
-            map: window.findings_map
+          window.findings_counter = window.findings_counter + 1
+          if window.findings_counter < 2
+            console.log "1"
+            new google.maps.Marker
+              position: new google.maps.LatLng(finding.split(',')[0].substring(1), finding.split(',')[1].substring(1, finding.split(',')[1].length - 1) )
+              map: window.findings_map
+              icon: "http://maps.google.com/mapfiles/ms/icons/green.png"
+          else
+            console.log "2"
+            new google.maps.Marker
+              position: new google.maps.LatLng(finding.split(',')[0].substring(1), finding.split(',')[1].substring(1, finding.split(',')[1].length - 1) )
+              map: window.findings_map
+              icon: "http://maps.google.com/mapfiles/ms/icons/green.png"
+        else
+          console.log "finding en blanco"
 
   $('#new_finding').on 'submit', (e) ->
     $('#finding_location').val("#{window.marker.getPosition().toString()}")
