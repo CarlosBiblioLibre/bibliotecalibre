@@ -95,7 +95,7 @@ $ ->
       do (finding) ->
         if (finding != "")
           window.findings_counter = window.findings_counter + 1
-          if window.findings_counter < 1233
+          if window.findings_counter < 1218
             new google.maps.Marker
               position: new google.maps.LatLng(finding.split(',')[0].substring(1), finding.split(',')[1].substring(1, finding.split(',')[1].length - 1) )
               map: window.findings_map
