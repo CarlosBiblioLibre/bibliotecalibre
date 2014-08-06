@@ -95,14 +95,12 @@ $ ->
       do (finding) ->
         if (finding != "")
           window.findings_counter = window.findings_counter + 1
-          if window.findings_counter < 2
-            console.log "1"
+          if window.findings_counter < 1233
             new google.maps.Marker
               position: new google.maps.LatLng(finding.split(',')[0].substring(1), finding.split(',')[1].substring(1, finding.split(',')[1].length - 1) )
               map: window.findings_map
-              icon: "http://maps.google.com/mapfiles/ms/icons/green.png"
+              icon: "http://maps.google.com/mapfiles/ms/icons/red.png"
           else
-            console.log "2"
             new google.maps.Marker
               position: new google.maps.LatLng(finding.split(',')[0].substring(1), finding.split(',')[1].substring(1, finding.split(',')[1].length - 1) )
               map: window.findings_map
