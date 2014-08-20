@@ -29,6 +29,8 @@ BiblioLibre::Application.routes.draw do
   get '/about/equipo' => 'about#equipo'
   get '/bibliocabinas' => 'biblio_libre#bibliocabinas'
 
+  get '/diab' => 'biblio_libre#diab'
+
 
   post '/tinymce_assets' => 'biblio_libre#uploads'
 
