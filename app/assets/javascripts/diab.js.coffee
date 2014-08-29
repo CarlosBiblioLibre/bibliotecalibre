@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$("body").on "click.scroll-adjust", "[href^=\"#\"]", (e) ->
+  return false if e and e.isDefaultPrevented()
+
+  $nav = $("div.navbar")
+  return false if ( $nav.css('position') != "fixed" )
+
+  $(window).one "scroll", ->
+    # scroll the window up by the height of the navbar
+    window.scrollBy 0, -$nav.height()
+    return
