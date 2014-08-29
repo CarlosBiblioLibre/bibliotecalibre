@@ -3,6 +3,8 @@ BiblioLibre::Application.routes.draw do
   resources :posts
   resources :hearts, only: :create
 
+  get '/diab_portada' => 'diab#index'
+
   get 'tags/:tag' => 'posts#comunidad', as: :tag
   get '/posts/comunidad' => 'posts#comunidad'
   get '/comunidad' => 'posts#comunidad', as: 'comunidad'

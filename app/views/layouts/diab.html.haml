@@ -1,0 +1,54 @@
+!!!
+%html
+  %head
+    %title Diab
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{:content => "La Biblioteca Libre es una biblioteca colectiva creada con los aportes de miles de libros de cientos de personas, para que éstos sean compartidos gratuita y libremente entre todos y no se pierdan en los hogares sin que nadie los lea.", :name => "description"}/
+
+    %title= content_for?(:title) ? yield(:title) : "Día B - La Biblioteca Libre"
+    %meta{:content => "La Biblioteca Libre", :name => "author"}/
+    - if @og_title
+      %meta{:content => @og_title, :property => "og:title"}/
+    - else
+      %meta{:content => "La Biblioteca Libre", :property => "og:title"}/
+    - if @og_title
+      %meta{:content => request.original_url, :property => "og:url"}/
+    - else
+      %meta{:content => "http://www.labibliotecalibre.cl/", :property => "og:url"}/
+    - if @og_description
+      %meta{:content => @og_description, :property => "og:description"}/
+    - else
+      %meta{:content => "La Biblioteca Libre es una iniciativa que promueve el intercambio gratuito de libros: las personas dejan o toman ejemplares de su interés. Los libros de La Biblioteca Libre no son de nadie en particular y son de todos en general. Una vez que leas los libros no los dejes en tu casa juntando polvo, pásalos a alguien más, que sigan su rumbo por el mundo.", :property => "og:description"}/
+    - if @og_image
+      %meta{:content => @og_image, :property => "og:image"}/
+      %meta{:content => "320", :property => "og:image:width"}/
+      %meta{:content => "222", :property => "og:image:height"}/
+    - else
+      %meta{:content => "http://www.labibliotecalibre.cl/assets/lbl2.jpg", :property => "og:image"}/
+      %meta{:content => "image/jpg", :property => "og:image:type"}/
+      %meta{:content => "333", :property => "og:image:width"}/
+      %meta{:content => "333", :property => "og:image:height"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %link{:href => "https://s3.amazonaws.com/bibliorock/favicon.ico", :rel => "shortcut icon"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = yield(:head)
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41898970-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  %body.diab
+    = render 'diab/menu'
+    .container
+      = yield
+      = javascript_include_tag "application"
+      = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyCjFGRwHIUl0nLB59JL-4bWR-w2qc1auqo&sensor=true"
+      %script{:src => "http://code.highcharts.com/highcharts.js"}

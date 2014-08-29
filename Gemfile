@@ -13,6 +13,8 @@ gem 'acts-as-taggable-on'
 
 gem 'acts_as_votable'
 
+gem 'haml-rails'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
