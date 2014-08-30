@@ -13,7 +13,8 @@
         %img{src: '/assets/diab/como.png', style: 'width: 52%;text-align:center;margin-top:20px;'}
         %a{href: '#quiero'}
           %img{src: '/assets/diab/paso1.png', style: 'height: 52px; margin-top:20px;'}
-        %img{src: '/assets/diab/paso2.png', style: 'height: 52px; margin-top:20px;'}
+        %a{href: '#buzones'}
+          %img{src: '/assets/diab/paso2.png', style: 'height: 52px; margin-top:20px;'}
     .row
       .span12{style: 'text-align:center;'}
         %img{src: '/assets/diab/parentesis.png', style: 'width: 680px;text-align:center;margin-top:30px; margin-bottom:20px;'}
@@ -73,8 +74,36 @@
             .control-group
               = u.label :location, 'Recuerda ir a dejar tu libro al siguiente buzón:', class: 'control-label'
               .controls
-                = u.hidden_field :location
                 #map_canvas_diab
+
+#diab{style: 'width: 100%; padding-top:40px;'}
+  .container
+    .row
+      .span12
+        %p
+          El
+          %strong 21 de septiembre
+          vamos a celebrar el
+          %strong Día de la Bibliodiversidad
+          en el Museo de Bellas Artes, con
+          %strong la mayor Liberación de Libros
+          que se haya hecho en el país. Más de 100.000 títulos cubrirán el museo y sus alrededores, para que la gente pueda intercambiar libros, libre y gratuitamente. Para llegar a la meta de los 100.000 libros se dispondrán buzones en distintos puntos de la ciudad de Santiago, que recibirán los ejemplares que la gente quiera que sean liberados ese día. Los puntos son los siguientes: Museo Nacional de Bellas Artes, Centro Cultural GAM, Biblioteca Nacional, Biblioteca de Providencia, y también universidades y colegios que irán alternándose semana a semana.
+
+        %p Los buzones permanecerán en los puntos señalados anteriormente hasta el lunes 15 de septiembre. Por cada libro, en excelente estado, que una persona aporte en estos buzones, podrá llevarse dos en el Día de la Bibliodiversidad (máximo 4 por persona). Para confirmar el aporte en los buzones, cada libro deberá ser registrado previamente este sitio web.
+
+        %p ¿Qué es la Bibliodiversidad? Es la expresión en el mundo del libro de la diversidad cultural, fundamento de un orden social diverso, justo y equitativo en un sistema en equilibrio con el ser humano.
+
+        %p Para más información visita
+        %ul
+          %li
+            El Día B:
+            %a{ href: 'http://www.eldiab.org/' } http://www.eldiab.org/
+          %li
+            La Biblioteca Libre: http://www.labibliotecalibre.cl/
+            %a{ href: 'http://www.labibliotecalibre.cl/' } http://www.labibliotecalibre.cl/
+          %li
+            Asociación de Editores de Chile: http://www.editoresdechile.cl/
+            %a{ href: 'http://www.editoresdechile.cl/' } http://www.editoresdechile.cl/
 
 #monos
   .container

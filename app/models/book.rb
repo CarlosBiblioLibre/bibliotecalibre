@@ -73,10 +73,11 @@ class Book < ActiveRecord::Base
   #  "(-33.440596, -70.665913)"
 
   def self.buzones
-    return [['Buzón 1', "(-33.425334, -70.612376)"],
-            ['Buzón 2', "(-33.440108, -70.683346)"],
-            ['Buzón 3', "(-33.441751, -70.644163)"],
-            ['Buzón 4', "(-33.440596, -70.665913)"]]
+    return [['GAM', "(-33.439306, -70.639791)"],
+            ['Museo Bellas Artes', "(-33.435398, -70.643447)"],
+            ['Biblioteca Nacional de Chile', "(-33.442068, -70.645746)"],
+            ['Biblioteca Municipal de Providencia', "(-33.427105, -70.61652)0"],
+            ['Centro Lector Lo Barnechea', "(-33.358088, -70.506496)"]]
   end
 
 end

@@ -92,5 +92,6 @@ BiblioLibre::Application.routes.draw do
 
   get '/donativos' => 'biblio_libre#donativos', :as => 'donativos'
 
-  root to: 'biblio_libre#index_nuevo'
+  # root to: 'biblio_libre#index_nuevo'
+  root to: 'diab#index'
 end
