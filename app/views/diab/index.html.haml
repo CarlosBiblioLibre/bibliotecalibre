@@ -49,6 +49,10 @@
                 = f.select :genre, Book.genre, required: 'required'
                 / <p class="help-block">asdasd</p>
             .control-group
+              = u.label :location, '¿A que buzón irás a dejar el libro?', class: 'control-label'
+              .controls
+                = u.select :location, Book.buzones, required: 'required', class: 'diab'
+            .control-group
               = u.label :username, '¿Cómo te llamas? *', class: 'control-label'
               .controls
                 = u.text_field :username, required: 'required'
@@ -67,7 +71,7 @@
                 %p.help-block * requerido
           .span8
             .control-group
-              = u.label :location, '¿Dónde lo liberarás? (Haz clic en el mapa)', class: 'control-label'
+              = u.label :location, 'Recuerda ir a dejar tu libro al siguiente buzón:', class: 'control-label'
               .controls
                 = u.hidden_field :location
                 #map_canvas_diab
