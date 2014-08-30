@@ -38,7 +38,7 @@ BiblioLibre::Application.routes.draw do
 
   get '/vota/:battle_id/:book' => 'battles#vote'
 
-  get '/zohoverify/verifyforzoho.html', to: redirect('/assets/verifyforzoho.html')
+  # get '/zohoverify/verifyforzoho.html', to: redirect('/assets/verifyforzoho.html')
 
   devise_for :users
 
@@ -58,6 +58,7 @@ BiblioLibre::Application.routes.draw do
   get '/libera' => 'books#new_book_and_release', as: 'new_book_and_release'
   get '/new_book_and_release' => 'books#new_book_and_release'
   post '/printables' => 'books#printables', as: 'printables'
+  post '/printables_diab' => 'diab#printables', as: 'printables_diab'
   get '/generate_pdf/:code' => 'books#generate_pdf', as: 'generate_pdf'
 
   get '/map' => 'findings#map', as: 'findings_map'

@@ -2,26 +2,26 @@
   .container
     .row
       .span12
-        %img{src: '/assets/diab/textologo.png', style: 'width: 520px;'}
+        %img{src: '/assets/diab/textologo.png', style: 'width: 510px;'}
     .row
       .span12{style: 'text-align:center;'}
-        %img{src: '/assets/diab/texto.png', style: 'width: 700px;text-align:center;margin-top:20px; margin-bottom:20px;'}
+        %img{src: '/assets/diab/texto.png', style: 'width: 685px;text-align:center;margin-top:20px; margin-bottom:40px;'}
     .row
       .span6{style: 'text-align:center;'}
         %iframe{:allowfullscreen => "", :frameborder => "0", :src => "//www.youtube.com/embed/woYDS8Zn1-Q", :width => "467px", height: "263px"}
-      .span6
+      .span6{style: 'text-align:center;'}
         %img{src: '/assets/diab/como.png', style: 'width: 52%;text-align:center;margin-top:20px;'}
         %a{href: '#quiero'}
-          %img{src: '/assets/diab/paso1.png', style: 'height: 52px; margin-top:20px; margin-left: 0px;'}
-        %img{src: '/assets/diab/paso2.png', style: 'height: 52px; margin-top:20px; margin-left: 0px;'}
+          %img{src: '/assets/diab/paso1.png', style: 'height: 52px; margin-top:20px;'}
+        %img{src: '/assets/diab/paso2.png', style: 'height: 52px; margin-top:20px;'}
     .row
       .span12{style: 'text-align:center;'}
-        %img{src: '/assets/diab/parentesis.png', style: 'width: 680px;text-align:center;margin-top:20px; margin-bottom:20px;'}
+        %img{src: '/assets/diab/parentesis.png', style: 'width: 680px;text-align:center;margin-top:30px; margin-bottom:20px;'}
 
 #quiero{style: 'background-color: #e2fbc9; width: 100%; padding-top:40px;'}
   .container
     .row
-      = form_for(@book, url: {action: printables_path}, html: { class: "form-horizontal" } ) do |f|
+      = form_for(@book, url: printables_diab_path, html: { class: "form-horizontal", id: 'new_book_diab' }, remote: true ) do |f|
         = f.fields_for :releases do |u|
           .span4
             - if @book.errors.any?
@@ -58,19 +58,22 @@
               .controls
                 = u.text_field :email, type: 'email', required: 'required', 'data-validation-email-message' => 'Ingresa un correo válido'
                 %p.help-block
-            .control-group
+            .row
+              .span4
+                .msg_ajax
+            .control-group.guardar_diab
               .controls
-                %button.btn.btn-primary{:name => "commit", :type => "submit", :value => "Ingresar datos"} Ingresar datos
+                %button.btn.btn-primary{:name => "commit", :type => "submit", :value => "Ingresar datos", id: 'save_release'} Guardar
                 %p.help-block * requerido
           .span8
             .control-group
               = u.label :location, '¿Dónde lo liberarás? (Haz clic en el mapa)', class: 'control-label'
               .controls
                 = u.hidden_field :location
-                #map_canvas
+                #map_canvas_diab
 
 #monos
   .container
     .row
       .span12{style: 'text-align:center;'}
-        %img{src: '/assets/diab/monos.png', style: 'width: 100%;text-align:center;margin-top:20px; margin-bottom:20px;'}
+        %img{src: '/assets/diab/monos.png', style: 'width: 60%;text-align:center;margin-top:20px; margin-bottom:20px;'}
