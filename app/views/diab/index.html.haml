@@ -104,7 +104,32 @@
           %li
             Asociación de Editores de Chile: http://www.editoresdechile.cl/
             %a{ href: 'http://www.editoresdechile.cl/' } http://www.editoresdechile.cl/
-
+#participa{style: 'width: 100%; padding-top:40px;'}
+  .container
+    .row
+      .span12{style: 'text-align:center;'}
+        = form_for @message, url: participa_diab_path, html: {class: ""}, remote: true do |form|
+          .row
+            .span8.offset2.well
+              .row
+                .span8
+                  %h4 ¿Te gustaría participar ayudándonos a recolectar libros o en el museo de Bellas artes el día de la Bibliodiversidad? Déjanos un mensaje y nos comunicaremos contigo.
+                  %br/
+              .row
+                .span3
+                  = form.label :name, 'Nombre'
+                  = form.text_field :name, required: 'required', class: "span3", placeholder: "Nombre"
+                  = form.label :email
+                  = form.text_field :email, type: 'email', required: 'required', class: "span3", placeholder: "Correo", 'data-validation-email-message' => 'Ingresa un correo válido'
+                  .msg-participa
+                .span4
+                  .row
+                    .span4
+                      %label Mensaje
+                      = form.text_area :body, class: "input-xlarge span5", rows: 10
+                  .row
+                    .span4
+                      = form.submit "Enviar", class: "btn btn-primary pull-right", id: 'send-participa'
 #monos
   .container
     .row

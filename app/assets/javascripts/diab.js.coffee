@@ -31,6 +31,14 @@ $ ->
     $("#save_release").text('Guardar')
     $("#save_release").removeClass "disabled"
 
+  $("#new_message").on "ajax:send", (xhr) ->
+    $("#send-participa").text('Enviando...')
+    $("#send-participa").addClass "disabled"
+
+  $("#new_message").on "ajax:complete", (xhr, status) ->
+    $("#send-participa").text('Guardar')
+    $("#send-participa").removeClass "disabled"
+
   location = new google.maps.LatLng( window.position.lat, window.position.lng )
 
   window.mapOptions =

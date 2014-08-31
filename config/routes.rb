@@ -32,6 +32,7 @@ BiblioLibre::Application.routes.draw do
   get '/bibliocabinas' => 'biblio_libre#bibliocabinas'
 
   get '/diab' => 'biblio_libre#diab'
+  post '/participa_diab' => 'diab#participa'
 
 
   post '/tinymce_assets' => 'biblio_libre#uploads'
@@ -92,6 +93,7 @@ BiblioLibre::Application.routes.draw do
 
   get '/donativos' => 'biblio_libre#donativos', :as => 'donativos'
 
+  get '/bibliolibre' => 'biblio_libre#index_nuevo', as: 'portada'
   # root to: 'biblio_libre#index_nuevo'
   root to: 'diab#index'
 end
