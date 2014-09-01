@@ -43,7 +43,7 @@ body.diab {
 
 #map_canvas_diab {
   height: 350px;
-  width: 95%;
+  width: 100%;
 }
 
 .anchor {
@@ -55,4 +55,14 @@ body.diab {
 
 .diab-footer-img {
   height: 60px;
+}
+
+.sitioBL {
+  position: fixed;
+  top: 80px;
+  right: 0px;
+}
+
+.diabLOGOBL {
+  width: 95px;
 }
