@@ -24,6 +24,10 @@
     .row
       .span12.well
         .row
+          .span12
+            %h2{style: 'margin-bottom: 10px;' }
+              Quiero liberar un libro
+        .row
           = form_for(@book, url: printables_diab_path, html: { class: "form-horizontal", id: 'new_book_diab' }, remote: true ) do |f|
             = f.fields_for :releases do |u|
               .span4
@@ -82,6 +86,8 @@
   .container
     .row
       .span12
+        %h2
+          El día B
         %p
           El
           %strong 21 de septiembre
@@ -91,7 +97,7 @@
           %strong la mayor Liberación de Libros
           que se haya hecho en el país. Más de 100.000 títulos cubrirán el museo y sus alrededores, para que la gente pueda intercambiar libros, libre y gratuitamente. Para llegar a la meta de los 100.000 libros se dispondrán buzones en distintos puntos de la ciudad de Santiago, que recibirán los ejemplares que la gente quiera que sean liberados ese día. Los puntos son los siguientes: Museo Nacional de Bellas Artes, Centro Cultural GAM, Biblioteca Nacional, Biblioteca de Providencia, y también universidades y colegios que irán alternándose semana a semana.
 
-        %p Los buzones permanecerán en los puntos señalados anteriormente hasta el lunes 15 de septiembre. Por cada libro, en excelente estado, que una persona aporte en estos buzones, podrá llevarse dos en el Día de la Bibliodiversidad (máximo 4 por persona). Para confirmar el aporte en los buzones, cada libro deberá ser registrado previamente este sitio web.
+        %p Los buzones permanecerán en los puntos señalados anteriormente hasta el lunes 15 de septiembre. Por cada libro, en excelente estado, que una persona aporte en estos buzones, podrá llevarse dos en el Día de la Bibliodiversidad (máximo 4 por persona). Para confirmar el aporte en los buzones, cada libro deberá ser registrado previamente en este sitio web.
 
         %p ¿Qué es la Bibliodiversidad? Es la expresión en el mundo del libro de la diversidad cultural, fundamento de un orden social diverso, justo y equitativo en un sistema en equilibrio con el ser humano.
 
@@ -100,9 +106,6 @@
           %li
             El Día B:
             %a{ href: 'http://www.eldiab.org/' } http://www.eldiab.org/
-          %li
-            La Biblioteca Libre: http://www.labibliotecalibre.cl/
-            %a{ href: 'http://www.labibliotecalibre.cl/' } http://www.labibliotecalibre.cl/
           %li
             Asociación de Editores de Chile: http://www.editoresdechile.cl/
             %a{ href: 'http://www.editoresdechile.cl/' } http://www.editoresdechile.cl/
@@ -113,6 +116,10 @@
         = form_for @message, url: participa_diab_path, html: {class: ""}, remote: true do |form|
           .row
             .span8.offset2.well
+              .row
+                .span12{style: 'text-align: left; margin-bottom: 5px;' }
+                  %h2
+                    Participa
               .row
                 .span8
                   %h4 ¿Te gustaría participar ayudándonos a recolectar libros o en el museo de Bellas artes el día de la Bibliodiversidad? Déjanos un mensaje y nos comunicaremos contigo.
@@ -137,3 +144,22 @@
     .row
       .span12{style: 'text-align:center;'}
         %img{src: '/assets/diab/monos.png', style: 'width: 60%;text-align:center;margin-top:20px; margin-bottom:20px;'}
+
+#footer{style: 'background-color: white; height: 61px;' }
+  .container
+    .row
+      .span4
+        %img.diab-footer-img{src: '/assets/diab/footer-organiza.png'}
+        %a{href: 'http://www.labibliotecalibre.cl/'}
+          %img.diab-footer-img{src: '/assets/diab/footer-bl.png'}
+        %img.diab-footer-img{src: '/assets/diab/footer-mas.png'}
+        %a{href: 'http://editoresdechile.cl/'}
+          %img.diab-footer-img{src: '/assets/diab/footer-editores.png'}
+      .span3
+        %img.diab-footer-img{src: '/assets/diab/footer-patrocina.png'}
+        %a{href: 'http://www.mnba.cl/'}
+          %img.diab-footer-img{src: '/assets/diab/footer-coma.png'}
+      .span5
+        %a{href: 'http://www.eldiab.org/'}
+          %img.diab-footer-img.pull-right{src: '/assets/diab/footer-logodiab.png'}
+        %img.diab-footer-img.pull-right{src: '/assets/diab/footer-diab.png', style: 'margin-right: -30px;'}
