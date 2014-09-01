@@ -19,62 +19,64 @@
       .span12{style: 'text-align:center;'}
         %img{src: '/assets/diab/parentesis.png', style: 'width: 680px;text-align:center;margin-top:30px; margin-bottom:20px;'}
 
-#quiero{style: 'background-color: #56A0B1; width: 100%; padding-top:40px; color: #fdf8f8;'}
+#quiero{style: 'width: 100%; padding-top:40px;'}
   .container
     .row
-      = form_for(@book, url: printables_diab_path, html: { class: "form-horizontal", id: 'new_book_diab' }, remote: true ) do |f|
-        = f.fields_for :releases do |u|
-          .span4
-            - if @book.errors.any?
-              #error_explanation
-                %h2
-                  = pluralize(@book.errors.count, "error")
-                  prohibited this book from being saved:
-                %ul
-                  - @book.errors.full_messages.each do |msg|
-                    %li= msg
-            = f.hidden_field(:code, value: @book.code)
-            .control-group
-              = f.label :title, 'Título *', class: 'control-label'
-              .controls
-                = f.text_field :title, required: 'required'
-                / <p class="help-block">asdasd</p>
-            .control-group
-              = f.label :author, 'Autor *', class: 'control-label'
-              .controls
-                = f.text_field :author, required: 'required'
-                / <p class="help-block">asdasd</p>
-            .control-group
-              = f.label :genre, 'Género', class: 'control-label'
-              .controls
-                = f.select :genre, Book.genre, required: 'required'
-                / <p class="help-block">asdasd</p>
-            .control-group
-              = u.label :location, '¿A que buzón irás a dejar el libro?', class: 'control-label'
-              .controls
-                = u.select :location, Book.buzones, required: 'required', class: 'diab'
-            .control-group
-              = u.label :username, '¿Cómo te llamas? *', class: 'control-label'
-              .controls
-                = u.text_field :username, required: 'required'
-                / <p class="help-block">asdasd</p>
-            .control-group
-              = u.label :email, '¿Tu correo electrónico?*', class: 'control-label'
-              .controls
-                = u.text_field :email, type: 'email', required: 'required', 'data-validation-email-message' => 'Ingresa un correo válido'
-                %p.help-block
-            .row
+      .span12.well
+        .row
+          = form_for(@book, url: printables_diab_path, html: { class: "form-horizontal", id: 'new_book_diab' }, remote: true ) do |f|
+            = f.fields_for :releases do |u|
               .span4
-                .msg_ajax
-            .control-group.guardar_diab
-              .controls
-                %button.btn.btn-primary{:name => "commit", :type => "submit", :value => "Ingresar datos", id: 'save_release'} Guardar
-                %p.help-block * requerido
-          .span8
-            .control-group
-              = u.label :location, 'Recuerda ir a dejar tu libro al siguiente buzón:', class: 'control-label'
-              .controls
-                #map_canvas_diab
+                - if @book.errors.any?
+                  #error_explanation
+                    %h2
+                      = pluralize(@book.errors.count, "error")
+                      prohibited this book from being saved:
+                    %ul
+                      - @book.errors.full_messages.each do |msg|
+                        %li= msg
+                = f.hidden_field(:code, value: @book.code)
+                .control-group
+                  = f.label :title, 'Título *', class: 'control-label'
+                  .controls
+                    = f.text_field :title, required: 'required'
+                    / <p class="help-block">asdasd</p>
+                .control-group
+                  = f.label :author, 'Autor *', class: 'control-label'
+                  .controls
+                    = f.text_field :author, required: 'required'
+                    / <p class="help-block">asdasd</p>
+                .control-group
+                  = f.label :genre, 'Género', class: 'control-label'
+                  .controls
+                    = f.select :genre, Book.genre, required: 'required'
+                    / <p class="help-block">asdasd</p>
+                .control-group
+                  = u.label :location, '¿A que buzón irás a dejar el libro?', class: 'control-label'
+                  .controls
+                    = u.select :location, Book.buzones, required: 'required', class: 'diab'
+                .control-group
+                  = u.label :username, '¿Cómo te llamas? *', class: 'control-label'
+                  .controls
+                    = u.text_field :username, required: 'required'
+                    / <p class="help-block">asdasd</p>
+                .control-group
+                  = u.label :email, '¿Tu correo electrónico?*', class: 'control-label'
+                  .controls
+                    = u.text_field :email, type: 'email', required: 'required', 'data-validation-email-message' => 'Ingresa un correo válido'
+                    %p.help-block
+                .row
+                  .span4
+                    .msg_ajax
+                .control-group.guardar_diab
+                  .controls
+                    %button.btn.btn-primary{:name => "commit", :type => "submit", :value => "Ingresar datos", id: 'save_release'} Guardar
+                    %p.help-block * requerido
+              .span8
+                .control-group
+                  = u.label :location, 'Recuerda ir a dejar tu libro al siguiente buzón:', class: 'control-label'
+                  .controls
+                    #map_canvas_diab
 
 #diab{style: 'width: 100%; padding-top:40px;'}
   .container
