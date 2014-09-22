@@ -3,7 +3,7 @@ BiblioLibre::Application.routes.draw do
   resources :posts
   resources :hearts, only: :create
 
-  get '/diab_portada' => 'diab#index'
+  get '/diab_portada' => 'diab#index', as: 'diab'
 
   get 'tags/:tag' => 'posts#comunidad', as: :tag
   get '/posts/comunidad' => 'posts#comunidad'
@@ -94,6 +94,7 @@ BiblioLibre::Application.routes.draw do
   get '/donativos' => 'biblio_libre#donativos', :as => 'donativos'
 
   get '/bibliolibre' => 'biblio_libre#index_nuevo', as: 'portada'
-  # root to: 'biblio_libre#index_nuevo'
-  root to: 'diab#index'
+
+  root to: 'biblio_libre#index_nuevo'
+  # root to: 'diab#index'
 end
