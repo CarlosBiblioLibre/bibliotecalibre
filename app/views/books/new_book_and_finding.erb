@@ -1,70 +1,94 @@
 <div class="row">
   <div class="span12">
     <h2>¡Tienes un libro nuevo!</h2>
+    <br />
     <p>El libro que tienes aún no ha sido ingresado a nuestro sistema, debe ser su primera liberación, ayúdanos completando el siguiente formulario. ¡Muchas gracias!</p>
   </div>
 </div>
+
 <div class="row">
-  <div class="span12">
-    <%= form_for(@book) do |f| %>
-    <% if @book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
-      <ul>
-        <% @book.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% end %>
-    <%= f.hidden_field(:code, value: params[:code]) %>
-    <div class="row">
-      <div class="field span6">
-        <%= f.label :title, 'Título' %><br />
-        <%= f.text_field :title %>
-      </div>
-      <div class="field span6">
-        <%= f.label :author, 'Autor' %><br />
-        <%= f.text_field :author %>
-      </div>
-    </div>
-    <%= f.fields_for :findings do |u| %>
-    <div class="row">
-      <div class="field span6">
-        <%= f.label :genre, 'Género' %><br />
-        <%= f.select :genre, Book.genre %>
-      </div>
-      <div class="field span6">
-        <%= u.label :how, '¿Cómo te llego el libro?' %><br />
-        <%= u.select :how, Finding.how_options %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="field span6">
-        <%= u.label :username, '¿Cómo te llamas?' %><br />
-        <%= u.text_field :username %>
-      </div>
-      <div class="field span6">
-        <%= u.label :email, '¿Tu correo electrónico?' %><br />
-        <%= u.text_field :email %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span6">
-        <div class="field" style="height:100%;">
-          <%= u.label :location, '¿Dónde lo encontraste? (Haz clic en el mapa)' %>
-          <%= u.hidden_field :location %>
-          <br />
-          <div id="map_canvas"></div>
+  <div class="span4">
+    <%= form_for(@book, html: { class: "form-horizontal" } ) do |f| %>
+      <% if @book.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+          <ul>
+            <% @book.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.hidden_field(:code, value: params[:code]) %>
+
+      <div class="control-group">
+        <%= f.label :title, 'Título *', class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :title, required: 'required' %>
+          <!-- <p class="help-block">asdasd</p> -->
         </div>
       </div>
-    </div>
-    <% end %>
-    <div class="actions row">
-      <div class="span6">
-        <input name="commit" type="submit" value="Ingresar datos">
+
+      <div class="control-group">
+        <%= f.label :author, 'Autor *', class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :author, required: 'required' %>
+          <!-- <p class="help-block">asdasd</p> -->
+        </div>
       </div>
-    </div>
+
+      <%= f.fields_for :findings do |u| %>
+
+        <div class="control-group">
+          <%= f.label :genre, 'Género', class: 'control-label' %>
+          <div class="controls">
+            <%= f.select :genre, Book.genre, required: 'required' %>
+            <!-- <p class="help-block">asdasd</p> -->
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= u.label :how, '¿Cómo te llego el libro?', class: 'control-label' %><br />
+          <div class="controls">
+            <%= u.select :how, Finding.how_options, required: 'required' %>
+            <!-- <p class="help-block">asdasd</p> -->
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= u.label :username, '¿Cómo te llamas? *', class: 'control-label' %>
+          <div class="controls">
+            <%= u.text_field :username, required: 'required' %>
+            <!-- <p class="help-block">asdasd</p> -->
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= u.label :email, '¿Tu correo electrónico?*', class: 'control-label' %>
+          <div class="controls">
+            <%= u.text_field :email, type: 'email', required: 'required', 'data-validation-email-message' => 'Ingresa un correo válido' %>
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <button name="commit" type="submit" value="Ingresar datos" class="btn btn-primary">Ingresar datos</button>
+            <p class="help-block">* requerido</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="span8">
+        <div class="control-group">
+          <%= u.label :location, '¿Dónde lo encontraste? (Haz clic en el mapa)' , class: 'control-label' %>
+          <div class="controls">
+            <%= u.hidden_field :location %>
+            <div id="map_canvas"></div>
+          </div>
+        </div>
+      </div>
+
     <% end %>
-  </div>
+  <% end %>
 </div>

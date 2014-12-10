@@ -1,16 +1,13 @@
 
 
-<div class="row">
-	<div class="span12">
+
 		<div class="well">
 
-		<p>Tu libro ha sido ingresado y se le ha generado el siguente código: <%= @book.code %></p>
+  		<p>Tu libro ha sido ingresado y se le ha generado el siguente código: <%= @book.code %></p>
 
-		<p>Baja las instrucciones y pégalas en el libro.</p>
+  		<p>Baja las instrucciones y pégalas en el libro.</p>
 
-		<a href="/generate_pdf/<%= @book.code %>" class="btn btn-large btn-primary">Bajar instrucciones</a>
-		&nbsp;<a href="/libera" >Liberar otro libro</a>
+  		<a href="/generate_pdf/<%= @book.code %>" class="btn btn-large btn-primary">Bajar instrucciones</a>
+  		&nbsp;<a href="/libera" >Liberar otro libro</a>
 
 		</div>
-	</div>
-</div>

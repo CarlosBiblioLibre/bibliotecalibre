@@ -1,15 +1,21 @@
 <div class="row">
-  <div class="span8 center well negro">
-    <p>
-      <b>Título:</b>
-      <%= @book.title %>
-    </p>
-    
-    <p>
-      <b>Código:</b>
-      <%= @book.code %>
-    </p>
-    
+  <div class="span12 center">
+    <div class="well negro">
+      <p>
+
+      </p>
+      <p>
+        <b>Libro encontrado:</b>
+        <%= @book.title %>
+      </p>
+
+      <p>
+        <b>Código:</b>
+        <%= @book.code %>
+      </p>
+
+    </div>
+
     <% if user_signed_in? %>
       <p>
         <b>Hallazgos:</b>
@@ -18,11 +24,14 @@
         <% end %>
       </p>
     <% end %>
+
   </div>
 </div>
 <div class="row">
-      <%= link_to 'Volver', root_path %>
-      <br />
-      <%= user_signed_in? ? link_to('(Todos)', books_path) : '' %>
-      <%= user_signed_in? ? link_to('| (Edit)', edit_book_path(@book)) : '' %>
+  <div class="span12">
+    <%= link_to 'Volver', root_path %>
+    <br />
+    <%= user_signed_in? ? link_to('(Todos)', books_path) : '' %>
+    <%= user_signed_in? ? link_to('| (Edit)', edit_book_path(@book)) : '' %>
+  </div>
 </div>

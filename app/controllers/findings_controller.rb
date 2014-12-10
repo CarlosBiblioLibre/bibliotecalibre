@@ -70,7 +70,7 @@ class FindingsController < ApplicationController
 
     respond_to do |format|
       if @finding.save
-        format.html { redirect_to @finding, notice: 'El hallazgo ha sido guardado.' }
+        format.html { redirect_to @finding, notice: 'Los datos han sido ingresados. ¡Muchas gracias!' }
         format.json { render json: @finding, status: :created, location: @finding }
       else
         format.html { render action: "new" }
@@ -86,7 +86,7 @@ class FindingsController < ApplicationController
 
     respond_to do |format|
       if @finding.update_attributes(params[:finding])
-        format.html { redirect_to @finding, notice: 'El hallazgo ha sido actualizado.' }
+        format.html { redirect_to @finding, notice: 'Los datos han sido ingresados. ¡Muchas gracias!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
