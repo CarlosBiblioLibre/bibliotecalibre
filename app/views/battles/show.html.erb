@@ -76,6 +76,14 @@
 </div>
 
 <div class="row">
+		<div class="span6">
+			<hr />
+				<div class="fb-like" data-href="<%= request.original_url %>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+			<hr />
+		</div>
+	</div>
+
+<div class="row">
 	<div class="span12">
 		<div class="fb-comments-unloaded" data-href="<%= request.url.split('?').first %>" data-numposts="15" data-colorscheme="light"></div>
 	</div>
