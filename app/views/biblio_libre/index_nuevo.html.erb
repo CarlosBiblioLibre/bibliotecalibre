@@ -87,17 +87,13 @@
 		<div class="row"> <!-- posts row 2 -->
 			<br />
 			<div class="span4">
-				<% if not @post_com1.blank? %>
+				<% if not @battle.blank? %>
 				<div class="span2" style="margin-left:-0px">
-					<% if @post_com1.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-					<%= link_to (image_tag @post_com1.small_picture.url), @post_com1 %>
-					<% else %>
-					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @post_com1 %>
-					<% end %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @battle %>
 				</div>
-				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_com1.title, @post_com1 %></strong></h4>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @battle.title, @battle %></strong></h4>
 				<p>
-					<%= @post_com1.description %>
+					<%= raw @battle.content.first(140) %>
 				</p>
 				<% end %>
 			</div>

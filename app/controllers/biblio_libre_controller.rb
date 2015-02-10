@@ -14,6 +14,7 @@ class BiblioLibreController < ApplicationController
 
 		@post_liberacion = Post.byKind "liberación"
 		@post_noticia = Post.byKind "noticia"
+    @battle = Battle.last
 		@post_com1 = Post.byKind "comunidad 1"
 		@post_com2 = Post.byKind "comunidad 2"
 		@post_columna =  Post.byKind "columna"
