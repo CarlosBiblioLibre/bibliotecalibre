@@ -93,7 +93,7 @@
 				</div>
 				<h4 style="margin-bottom: 5px;"><strong><%= link_to @battle.title, @battle %></strong></h4>
 				<p>
-					<%= sanitize @battle.content.first(150) %>...
+					<%= (sanitize @battle.content).first(150) %>...
 				</p>
 				<% end %>
 			</div>
