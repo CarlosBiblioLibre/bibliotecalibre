@@ -89,11 +89,11 @@
 			<div class="span4">
 				<% if not @battle.blank? %>
 				<div class="span2" style="margin-left:-0px">
-					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @battle %>
+					<%= link_to (image_tag "http://bibliorock.s3.amazonaws.com/posts/small_pictures/000/000/002/original/Libro_Pelea-58.jpg?1394679311"), @battle %>
 				</div>
 				<h4 style="margin-bottom: 5px;"><strong><%= link_to @battle.title, @battle %></strong></h4>
 				<p>
-					<%= raw @battle.content.first(250) %>
+					<%= sanitize @battle.content.first(150) %>...
 				</p>
 				<% end %>
 			</div>
