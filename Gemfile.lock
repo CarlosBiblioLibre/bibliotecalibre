@@ -62,7 +62,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.8)
     execjs (2.0.2)
     haml (4.0.5)
       tilt
@@ -190,3 +190,6 @@ DEPENDENCIES
   tinymce-rails
   tinymce-rails-imageupload (~> 4.0.0.beta)
   uglifier (>= 1.0.3)
+
+BUNDLED WITH
+   1.10.6
