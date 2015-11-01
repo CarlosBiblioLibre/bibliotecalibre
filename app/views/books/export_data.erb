@@ -1,0 +1,15 @@
+title~pages~code~author~editorial~genre~subgenre~location~how~username~email</br>
+<% @books.each do |book| %>
+<% book.findings.each do |finding| %>
+<%=book.id%>~<%=book.title%>~<%=book.pages%>~<%=book.code%>~<%=book.author%>~<%=book.editorial%>~<%=book.genre%>~<%=book.subgenre%><%=finding.location%>~<%=finding.how%>~<%=finding.username%>~<%=finding.email%></br>
+<% end %>
+<% book.releases.each do |release| %>
+<%=book.id%>~<%=book.title%>~<%=book.pages%>~<%=book.code%>~<%=book.author%>~<%=book.editorial%>~<%=book.genre%>~<%=book.subgenre%><%=release.location%>~~<%=release.username%>~<%=release.email%></br>
+<% end %>
+<% end %>
+
+
+
+
+
+

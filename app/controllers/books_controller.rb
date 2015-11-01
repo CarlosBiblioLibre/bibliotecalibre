@@ -105,6 +105,12 @@ class BooksController < ApplicationController
     end
   end
 
+  def export_data
+    @books = Book.all
+
+    render layout: false
+  end
+
   private
   def do_pdf(code)
     Prawn::Document.new do

@@ -39,6 +39,8 @@ BiblioLibre::Application.routes.draw do
 
   get '/vota/:battle_id/:book' => 'battles#vote'
 
+  get '/books/export' => 'books#export_data'
+
   # get '/zohoverify/verifyforzoho.html', to: redirect('/assets/verifyforzoho.html')
 
   devise_for :users
