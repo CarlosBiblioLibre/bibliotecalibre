@@ -33,9 +33,12 @@ class PostsController < ApplicationController
     if params[:tag]
       @posts = Post.tagged_with(params[:tag])
     else
-    @posts = Post.all
+      @posts = Post.all
     end
+
     @post = Post.find(params[:id])
+
+    @last_posts = Post.select('*').where('id != ?', params[:id]).where("kind LIKE 'comunidad 1' or kind LIKE 'comunidad 2' or kind LIKE 'comunidad 1'").limit(6).order('id desc')
 
     @og_description = @post.description
     @og_title = @post.title
