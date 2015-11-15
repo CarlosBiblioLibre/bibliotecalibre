@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
     @post = Post.find(params[:id])
 
-    @last_posts = Post.select('*').where('id != ?', params[:id]).where("kind LIKE 'comunidad 1' or kind LIKE 'comunidad 2' or kind LIKE 'comunidad 1'").limit(6).order('id desc')
+    @last_posts = Post.select('*').where('id != ?', @post.id).where("kind LIKE 'comunidad 1' or kind LIKE 'comunidad 2' or kind LIKE 'comunidad 1'").limit(6).order('id desc')
 
     @og_description = @post.description
     @og_title = @post.title
