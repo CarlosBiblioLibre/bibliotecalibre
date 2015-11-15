@@ -38,9 +38,9 @@ gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 group :development do
   gem 'annotate', ">=2.5.0"
   gem 'quiet_assets'
-
-  gem 'test-unit'
 end
+
+gem 'test-unit'
 
 # Gems used only for assets and not required
 # in production environments by default.
