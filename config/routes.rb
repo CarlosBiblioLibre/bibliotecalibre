@@ -34,8 +34,10 @@ BiblioLibre::Application.routes.draw do
   get '/diab' => 'biblio_libre#diab'
   post '/participa_diab' => 'diab#participa'
 
-
   post '/tinymce_assets' => 'biblio_libre#uploads'
+
+  get '/massive_load' => 'biblio_libre#massive_load', :as => 'massive_load'
+  post '/proccess_massive_load' => 'biblio_libre#proccess_massive_load', :as => 'proccess_massive_load'
 
   get '/vota/:battle_id/:book' => 'battles#vote'
 

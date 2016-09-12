@@ -1,0 +1,13 @@
+<%= form_tag(proccess_massive_load_path, method: "post", multipart: true) do %>
+    <div class="row">
+        <div class="span8">
+        	<div class="well">
+        		<p>Importar archivo de codigos:</p>
+				<%= file_field_tag 'file' %>
+            	<%= submit_tag "Enviar", class: "btn btn-primary pull-right" %>
+            	<br /><br />
+            	<p><a href="/assets/codigos_plantilla.csv">Bajar plantilla</a></p>        	
+        	</div>
+    	</div>     
+    </div>
+<% end %>
