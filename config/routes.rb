@@ -29,6 +29,9 @@ BiblioLibre::Application.routes.draw do
   get '/comunidad' => 'biblio_libre#comunidad'
   get '/about/faqs' => 'about#faqs'
   get '/about/equipo' => 'about#equipo'
+  get '/about/manifest' => 'about#manifest', :as => 'manifest'
+  get '/about/normas' => 'about#normas'
+  get '/about/donaciones' => 'about#donaciones'
   get '/bibliocabinas' => 'biblio_libre#bibliocabinas'
 
   get '/diab' => 'biblio_libre#diab'

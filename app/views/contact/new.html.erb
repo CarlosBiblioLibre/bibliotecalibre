@@ -1,14 +1,6 @@
 <%= form_for @message, url: contact_path, html: {class: ""} do |form| %>
   <div class="row">
-    <div class="span2 offset1">
-    <p style="color: #ffffff">.</p>
-    <ul class="nav nav-pills nav-stacked">
-        <li><a href="/posts/new"> Manifiesto</a></li>
-        <li><a href="/about/equipo"> Equipo</a></li>
-        <li><a href="/about/faqs"> Preguntas Frecuentes</a></li>
-        <li class="active"><a href="#"> Contacto</a></li>
-    </ul>
-    </div>
+    <%= render 'about/menu' %>
     <br>
     <div class="span7 offset1 well">
       <div class="row">

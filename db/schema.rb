@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140507181019) do
+ActiveRecord::Schema.define(:version => 20151222015029) do
 
   create_table "battles", :force => true do |t|
     t.string   "title"
@@ -58,6 +58,17 @@ ActiveRecord::Schema.define(:version => 20140507181019) do
     t.string   "email"
   end
 
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "hearts", :force => true do |t|
     t.integer "post_id"
   end
@@ -89,7 +100,10 @@ ActiveRecord::Schema.define(:version => 20140507181019) do
     t.string   "kind"
     t.text     "bajada"
     t.text     "autor"
+    t.string   "slug"
   end
+
+  add_index "posts", ["slug"], :name => "index_posts_on_slug"
 
   create_table "releases", :force => true do |t|
     t.string   "location"
@@ -111,9 +125,11 @@ ActiveRecord::Schema.define(:version => 20140507181019) do
   end
 
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], :name => "taggings_idx", :unique => true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "taggings_count", :default => 0
   end
 
   add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
