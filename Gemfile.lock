@@ -201,5 +201,8 @@ DEPENDENCIES
   tinymce-rails-imageupload (~> 4.0.0.beta)
   uglifier (>= 1.0.3)
 
+RUBY VERSION
+   ruby 2.2.3p173
+
 BUNDLED WITH
-   1.10.6
+   1.13.1
