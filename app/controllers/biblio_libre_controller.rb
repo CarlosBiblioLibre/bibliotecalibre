@@ -19,8 +19,8 @@ class BiblioLibreController < ApplicationController
     	@battle = Battle.last
 		@post_com1 = Post.byKind "comunidad 1"
 		@post_com2 = Post.byKind "comunidad 2"
-		@post_columna =  Post.byKind "columna"
-		@post_com3 = Post.byKind "comunidad 3"
+		@posts_columna =  Post.byKind "columna", 2
+		@posts_com3 = Post.byKind "comunidad 3", 2
 
 	end
 

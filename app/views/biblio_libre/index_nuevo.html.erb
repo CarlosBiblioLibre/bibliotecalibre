@@ -127,32 +127,67 @@
 		<div class="row"> <!-- posts row 3 -->
 			<br />
 			<div class="span4">
-				<% if not @post_columna.blank? %>
+				<% if not @posts_columna[0].blank? %>
 				<div class="span2" style="margin-left:-0px">
-					<% if @post_columna.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-					<%= link_to (image_tag @post_columna.small_picture.url), @post_columna %>
+					<% if @posts_columna[0].small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @posts_columna[0].small_picture.url), @posts_columna[0] %>
 					<% else %>
-					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @post_columna %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @posts_columna[0] %>
 					<% end %>
 				</div>
-				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_columna.title, @post_columna %></strong></h4>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @posts_columna[0].title, @posts_columna[0] %></strong></h4>
 				<p>
-					<%= @post_columna.description %>
+					<%= @posts_columna[0].description %>
 				</p>
 				<% end %>
 			</div>
 			<div class="span4">
-				<% if not @post_com3.blank? %>
+				<% if not @posts_com3[0].blank? %>
 				<div class="span2" style="margin-left:-0px">
-					<% if @post_com3.small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
-					<%= link_to (image_tag @post_com3.small_picture.url), @post_com3 %>
+					<% if @posts_com3[0].small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @posts_com3[0].small_picture.url), @posts_com3[0] %>
 					<% else %>
-					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-51.jpg"), @post_com3 %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-51.jpg"), @posts_com3[0] %>
 					<% end %>
 				</div>
-				<h4 style="margin-bottom: 5px;"><strong><%= link_to @post_com3.title, @post_com3 %></strong></h4>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @posts_com3[0].title, @posts_com3[0] %></strong></h4>
 				<p>
-					<%= @post_com3.description %>
+					<%= @posts_com3[0].description %>
+				</p>
+				<% end %>
+			</div>
+		</div> <!-- posts row 3 -->
+
+
+		<div class="row"> <!-- posts row 4 -->
+			<br />
+			<div class="span4">
+				<% if not @posts_columna[1].blank? %>
+				<div class="span2" style="margin-left:-0px">
+					<% if @posts_columna[1].small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @posts_columna[1].small_picture.url), @posts_columna[1] %>
+					<% else %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-52.jpg"), @posts_columna[1] %>
+					<% end %>
+				</div>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @posts_columna[1].title, @posts_columna[1] %></strong></h4>
+				<p>
+					<%= @posts_columna[1].description %>
+				</p>
+				<% end %>
+			</div>
+			<div class="span4">
+				<% if not @posts_com3[1].blank? %>
+				<div class="span2" style="margin-left:-0px">
+					<% if @posts_com3[1].small_picture.url(:thumb) != "/small_pictures/thumb/missing.png" %>
+					<%= link_to (image_tag @posts_com3[1].small_picture.url), @posts_com3[1] %>
+					<% else %>
+					<%= link_to (image_tag "https://s3.amazonaws.com/bibliorock/Avatar-51.jpg"), @posts_com3[1] %>
+					<% end %>
+				</div>
+				<h4 style="margin-bottom: 5px;"><strong><%= link_to @posts_com3[1].title, @posts_com3[1] %></strong></h4>
+				<p>
+					<%= @posts_com3[1].description %>
 				</p>
 				<% end %>
 			</div>
@@ -161,7 +196,7 @@
 		<div class="row"> <!-- galerias header -->
 			<br />
 			<div class="span8">
-				<img src="/assets/pepi.jpg" alt="">
+				<img src="/assets/lanovena.png" alt="">
 			</div>
 			<br />
 			<br />
