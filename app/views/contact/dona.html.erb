@@ -1,46 +1,54 @@
 <%= form_for @message, url: dona_path, html: {class: ""} do |form| %>
 
-  <div class="row">
-      <div class="span6">
-          <img src="/assets/dona.jpg" alt="" />
-      </div>
-      <div class="span6">
-          <p class="text-right">Con los libros que dones nos ayudarás a fomentar la lectura en Chile.</p>
-          <p class="text-right">En 2018 logramos distribuir gratuitamente más de 18.000 libros. Nuestra meta para este año son 30.000 libros. ¡Súmate!</p>
-          <p class="text-right">Completa este formulario y nosotros los vamos a buscar a la puerta de tu casa:</p>
-      </div>
-  </div>
-  <div class="row">
-    <div class="span12 well">
-      <div class="row">
-        <div class="span12">
-          <h4>Envíanos un mensaje y coordinemos para ir a buscar la donación de libros</h4>
-          <br />
-        </div>
-      </div>
-      <div class="row">
-        <div class="span5">
-          <label for="message_name">Nombre</label>
-          <%= form.text_field :name, class: "span4", placeholder: "Nombre" %>
-          <%= form.label :email %>
-          <%= form.text_field :email, class: "span4", placeholder: "Correo" %>
-          <label>Asunto</label>
-          <input class="span4" id="message_subject" name="message[subject]" type="hidden" value="Dona">
-        </div>
-        <div class="span7">
-          <div class="row">
-            <div class="span7">
-              <label>Mensaje</label>
-              <%= form.text_area :body, class: "input-xlarge span7", rows: 10 %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="span7">
-              <%= form.submit "Enviar", class: "btn btn-primary pull-right" %>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="row">
+    <div class="span6">
+        <img src="/assets/dona.jpg" alt="" />
     </div>
-  </div>
+    <div class="span6">
+        <row>
+            <div class="span6">
+                <p class="text-right">Con los libros que dones nos ayudarás a fomentar la lectura en Chile.</p>
+                <p class="text-right">En 2018 logramos distribuir gratuitamente más de 18.000 libros. Nuestra meta para este año son 30.000 libros. ¡Súmate!</p>
+                <p class="text-right">Completa este formulario y nosotros los vamos a buscar a la puerta de tu casa:</p>
+            </div>
+        </row>
+
+        <div class="row">
+            <div class="span6 well">
+                <div class="row">
+                    <div class="span6">
+                        <h4>Envíanos un mensaje y coordinemos para ir a buscar la donación de libros</h4>
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span6">
+                        <label for="message_name">Nombre</label>
+                        <%= form.text_field :name, class: "span4", placeholder: "Nombre" %>
+                        <%= form.label :email %>
+                        <%= form.text_field :email, class: "span4", placeholder: "Correo" %>
+                        <label>Asunto</label>
+                        <input class="span4" id="message_subject" name="message[subject]" type="hidden" value="Dona">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span6">
+                        <div class="row">
+                            <div class="span6">
+                                <label>Mensaje</label>
+                                <%= form.text_area :body, class: "input-xlarge span7", rows: 10 %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span6">
+                                <%= form.submit "Enviar", class: "btn btn-primary pull-right" %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 <% end %>
